@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-sprockets/components/legend/fieldset <Legend /> With additional props renders 1`] = `
+<legend
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`shinkansen-sprockets/components/legend/fieldset <Legend /> With required props renders 1`] = `
+<legend
+  className="MOCK CLASSNAME"
+/>
+`;

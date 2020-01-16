@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-sprockets/components/legend <Legend /> With additional props renders 1`] = `
+<legend
+  className="legend"
+>
+  MOCK TEXT CONTENT
+</legend>
+`;
+
+exports[`shinkansen-sprockets/components/legend <Legend /> With required props renders 1`] = `
+<legend
+  className="legend"
+>
+  MOCK TEXT CONTENT
+</legend>
+`;
