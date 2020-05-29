@@ -52,7 +52,7 @@ describe('shinkansen-sprockets/components/group/fieldset', () => {
       let returnValue
 
       beforeEach(() => {
-        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GET CLASSNAME')
+        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
           <Group />
@@ -68,7 +68,7 @@ describe('shinkansen-sprockets/components/group/fieldset', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GET CLASSNAME', 'fieldset')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
       })
 
       it('returns the classname', () => {

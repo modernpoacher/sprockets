@@ -12,6 +12,9 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
+jest.mock('shinkansen-sprockets/components/label/fieldset')
+jest.mock('shinkansen-sprockets/components/group/fieldset')
+
 describe('shinkansen-sprockets/sprockets/fieldset', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
@@ -44,7 +47,6 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         const component = (
           <Sprocket
             label='MOCK LABEL'
-            onClick={jest.fn()}
             onChange={jest.fn()}
           />
         )
