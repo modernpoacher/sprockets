@@ -5,18 +5,20 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-sprockets/sprockets'
-import Sprocket from 'shinkansen-sprockets/sprockets/fieldset'
+import Super from 'shinkansen-sprockets/components/label'
+import Label from 'shinkansen-sprockets/components/label/fieldset'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('shinkansen-sprockets/sprockets/fieldset', () => {
-  describe('<Sprocket />', () => {
+jest.mock('shinkansen-sprockets/components/label')
+
+describe('shinkansen-sprockets/components/label/fieldset', () => {
+  describe('<Label />', () => {
     describe('With required props', () => {
       const component = (
-        <Sprocket />
+        <Label />
       )
 
       it('renders', () => {
@@ -26,14 +28,7 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Sprocket.prototype.getClassName)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderLabel`', () => {
-        it('is defined', () => {
-          return expect(Sprocket.prototype.renderLabel)
+          return expect(Label.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -42,9 +37,8 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Sprocket
+          <Label
             label='MOCK LABEL'
-            onClick={jest.fn()}
             onChange={jest.fn()}
           />
         )
@@ -61,7 +55,7 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Sprocket />
+          <Label />
         )
 
         const instance = (
@@ -72,7 +66,7 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
       })

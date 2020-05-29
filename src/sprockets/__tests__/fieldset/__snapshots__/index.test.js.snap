@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-sprockets/sprockets/fieldset <Sprocket /> With additional props renders 1`] = `null`;
+exports[`shinkansen-sprockets/sprockets/fieldset <Sprocket /> With additional props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <fieldset
+    className="group"
+    onChange={[MockFunction]}
+  >
+    <legend
+      className="label"
+    >
+      <span
+        className="text-content"
+      >
+        MOCK LABEL
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;
 
-exports[`shinkansen-sprockets/sprockets/fieldset <Sprocket /> With required props renders 1`] = `null`;
+exports[`shinkansen-sprockets/sprockets/fieldset <Sprocket /> With required props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <fieldset
+    className="group"
+    onChange={[Function]}
+  >
+    <legend
+      className="label"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;

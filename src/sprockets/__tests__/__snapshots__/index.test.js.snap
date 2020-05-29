@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shinkansen-sprockets/sprockets <Sprocket /> With additional props renders 1`] = `
-<fieldset
+<div
   className="sprocket"
 />
 `;
 
 exports[`shinkansen-sprockets/sprockets <Sprocket /> With required props renders 1`] = `
-<fieldset
+<div
   className="sprocket"
 />
 `;

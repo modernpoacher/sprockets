@@ -4,11 +4,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Legend from 'shinkansen-sprockets/components/legend'
+import Label from 'shinkansen-sprockets/components/label'
+import Group from 'shinkansen-sprockets/components/group'
 
 export default class Sprocket extends Component {
-  getLegend = () => this.legend
-  setLegend = (legend) => !!(this.legend = legend) || delete this.legend
+  getLabel = () => this.label
+  getGroup = () => this.group
+
+  setLabel = (label) => !!(this.label = label) || delete this.label
+  setGroup = (group) => !!(this.group = group) || delete this.group
 
   getClassName () {
     return 'sprocket'
@@ -16,41 +20,53 @@ export default class Sprocket extends Component {
 
   shouldComponentUpdate (props) {
     return (
-      (props.legend !== this.props.legend) ||
+      (props.label !== this.props.label) ||
       (props.onChange !== this.props.onChange)
     )
   }
 
-  renderLegend () {
+  renderLabel () {
     const {
-      legend
+      label
     } = this.props
 
     return (
-      <Legend
-        legend={legend}
-        ref={this.setLegend}
+      <Label
+        label={label}
+        ref={this.setLabel}
       />
+    )
+  }
+
+  renderGroup () {
+    const {
+      onChange,
+      children
+    } = this.props
+
+    return (
+      <Group
+        onChange={onChange}
+        ref={this.setGroup}>
+        {this.renderLabel()}
+        {children}
+      </Group>
     )
   }
 
   render () {
     const className = this.getClassName()
-    const {
-      children
-    } = this.props
 
     return (
-      <fieldset className={className}>
-        {this.renderLegend()}
-        {children}
-      </fieldset>
+      <div className={className}>
+        {this.renderGroup()}
+      </div>
     )
   }
 }
 
 Sprocket.propTypes = {
-  legend: PropTypes.string,
+  label: PropTypes.string,
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.element,
@@ -61,6 +77,6 @@ Sprocket.propTypes = {
 }
 
 Sprocket.defaultProps = {
-  legend: 'Sprocket',
+  label: 'Sprocket',
   onChange: () => {}
 }

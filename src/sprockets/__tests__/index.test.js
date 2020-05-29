@@ -5,7 +5,8 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Legend from 'shinkansen-sprockets/components/legend'
+import Label from 'shinkansen-sprockets/components/label'
+import Group from 'shinkansen-sprockets/components/group'
 
 import Sprocket from 'shinkansen-sprockets/sprockets'
 
@@ -13,38 +14,46 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/legend')
+jest.mock('shinkansen-sprockets/components/label')
+jest.mock('shinkansen-sprockets/components/group')
 
 describe('shinkansen-sprockets/sprockets', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (
-        <Sprocket legend='MOCK LEGEND' />
+        <Sprocket label='MOCK LABEL' />
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('Prototype', () => {
         describe('`getClassName`', () => {
           it('is defined', () => {
-            expect(Sprocket.prototype.getClassName)
+            return expect(Sprocket.prototype.getClassName)
               .toBeDefined()
           })
         })
 
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
-            expect(Sprocket.prototype.shouldComponentUpdate)
+            return expect(Sprocket.prototype.shouldComponentUpdate)
               .toBeDefined()
           })
         })
 
-        describe('`renderLegend`', () => {
+        describe('`renderLabel`', () => {
           it('is defined', () => {
-            expect(Sprocket.prototype.renderLegend)
+            return expect(Sprocket.prototype.renderLabel)
+              .toBeDefined()
+          })
+        })
+
+        describe('`renderGroup`', () => {
+          it('is defined', () => {
+            return expect(Sprocket.prototype.renderGroup)
               .toBeDefined()
           })
         })
@@ -59,16 +68,30 @@ describe('shinkansen-sprockets/sprockets', () => {
           instance = wrapper.instance()
         })
 
-        describe('`getLegend`', () => {
+        describe('`getLabel`', () => {
           it('is defined', () => {
-            expect(instance.getLegend)
+            return expect(instance.getLabel)
               .toBeDefined()
           })
         })
 
-        describe('`setLegend`', () => {
+        describe('`setLabel`', () => {
           it('is defined', () => {
-            expect(instance.setLegend)
+            return expect(instance.setLabel)
+              .toBeDefined()
+          })
+        })
+
+        describe('`getGroup`', () => {
+          it('is defined', () => {
+            return expect(instance.getGroup)
+              .toBeDefined()
+          })
+        })
+
+        describe('`setGroup`', () => {
+          it('is defined', () => {
+            return expect(instance.setGroup)
               .toBeDefined()
           })
         })
@@ -79,40 +102,40 @@ describe('shinkansen-sprockets/sprockets', () => {
       it('renders', () => {
         const component = (
           <Sprocket
-            legend='MOCK LEGEND'
+            label='MOCK LABEL'
             onChange={jest.fn()}
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
 
-    describe('`getLegend()`', () => {
-      it('returns the `legend` field of the instance', () => {
+    describe('`getLabel()`', () => {
+      it('returns the `label` field of the instance', () => {
         const component = (
-          <Sprocket legend='MOCK LEGEND' />
+          <Sprocket label='MOCK LABEL' />
         )
 
         const wrapper = shallow(component)
 
         const instance = wrapper.instance()
 
-        const mockLegend = {}
+        const mockLabel = {}
 
-        instance.legend = mockLegend
+        instance.label = mockLabel
 
-        expect(instance.getLegend())
-          .toBe(mockLegend)
+        return expect(instance.getLabel())
+          .toBe(mockLabel)
       })
     })
 
-    describe('`setLegend()`', () => {
+    describe('`setLabel()`', () => {
       describe('With a parameter', () => {
-        it('sets the parameter to the instance as the field `legend`', () => {
+        it('sets the parameter to the instance as the field `label`', () => {
           const component = (
-            <Sprocket legend='MOCK LEGEND' />
+            <Sprocket label='MOCK LABEL' />
           )
 
           const instance = (
@@ -120,19 +143,19 @@ describe('shinkansen-sprockets/sprockets', () => {
               .instance()
           )
 
-          const mockLegend = {}
+          const mockLabel = {}
 
-          instance.setLegend(mockLegend)
+          instance.setLabel(mockLabel)
 
-          expect(instance.legend)
-            .toBe(mockLegend)
+          return expect(instance.label)
+            .toBe(mockLabel)
         })
       })
 
       describe('Without any parameters', () => {
-        it('deletes the field `legend` from the instance', () => {
+        it('deletes the field `label` from the instance', () => {
           const component = (
-            <Sprocket legend='MOCK LEGEND' />
+            <Sprocket label='MOCK LABEL' />
           )
 
           const instance = (
@@ -140,9 +163,68 @@ describe('shinkansen-sprockets/sprockets', () => {
               .instance()
           )
 
-          instance.setLegend()
+          instance.setLabel()
 
-          expect(instance.legend)
+          return expect(instance.label)
+            .toBeUndefined()
+        })
+      })
+    })
+
+    describe('`getGroup()`', () => {
+      it('returns the `group` field of the instance', () => {
+        const component = (
+          <Sprocket group='MOCK LABEL' />
+        )
+
+        const wrapper = shallow(component)
+
+        const instance = wrapper.instance()
+
+        const mockGroup = {}
+
+        instance.group = mockGroup
+
+        return expect(instance.getGroup())
+          .toBe(mockGroup)
+      })
+    })
+
+    describe('`setGroup()`', () => {
+      describe('With a parameter', () => {
+        it('sets the parameter to the instance as the field `group`', () => {
+          const component = (
+            <Sprocket label='MOCK LABEL' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          const mockGroup = {}
+
+          instance.setGroup(mockGroup)
+
+          return expect(instance.group)
+            .toBe(mockGroup)
+        })
+      })
+
+      describe('Without any parameters', () => {
+        it('deletes the field `group` from the instance', () => {
+          const component = (
+            <Sprocket group='MOCK LABEL' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          instance.setGroup()
+
+          return expect(instance.group)
             .toBeUndefined()
         })
       })
@@ -158,7 +240,7 @@ describe('shinkansen-sprockets/sprockets', () => {
 
         beforeEach(() => {
           const component = (
-            <Sprocket legend='MOCK LEGEND' />
+            <Sprocket label='MOCK LABEL' />
           )
 
           const instance = (
@@ -170,12 +252,12 @@ describe('shinkansen-sprockets/sprockets', () => {
         })
 
         it('does not invoke `classnames`', () => {
-          expect(classnames)
+          return expect(classnames)
             .not.toBeCalled()
         })
 
         it('returns the classname', () => {
-          expect(returnValue)
+          return expect(returnValue)
             .toBe('sprocket')
         })
       })
@@ -186,7 +268,7 @@ describe('shinkansen-sprockets/sprockets', () => {
 
       const component = (
         <Sprocket
-          legend='MOCK LEGEND'
+          label='MOCK LABEL'
           onChange={MOCK_ONCHANGE}
         />
       )
@@ -201,8 +283,8 @@ describe('shinkansen-sprockets/sprockets', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
-            legend: 'MOCK CHANGE LEGEND',
+          return expect(instance.shouldComponentUpdate({
+            label: 'MOCK CHANGE LEGEND',
             onChange: jest.fn()
           }))
             .toBe(true)
@@ -211,8 +293,8 @@ describe('shinkansen-sprockets/sprockets', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
-            legend: 'MOCK LEGEND',
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            label: 'MOCK LABEL',
             onChange: MOCK_ONCHANGE
           }))
             .toBe(false)
@@ -220,12 +302,12 @@ describe('shinkansen-sprockets/sprockets', () => {
       })
     })
 
-    describe('`renderLegend()`', () => {
+    xdescribe('`renderLabel()`', () => {
       const MOCK_ONCHANGE = jest.fn()
 
       const component = (
         <Sprocket
-          legend='MOCK LEGEND'
+          label='MOCK LABEL'
           onChange={MOCK_ONCHANGE}
         />
       )
@@ -233,19 +315,50 @@ describe('shinkansen-sprockets/sprockets', () => {
       let instance
 
       beforeEach(() => {
-        jest.clearAllMocks()
+        // jest.clearAllMocks()
 
         const wrapper = mount(component)
 
         instance = wrapper.instance()
 
-        instance.renderLegend()
+        instance.renderLabel()
       })
 
-      it('renders `<Legend />`', () => {
-        expect(Legend)
+      it('renders `<Label />`', () => {
+        return expect(Label)
           .toBeCalledWith({
-            legend: 'MOCK LEGEND'
+            label: 'MOCK LABEL'
+          }, {})
+      })
+    })
+
+    describe('`renderGroup()`', () => {
+      const MOCK_ONCHANGE = jest.fn()
+
+      const component = (
+        <Sprocket
+          label='MOCK BACON'
+          onChange={MOCK_ONCHANGE}
+        />
+      )
+
+      let instance
+
+      beforeEach(() => {
+        // jest.clearAllMocks()
+
+        const wrapper = mount(component)
+
+        instance = wrapper.instance()
+
+        instance.renderGroup()
+      })
+
+      it('renders `<Group />`', () => {
+        return expect(Group)
+          .toBeCalledWith({
+            onChange: MOCK_ONCHANGE,
+            children: expect.any(Array)
           }, {})
       })
     })

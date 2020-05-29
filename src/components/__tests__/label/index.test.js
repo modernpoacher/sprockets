@@ -3,48 +3,48 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Legend from 'shinkansen-sprockets/components/legend'
+import Label from 'shinkansen-sprockets/components/label'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('shinkansen-sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 
-describe('shinkansen-sprockets/components/legend', () => {
-  describe('<Legend />', () => {
+describe('shinkansen-sprockets/components/label', () => {
+  describe('<Label />', () => {
     describe('With required props', () => {
       const component = (
-        <Legend />
+        <Label />
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`textContent`', () => {
         it('is defined', () => {
-          expect(Legend.prototype.textContent)
+          return expect(Label.prototype.textContent)
             .toBeDefined()
         })
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Legend.prototype.getClassName)
+          return expect(Label.prototype.getClassName)
             .toBeDefined()
         })
       })
 
       describe('`shouldComponentUpdate`', () => {
         it('is defined', () => {
-          expect(Legend.prototype.shouldComponentUpdate)
+          return expect(Label.prototype.shouldComponentUpdate)
             .toBeDefined()
         })
       })
 
       describe('`renderTextContent`', () => {
         it('is defined', () => {
-          expect(Legend.prototype.renderTextContent)
+          return expect(Label.prototype.renderTextContent)
             .toBeDefined()
         })
       })
@@ -53,21 +53,21 @@ describe('shinkansen-sprockets/components/legend', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Legend
-            legend='MOCK LEGEND'
+          <Label
+            label='MOCK LABEL'
             onChange={jest.fn()}
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
 
     describe('`textContent()`', () => {
-      it('returns the `legend` prop', () => {
+      it('returns the `label` prop', () => {
         const component = (
-          <Legend legend='MOCK LEGEND' />
+          <Label label='MOCK LABEL' />
         )
 
         const instance = (
@@ -75,15 +75,15 @@ describe('shinkansen-sprockets/components/legend', () => {
             .instance()
         )
 
-        expect(instance.textContent())
-          .toBe('MOCK LEGEND')
+        return expect(instance.textContent())
+          .toBe('MOCK LABEL')
       })
     })
 
     describe('`getClassName()`', () => {
       it('returns the classname', () => {
         const component = (
-          <Legend />
+          <Label />
         )
 
         const instance = (
@@ -91,15 +91,15 @@ describe('shinkansen-sprockets/components/legend', () => {
             .instance()
         )
 
-        expect(instance.getClassName())
-          .toBe('legend')
+        return expect(instance.getClassName())
+          .toBe('label')
       })
     })
 
     describe('`shouldComponentUpdate()`', () => {
       const component = (
-        <Legend
-          legend='MOCK LEGEND'
+        <Label
+          label='MOCK LABEL'
         />
       )
 
@@ -113,8 +113,8 @@ describe('shinkansen-sprockets/components/legend', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
-            legend: 'MOCK CHANGE LEGEND'
+          return expect(instance.shouldComponentUpdate({
+            label: 'MOCK CHANGE Label'
           }))
             .toBe(true)
         })
@@ -122,8 +122,8 @@ describe('shinkansen-sprockets/components/legend', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
-            legend: 'MOCK LEGEND'
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            label: 'MOCK LABEL'
           }))
             .toBe(false)
         })

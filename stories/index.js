@@ -8,9 +8,14 @@ import {
 
 storiesOf('FieldsetSprocket', module)
   .add('Required and default props', () => (
-    <div className='group'>
-      <FieldsetSprocket legend='Fieldset One' />
-      <FieldsetSprocket legend='Fieldset Two' />
-      <FieldsetSprocket legend='Fieldset Three' />
-    </div>
+    <FieldsetSprocket title='Fieldset'>
+      <p>Content</p>
+    </FieldsetSprocket>
+  ))
+  .add('Outer - inner', () => (
+    <FieldsetSprocket title='Outer'>
+      <FieldsetSprocket title='Inner'>
+        <p>Content</p>
+      </FieldsetSprocket>
+    </FieldsetSprocket>
   ))

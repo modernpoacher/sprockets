@@ -1,49 +1,34 @@
-import React, { Component as mockComponent } from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-sprockets/components/legend'
-import Legend from 'shinkansen-sprockets/components/legend/fieldset'
+import Super from 'shinkansen-sprockets/components/group'
+import Group from 'shinkansen-sprockets/components/group/fieldset'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/legend', () => ({
-  __esModule: true,
-  default: class MockLegend extends mockComponent {
-    getClassName () { }
+jest.mock('shinkansen-sprockets/components/group')
 
-    render () {
-      const { children } = this.props
-
-      return (
-        <legend className={this.getClassName()}>
-          {children}
-        </legend>
-      )
-    }
-  }
-}))
-
-describe('shinkansen-sprockets/components/legend/fieldset', () => {
-  describe('<Legend />', () => {
+describe('shinkansen-sprockets/components/group/fieldset', () => {
+  describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
-        <Legend />
+        <Group />
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Legend.prototype.getClassName)
+          return expect(Group.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -52,13 +37,13 @@ describe('shinkansen-sprockets/components/legend/fieldset', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Legend
-            legend='MOCK LEGEND'
+          <Group
+            label='MOCK LABEL'
             onChange={jest.fn()}
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -67,10 +52,10 @@ describe('shinkansen-sprockets/components/legend/fieldset', () => {
       let returnValue
 
       beforeEach(() => {
-        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
+        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GET CLASSNAME')
 
         const component = (
-          <Legend />
+          <Group />
         )
 
         const instance = (
@@ -82,12 +67,12 @@ describe('shinkansen-sprockets/components/legend/fieldset', () => {
       })
 
       it('invokes `classnames`', () => {
-        expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
+        return expect(classnames)
+          .toBeCalledWith('MOCK GET CLASSNAME', 'fieldset')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })
