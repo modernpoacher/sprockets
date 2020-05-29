@@ -114,7 +114,7 @@ describe('shinkansen-sprockets/components/label', () => {
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            label: 'MOCK CHANGE Label'
+            label: 'MOCK CHANGE LABEL'
           }))
             .toBe(true)
         })
