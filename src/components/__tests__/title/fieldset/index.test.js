@@ -5,20 +5,20 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-sprockets/components/label'
-import Label from 'shinkansen-sprockets/components/label/fieldset'
+import Super from 'shinkansen-sprockets/components/title'
+import Title from 'shinkansen-sprockets/components/title/fieldset'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/label')
+jest.mock('shinkansen-sprockets/components/title')
 
-describe('shinkansen-sprockets/components/label/fieldset', () => {
-  describe('<Label />', () => {
+describe('shinkansen-sprockets/components/title/fieldset', () => {
+  describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
-        <Label />
+        <Title />
       )
 
       it('renders', () => {
@@ -28,7 +28,7 @@ describe('shinkansen-sprockets/components/label/fieldset', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.getClassName)
+          return expect(Title.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -37,8 +37,8 @@ describe('shinkansen-sprockets/components/label/fieldset', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Label
-            label='MOCK LABEL'
+          <Title
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )
@@ -55,7 +55,7 @@ describe('shinkansen-sprockets/components/label/fieldset', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Label />
+          <Title />
         )
 
         const instance = (

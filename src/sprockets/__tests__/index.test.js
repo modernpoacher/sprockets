@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Label from 'shinkansen-sprockets/components/label'
+import Title from 'shinkansen-sprockets/components/title'
 import Group from 'shinkansen-sprockets/components/group'
 
 import Sprocket from 'shinkansen-sprockets/sprockets'
@@ -14,14 +14,14 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/label')
+jest.mock('shinkansen-sprockets/components/title')
 jest.mock('shinkansen-sprockets/components/group')
 
 describe('shinkansen-sprockets/sprockets', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (
-        <Sprocket label='MOCK LABEL' />
+        <Sprocket title='MOCK TITLE' />
       )
 
       it('renders', () => {
@@ -44,9 +44,9 @@ describe('shinkansen-sprockets/sprockets', () => {
           })
         })
 
-        describe('`renderLabel`', () => {
+        describe('`renderTitle`', () => {
           it('is defined', () => {
-            return expect(Sprocket.prototype.renderLabel)
+            return expect(Sprocket.prototype.renderTitle)
               .toBeDefined()
           })
         })
@@ -68,16 +68,16 @@ describe('shinkansen-sprockets/sprockets', () => {
           instance = wrapper.instance()
         })
 
-        describe('`getLabel`', () => {
+        describe('`getTitle`', () => {
           it('is defined', () => {
-            return expect(instance.getLabel)
+            return expect(instance.getTitle)
               .toBeDefined()
           })
         })
 
-        describe('`setLabel`', () => {
+        describe('`setTitle`', () => {
           it('is defined', () => {
-            return expect(instance.setLabel)
+            return expect(instance.setTitle)
               .toBeDefined()
           })
         })
@@ -102,7 +102,7 @@ describe('shinkansen-sprockets/sprockets', () => {
       it('renders', () => {
         const component = (
           <Sprocket
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )
@@ -112,30 +112,30 @@ describe('shinkansen-sprockets/sprockets', () => {
       })
     })
 
-    describe('`getLabel()`', () => {
-      it('returns the `label` field of the instance', () => {
+    describe('`getTitle()`', () => {
+      it('returns the `title` field of the instance', () => {
         const component = (
-          <Sprocket label='MOCK LABEL' />
+          <Sprocket title='MOCK TITLE' />
         )
 
         const wrapper = shallow(component)
 
         const instance = wrapper.instance()
 
-        const mockLabel = {}
+        const mockTitle = {}
 
-        instance.label = mockLabel
+        instance.title = mockTitle
 
-        return expect(instance.getLabel())
-          .toBe(mockLabel)
+        return expect(instance.getTitle())
+          .toBe(mockTitle)
       })
     })
 
-    describe('`setLabel()`', () => {
+    describe('`setTitle()`', () => {
       describe('With a parameter', () => {
-        it('sets the parameter to the instance as the field `label`', () => {
+        it('sets the parameter to the instance as the field `title`', () => {
           const component = (
-            <Sprocket label='MOCK LABEL' />
+            <Sprocket title='MOCK TITLE' />
           )
 
           const instance = (
@@ -143,19 +143,19 @@ describe('shinkansen-sprockets/sprockets', () => {
               .instance()
           )
 
-          const mockLabel = {}
+          const mockTitle = {}
 
-          instance.setLabel(mockLabel)
+          instance.setTitle(mockTitle)
 
-          return expect(instance.label)
-            .toBe(mockLabel)
+          return expect(instance.title)
+            .toBe(mockTitle)
         })
       })
 
       describe('Without any parameters', () => {
-        it('deletes the field `label` from the instance', () => {
+        it('deletes the field `title` from the instance', () => {
           const component = (
-            <Sprocket label='MOCK LABEL' />
+            <Sprocket title='MOCK TITLE' />
           )
 
           const instance = (
@@ -163,9 +163,9 @@ describe('shinkansen-sprockets/sprockets', () => {
               .instance()
           )
 
-          instance.setLabel()
+          instance.setTitle()
 
-          return expect(instance.label)
+          return expect(instance.title)
             .toBeUndefined()
         })
       })
@@ -174,7 +174,7 @@ describe('shinkansen-sprockets/sprockets', () => {
     describe('`getGroup()`', () => {
       it('returns the `group` field of the instance', () => {
         const component = (
-          <Sprocket group='MOCK LABEL' />
+          <Sprocket group='MOCK TITLE' />
         )
 
         const wrapper = shallow(component)
@@ -194,7 +194,7 @@ describe('shinkansen-sprockets/sprockets', () => {
       describe('With a parameter', () => {
         it('sets the parameter to the instance as the field `group`', () => {
           const component = (
-            <Sprocket label='MOCK LABEL' />
+            <Sprocket title='MOCK TITLE' />
           )
 
           const instance = (
@@ -214,7 +214,7 @@ describe('shinkansen-sprockets/sprockets', () => {
       describe('Without any parameters', () => {
         it('deletes the field `group` from the instance', () => {
           const component = (
-            <Sprocket group='MOCK LABEL' />
+            <Sprocket group='MOCK TITLE' />
           )
 
           const instance = (
@@ -240,7 +240,7 @@ describe('shinkansen-sprockets/sprockets', () => {
 
         beforeEach(() => {
           const component = (
-            <Sprocket label='MOCK LABEL' />
+            <Sprocket title='MOCK TITLE' />
           )
 
           const instance = (
@@ -268,7 +268,7 @@ describe('shinkansen-sprockets/sprockets', () => {
 
       const component = (
         <Sprocket
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           onChange={MOCK_ONCHANGE}
         />
       )
@@ -284,7 +284,7 @@ describe('shinkansen-sprockets/sprockets', () => {
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            label: 'MOCK CHANGE LEGEND',
+            title: 'MOCK CHANGE LEGEND',
             onChange: jest.fn()
           }))
             .toBe(true)
@@ -294,7 +294,7 @@ describe('shinkansen-sprockets/sprockets', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            label: 'MOCK LABEL',
+            title: 'MOCK TITLE',
             onChange: MOCK_ONCHANGE
           }))
             .toBe(false)
@@ -302,12 +302,12 @@ describe('shinkansen-sprockets/sprockets', () => {
       })
     })
 
-    xdescribe('`renderLabel()`', () => {
+    xdescribe('`renderTitle()`', () => {
       const MOCK_ONCHANGE = jest.fn()
 
       const component = (
         <Sprocket
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           onChange={MOCK_ONCHANGE}
         />
       )
@@ -321,13 +321,13 @@ describe('shinkansen-sprockets/sprockets', () => {
 
         instance = wrapper.instance()
 
-        instance.renderLabel()
+        instance.renderTitle()
       })
 
-      it('renders `<Label />`', () => {
-        return expect(Label)
+      it('renders `<Title />`', () => {
+        return expect(Title)
           .toBeCalledWith({
-            label: 'MOCK LABEL'
+            title: 'MOCK TITLE'
           }, {})
       })
     })
@@ -337,7 +337,7 @@ describe('shinkansen-sprockets/sprockets', () => {
 
       const component = (
         <Sprocket
-          label='MOCK BACON'
+          title='MOCK TITLE'
           onChange={MOCK_ONCHANGE}
         />
       )

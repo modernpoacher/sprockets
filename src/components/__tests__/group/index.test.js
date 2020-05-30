@@ -38,7 +38,7 @@ describe('shinkansen-sprockets/components/group', () => {
       it('renders', () => {
         const component = (
           <Group
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )
@@ -67,7 +67,7 @@ describe('shinkansen-sprockets/components/group', () => {
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Group
-          label='MOCK LABEL'
+          title='MOCK TITLE'
         />
       )
 
@@ -82,7 +82,7 @@ describe('shinkansen-sprockets/components/group', () => {
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            label: 'MOCK CHANGE GROUP'
+            title: 'MOCK CHANGE GROUP'
           }))
             .toBe(true)
         })
@@ -91,7 +91,7 @@ describe('shinkansen-sprockets/components/group', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            label: 'MOCK LABEL'
+            title: 'MOCK TITLE'
           }))
             .toBe(false)
         })

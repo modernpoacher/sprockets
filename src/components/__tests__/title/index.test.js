@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Label from 'shinkansen-sprockets/components/label'
+import Title from 'shinkansen-sprockets/components/title'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('shinkansen-sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 
-describe('shinkansen-sprockets/components/label', () => {
-  describe('<Label />', () => {
+describe('shinkansen-sprockets/components/title', () => {
+  describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
-        <Label />
+        <Title />
       )
 
       it('renders', () => {
@@ -23,35 +23,35 @@ describe('shinkansen-sprockets/components/label', () => {
 
       describe('`hasTextContent`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.hasTextContent)
+          return expect(Title.prototype.hasTextContent)
             .toBeDefined()
         })
       })
 
       describe('`getTextContent`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.getTextContent)
+          return expect(Title.prototype.getTextContent)
             .toBeDefined()
         })
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.getClassName)
+          return expect(Title.prototype.getClassName)
             .toBeDefined()
         })
       })
 
       describe('`shouldComponentUpdate`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.shouldComponentUpdate)
+          return expect(Title.prototype.shouldComponentUpdate)
             .toBeDefined()
         })
       })
 
       describe('`renderTextContent`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.renderTextContent)
+          return expect(Title.prototype.renderTextContent)
             .toBeDefined()
         })
       })
@@ -60,8 +60,8 @@ describe('shinkansen-sprockets/components/label', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Label
-            label='MOCK LABEL'
+          <Title
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )
@@ -72,10 +72,10 @@ describe('shinkansen-sprockets/components/label', () => {
     })
 
     describe('`hasTextContent()`', () => {
-      describe('With the `label` prop defined', () => {
-        it('returns the `label` prop', () => {
+      describe('With the `title` prop defined', () => {
+        it('returns the `title` prop', () => {
           const component = (
-            <Label label='MOCK LABEL' />
+            <Title title='MOCK TITLE' />
           )
 
           const instance = (
@@ -88,10 +88,10 @@ describe('shinkansen-sprockets/components/label', () => {
         })
       })
 
-      describe('Without the `label` prop defined', () => {
+      describe('Without the `title` prop defined', () => {
         it('returns false', () => {
           const component = (
-            <Label />
+            <Title />
           )
 
           const instance = (
@@ -106,9 +106,9 @@ describe('shinkansen-sprockets/components/label', () => {
     })
 
     describe('`getTextContent()`', () => {
-      it('returns the `label` prop', () => {
+      it('returns the `title` prop', () => {
         const component = (
-          <Label label='MOCK LABEL' />
+          <Title title='MOCK TITLE' />
         )
 
         const instance = (
@@ -117,14 +117,14 @@ describe('shinkansen-sprockets/components/label', () => {
         )
 
         return expect(instance.getTextContent())
-          .toBe('MOCK LABEL')
+          .toBe('MOCK TITLE')
       })
     })
 
     describe('`getClassName()`', () => {
       it('returns the classname', () => {
         const component = (
-          <Label />
+          <Title />
         )
 
         const instance = (
@@ -133,14 +133,14 @@ describe('shinkansen-sprockets/components/label', () => {
         )
 
         return expect(instance.getClassName())
-          .toBe('label')
+          .toBe('title')
       })
     })
 
     describe('`shouldComponentUpdate()`', () => {
       const component = (
-        <Label
-          label='MOCK LABEL'
+        <Title
+          title='MOCK TITLE'
         />
       )
 
@@ -155,7 +155,7 @@ describe('shinkansen-sprockets/components/label', () => {
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            label: 'MOCK CHANGE LABEL'
+            title: 'MOCK CHANGE TITLE'
           }))
             .toBe(true)
         })
@@ -164,7 +164,7 @@ describe('shinkansen-sprockets/components/label', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            label: 'MOCK LABEL'
+            title: 'MOCK TITLE'
           }))
             .toBe(false)
         })

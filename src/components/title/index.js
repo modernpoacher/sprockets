@@ -1,31 +1,31 @@
 /**
- * Label component
+ * Title component
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
-export default class Label extends Component {
+export default class Title extends Component {
   hasTextContent () {
-    const { label } = this.props
+    const { title } = this.props
 
-    return !!label
+    return !!title
   }
 
   getTextContent () {
-    const { label } = this.props
+    const { title } = this.props
 
-    return label
+    return title
   }
 
   getClassName () {
-    return 'label'
+    return 'title'
   }
 
   shouldComponentUpdate (props) {
     return (
-      (props.label !== this.props.label)
+      (props.title !== this.props.title)
     )
   }
 
@@ -54,6 +54,6 @@ export default class Label extends Component {
   }
 }
 
-Label.propTypes = {
-  label: PropTypes.string
+Title.propTypes = {
+  title: PropTypes.string
 }

@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Label from 'shinkansen-sprockets/components/label'
+import Title from 'shinkansen-sprockets/components/title'
 import Group from 'shinkansen-sprockets/components/group'
 
 function onChange () {
@@ -12,10 +12,10 @@ function onChange () {
 }
 
 export default class Sprocket extends Component {
-  getLabel = () => this.label
+  getTitle = () => this.title
   getGroup = () => this.group
 
-  setLabel = (label) => !!(this.label = label) || delete this.label
+  setTitle = (title) => !!(this.title = title) || delete this.title
   setGroup = (group) => !!(this.group = group) || delete this.group
 
   getClassName () {
@@ -24,20 +24,20 @@ export default class Sprocket extends Component {
 
   shouldComponentUpdate (props) {
     return (
-      (props.label !== this.props.label) ||
+      (props.title !== this.props.title) ||
       (props.onChange !== this.props.onChange)
     )
   }
 
-  renderLabel () {
+  renderTitle () {
     const {
-      label
+      title
     } = this.props
 
     return (
-      <Label
-        label={label}
-        ref={this.setLabel}
+      <Title
+        title={title}
+        ref={this.setTitle}
       />
     )
   }
@@ -52,7 +52,7 @@ export default class Sprocket extends Component {
       <Group
         onChange={onChange}
         ref={this.setGroup}>
-        {this.renderLabel()}
+        {this.renderTitle()}
         {children}
       </Group>
     )
@@ -70,7 +70,7 @@ export default class Sprocket extends Component {
 }
 
 Sprocket.propTypes = {
-  label: PropTypes.string,
+  title: PropTypes.string,
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.element,

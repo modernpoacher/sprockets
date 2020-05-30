@@ -6,7 +6,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import Sprocket from 'shinkansen-sprockets/sprockets'
-import Label from 'shinkansen-sprockets/components/label/fieldset'
+import Title from 'shinkansen-sprockets/components/title/fieldset'
 import Group from 'shinkansen-sprockets/components/group/fieldset'
 
 export default class FieldsetSprocket extends Sprocket {
@@ -14,15 +14,15 @@ export default class FieldsetSprocket extends Sprocket {
     return classnames(super.getClassName(), 'fieldset')
   }
 
-  renderLabel () {
+  renderTitle () {
     const {
-      label
+      title
     } = this.props
 
     return (
-      <Label
-        label={label}
-        ref={this.setLabel}
+      <Title
+        title={title}
+        ref={this.setTitle}
       />
     )
   }
@@ -37,7 +37,7 @@ export default class FieldsetSprocket extends Sprocket {
       <Group
         onChange={onChange}
         ref={this.setGroup}>
-        {this.renderLabel()}
+        {this.renderTitle()}
         {children}
       </Group>
     )

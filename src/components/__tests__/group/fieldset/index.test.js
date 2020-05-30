@@ -38,7 +38,7 @@ describe('shinkansen-sprockets/components/group/fieldset', () => {
       it('renders', () => {
         const component = (
           <Group
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )

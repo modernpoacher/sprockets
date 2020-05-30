@@ -12,7 +12,7 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/label/fieldset')
+jest.mock('shinkansen-sprockets/components/title/fieldset')
 jest.mock('shinkansen-sprockets/components/group/fieldset')
 
 describe('shinkansen-sprockets/sprockets/fieldset', () => {
@@ -34,9 +34,9 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         })
       })
 
-      describe('`renderLabel`', () => {
+      describe('`renderTitle`', () => {
         it('is defined', () => {
-          return expect(Sprocket.prototype.renderLabel)
+          return expect(Sprocket.prototype.renderTitle)
             .toBeDefined()
         })
       })
@@ -46,7 +46,7 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
       it('renders', () => {
         const component = (
           <Sprocket
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )

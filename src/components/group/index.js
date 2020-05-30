@@ -14,7 +14,7 @@ export default class Group extends Component {
 
   shouldComponentUpdate (props) {
     return (
-      (props.label !== this.props.label) ||
+      (props.title !== this.props.title) ||
       (props.onChange !== this.props.onChange) ||
       (props.children !== this.props.children)
     )
@@ -38,7 +38,7 @@ export default class Group extends Component {
 }
 
 Group.propTypes = {
-  label: PropTypes.string,
+  title: PropTypes.string,
   onChange: PropTypes.func,
   children: PropTypes.any
 }
