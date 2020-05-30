@@ -7,6 +7,10 @@ import PropTypes from 'prop-types'
 import Label from 'shinkansen-sprockets/components/label'
 import Group from 'shinkansen-sprockets/components/group'
 
+function onChange () {
+  /* */
+}
+
 export default class Sprocket extends Component {
   getLabel = () => this.label
   getGroup = () => this.group
@@ -77,6 +81,5 @@ Sprocket.propTypes = {
 }
 
 Sprocket.defaultProps = {
-  label: 'Sprocket',
-  onChange: () => {}
+  onChange
 }

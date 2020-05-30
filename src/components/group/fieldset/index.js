@@ -15,6 +15,5 @@ FieldsetGroup.propTypes = {
 }
 
 FieldsetGroup.defaultProps = {
-  ...Group.defaultProps,
-  label: 'Fieldset'
+  ...Group.defaultProps
 }

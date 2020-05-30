@@ -40,10 +40,5 @@ export default class Group extends Component {
 Group.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(
-      PropTypes.element
-    )
-  ])
+  children: PropTypes.any
 }

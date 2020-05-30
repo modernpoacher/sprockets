@@ -49,6 +49,5 @@ FieldsetSprocket.propTypes = {
 }
 
 FieldsetSprocket.defaultProps = {
-  ...Sprocket.defaultProps,
-  label: 'Fieldset Sprocket'
+  ...Sprocket.defaultProps
 }

@@ -7,8 +7,16 @@ import PropTypes from 'prop-types'
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 export default class Label extends Component {
-  textContent () {
-    return this.props.label
+  hasTextContent () {
+    const { label } = this.props
+
+    return !!label
+  }
+
+  getTextContent () {
+    const { label } = this.props
+
+    return label
   }
 
   getClassName () {
@@ -22,28 +30,30 @@ export default class Label extends Component {
   }
 
   renderTextContent () {
-    const { label } = this.props
+    if (this.hasTextContent()) {
+      const textContent = this.getTextContent()
 
-    if (label) {
       return (
-        <TextContent textContent={label} />
+        <TextContent textContent={textContent} />
       )
     }
+
+    return null
   }
 
   render () {
-    return (
-      <legend className={this.getClassName()}>
-        {this.renderTextContent()}
-      </legend>
-    )
+    if (this.hasTextContent()) {
+      return (
+        <legend className={this.getClassName()}>
+          {this.renderTextContent()}
+        </legend>
+      )
+    }
+
+    return null
   }
 }
 
 Label.propTypes = {
   label: PropTypes.string
-}
-
-Label.defaultProps = {
-  label: 'Label'
 }

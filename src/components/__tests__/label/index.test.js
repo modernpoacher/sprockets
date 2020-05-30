@@ -21,9 +21,16 @@ describe('shinkansen-sprockets/components/label', () => {
           .toMatchSnapshot()
       })
 
-      describe('`textContent`', () => {
+      describe('`hasTextContent`', () => {
         it('is defined', () => {
-          return expect(Label.prototype.textContent)
+          return expect(Label.prototype.hasTextContent)
+            .toBeDefined()
+        })
+      })
+
+      describe('`getTextContent`', () => {
+        it('is defined', () => {
+          return expect(Label.prototype.getTextContent)
             .toBeDefined()
         })
       })
@@ -64,7 +71,41 @@ describe('shinkansen-sprockets/components/label', () => {
       })
     })
 
-    describe('`textContent()`', () => {
+    describe('`hasTextContent()`', () => {
+      describe('With the `label` prop defined', () => {
+        it('returns the `label` prop', () => {
+          const component = (
+            <Label label='MOCK LABEL' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          return expect(instance.hasTextContent())
+            .toBe(true)
+        })
+      })
+
+      describe('Without the `label` prop defined', () => {
+        it('returns false', () => {
+          const component = (
+            <Label />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          return expect(instance.hasTextContent())
+            .toBe(false)
+        })
+      })
+    })
+
+    describe('`getTextContent()`', () => {
       it('returns the `label` prop', () => {
         const component = (
           <Label label='MOCK LABEL' />
@@ -75,7 +116,7 @@ describe('shinkansen-sprockets/components/label', () => {
             .instance()
         )
 
-        return expect(instance.textContent())
+        return expect(instance.getTextContent())
           .toBe('MOCK LABEL')
       })
     })
@@ -106,9 +147,9 @@ describe('shinkansen-sprockets/components/label', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+        ).instance()
       })
 
       describe('`props` have changed', () => {
