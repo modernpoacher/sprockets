@@ -36,6 +36,10 @@ describe('shinkansen-sprockets/components/title/fieldset', () => {
 
     describe('With additional props', () => {
       it('renders', () => {
+        jest.spyOn(Title.prototype, 'hasTextContent').mockReturnValue(true)
+        jest.spyOn(Title.prototype, 'getTextContent')
+        jest.spyOn(Title.prototype, 'renderTextContent').mockReturnValue('MOCK RENDER CONTENT')
+
         const component = (
           <Title
             title='MOCK TITLE'

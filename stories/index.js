@@ -1,22 +1,50 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
 import {
-  FieldsetSprocket
+  FieldsetSprocket,
+  CheckAnswersSprocket,
+  ErrorSummarySprocket
 } from 'shinkansen-sprockets'
 
-const actionChange = action('change')
+import CHECK_ANSWERS from './check-answers'
+import ERROR_SUMMARY, {
+  ALL_ERRORS
+} from './error-summary'
+
+const RESOURCE = {
+  alpha: 'alpha',
+  omega: 'omega'
+}
 
 storiesOf('FieldsetSprocket', module)
   .add('Required and default props', () => (
-    <FieldsetSprocket label='Fieldset'>
-      <p>Content</p>
+    <FieldsetSprocket title='Fieldset'>
+      <p>Fields</p>
     </FieldsetSprocket>
   ))
-  .add('Additional props', () => (
-    <FieldsetSprocket label='Fieldset' onChange={actionChange}>
-      <p>Content</p>
-    </FieldsetSprocket>
+
+storiesOf('CheckAnswersSprocket', module)
+  .add('Required and default props', () => (
+    <CheckAnswersSprocket
+      title='Check Answers'
+      checkAnswers={CHECK_ANSWERS}
+      resource={RESOURCE}
+    />
+  ))
+
+storiesOf('ErrorSummarySprocket', module)
+  .add('Required and default props', () => (
+    <ErrorSummarySprocket
+      title='Error Summary'
+      errorSummary={ERROR_SUMMARY}
+      resource={RESOURCE}
+    />
+  )).add('Additional props', () => (
+    <ErrorSummarySprocket
+      title='Error Summary'
+      errorSummary={ALL_ERRORS}
+      resource={RESOURCE}
+    />
   ))

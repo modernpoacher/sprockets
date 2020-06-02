@@ -38,7 +38,6 @@ describe('shinkansen-sprockets/components/group', () => {
       it('renders', () => {
         const component = (
           <Group
-            title='MOCK TITLE'
             onChange={jest.fn()}
           />
         )
@@ -65,24 +64,27 @@ describe('shinkansen-sprockets/components/group', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
+      const MOCK_ONCHANGE = jest.fn()
+
       const component = (
         <Group
-          title='MOCK TITLE'
+          onChange={MOCK_ONCHANGE}
         />
       )
 
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+            .instance()
+        )
       })
 
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            title: 'MOCK CHANGE GROUP'
+            onChange: jest.fn()
           }))
             .toBe(true)
         })
@@ -91,7 +93,7 @@ describe('shinkansen-sprockets/components/group', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            title: 'MOCK TITLE'
+            onChange: MOCK_ONCHANGE
           }))
             .toBe(false)
         })
