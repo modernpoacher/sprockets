@@ -20,8 +20,8 @@ import TextContent from 'shinkansen-sprockets/components/common/text-content'
 const log = debug('shinkansen:sprockets:components:group:error-summary')
 
 /* eslint-disable-next-line react/prop-types */
-function renderError (error, index) {
-  log('renderError')
+function render (error, index) {
+  log('render')
 
   const {
     href,
@@ -86,7 +86,7 @@ export default class ErrorSummaryGroup extends Group {
         <ul
           className={this.getClassName()}
           ref={this.setDOMNode}>
-          {errorSummary.map(renderError)}
+          {errorSummary.map(render)}
         </ul>
       )
     }

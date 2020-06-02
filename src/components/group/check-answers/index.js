@@ -21,8 +21,8 @@ import ChangeAnswer from './change-answer'
 const log = debug('shinkansen:sprockets:components:group:check-answers')
 
 /* eslint-disable-next-line react/prop-types */
-function renderAnswer ({ params: { answer, changeAnswer: { href, text, ...changeAnswer } } }, index) {
-  log('renderAnswer')
+function render ({ params: { answer, changeAnswer: { href, text, ...changeAnswer } } }, index) {
+  log('render')
 
   return (
     <div key={getKey(href, text, index)} className='answer'>
@@ -84,10 +84,12 @@ export default class CheckAnswersGroup extends Group {
         <dl
           className={this.getClassName()}
           ref={this.setDOMNode}>
-          {checkAnswers.map(renderAnswer)}
+          {checkAnswers.map(render)}
         </dl>
       )
     }
+
+    return null
   }
 }
 
