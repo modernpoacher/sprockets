@@ -13,12 +13,9 @@ Enzyme.configure({ adapter: new Adapter() })
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('shinkansen-sprockets/components/group')
-jest.mock('shinkansen-sprockets/components/group/check-answers/type-string-answer', () => () => 'MOCK STRING ANSWER')
-jest.mock('shinkansen-sprockets/components/group/check-answers/type-number-answer', () => () => 'MOCK NUMBER ANSWER')
-jest.mock('shinkansen-sprockets/components/group/check-answers/type-boolean-answer', () => () => 'MOCK BOOLEAN ANSWER')
-jest.mock('shinkansen-sprockets/components/group/check-answers/type-null-answer', () => () => 'MOCK NULL ANSWER')
-
-const MOCK_RESOURCE = { alpha: 'MOCK ALPHA', omega: 'MOCK OMEGA' }
+jest.mock('shinkansen-sprockets/components/group/check-answers/answer-title', () => () => 'MOCK ANSWER TITLE')
+jest.mock('shinkansen-sprockets/components/group/check-answers/answer-value', () => () => 'MOCK ANSWER VALUE')
+jest.mock('shinkansen-sprockets/components/group/check-answers/change-answer', () => () => 'MOCK CHANGE ANSWER')
 
 describe('shinkansen-sprockets/components/group/check-answers', () => {
   describe('<Group />', () => {
@@ -45,8 +42,9 @@ describe('shinkansen-sprockets/components/group/check-answers', () => {
         const component = (
           <Group
             onChange={jest.fn()}
-            checkAnswers={{ meta: { type: 'string' } }}
-            resource={MOCK_RESOURCE}
+            checkAnswers={[
+              { type: 'STRING', params: { answer: {}, changeAnswer: {} } }
+            ]}
           />
         )
 
@@ -58,8 +56,43 @@ describe('shinkansen-sprockets/components/group/check-answers', () => {
         const component = (
           <Group
             onChange={jest.fn()}
-            checkAnswers={{ meta: { type: 'number' } }}
-            resource={MOCK_RESOURCE}
+            checkAnswers={[
+              { type: 'NUMBER', params: { answer: {}, changeAnswer: {} } }
+            ]}
+          />
+        )
+
+        return expect(renderer.create(component).toJSON())
+          .toMatchSnapshot()
+      })
+
+      it('renders type `object` answers', () => {
+        const component = (
+          <Group
+            onChange={jest.fn()}
+            checkAnswers={[
+              { type: 'STRING', params: { answer: {}, changeAnswer: {} } },
+              { type: 'NUMBER', params: { answer: {}, changeAnswer: {} } },
+              { type: 'BOOLEAN', params: { answer: {}, changeAnswer: {} } },
+              { type: 'NULL', params: { answer: {}, changeAnswer: {} } }
+            ]}
+          />
+        )
+
+        return expect(renderer.create(component).toJSON())
+          .toMatchSnapshot()
+      })
+
+      it('renders type `array` answers', () => {
+        const component = (
+          <Group
+            onChange={jest.fn()}
+            checkAnswers={[
+              { type: 'STRING', params: { answer: {}, changeAnswer: {} } },
+              { type: 'NUMBER', params: { answer: {}, changeAnswer: {} } },
+              { type: 'BOOLEAN', params: { answer: {}, changeAnswer: {} } },
+              { type: 'NULL', params: { answer: {}, changeAnswer: {} } }
+            ]}
           />
         )
 
@@ -71,8 +104,9 @@ describe('shinkansen-sprockets/components/group/check-answers', () => {
         const component = (
           <Group
             onChange={jest.fn()}
-            checkAnswers={{ meta: { type: 'boolean' } }}
-            resource={MOCK_RESOURCE}
+            checkAnswers={[
+              { type: 'BOOLEAN', params: { answer: {}, changeAnswer: {} } }
+            ]}
           />
         )
 
@@ -84,8 +118,9 @@ describe('shinkansen-sprockets/components/group/check-answers', () => {
         const component = (
           <Group
             onChange={jest.fn()}
-            checkAnswers={{ meta: { type: 'null' } }}
-            resource={MOCK_RESOURCE}
+            checkAnswers={[
+              { type: 'NULL', params: { answer: {}, changeAnswer: {} } }
+            ]}
           />
         )
 

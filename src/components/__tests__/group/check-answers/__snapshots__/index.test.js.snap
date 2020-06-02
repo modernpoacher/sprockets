@@ -1,39 +1,129 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`boolean\` answers 1`] = `
-<div
+exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`array\` answers 1`] = `
+<dl
   className="MOCK CLASSNAME"
 >
-  MOCK BOOLEAN ANSWER
-</div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
+`;
+
+exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`boolean\` answers 1`] = `
+<dl
+  className="MOCK CLASSNAME"
+>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
 `;
 
 exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`null\` answers 1`] = `
-<div
+<dl
   className="MOCK CLASSNAME"
 >
-  MOCK NULL ANSWER
-</div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
 `;
 
 exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`number\` answers 1`] = `
-<div
+<dl
   className="MOCK CLASSNAME"
 >
-  MOCK NUMBER ANSWER
-</div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
+`;
+
+exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`object\` answers 1`] = `
+<dl
+  className="MOCK CLASSNAME"
+>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
 `;
 
 exports[`shinkansen-sprockets/components/group/check-answers <Group /> With additional props renders type \`string\` answers 1`] = `
-<div
+<dl
   className="MOCK CLASSNAME"
 >
-  MOCK STRING ANSWER
-</div>
+  <div
+    className="answer"
+  >
+    MOCK ANSWER TITLE
+    MOCK ANSWER VALUE
+    MOCK CHANGE ANSWER
+  </div>
+</dl>
 `;
 
-exports[`shinkansen-sprockets/components/group/check-answers <Group /> With required props renders 1`] = `
-<div
-  className="MOCK CLASSNAME"
-/>
-`;
+exports[`shinkansen-sprockets/components/group/check-answers <Group /> With required props renders 1`] = `null`;

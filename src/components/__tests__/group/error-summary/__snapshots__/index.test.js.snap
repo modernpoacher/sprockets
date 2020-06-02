@@ -4,7 +4,9 @@ exports[`shinkansen-sprockets/components/group/error-summary <Group /> With addi
 <ul
   className="MOCK CLASSNAME"
 >
-  <li>
+  <li
+    className="error"
+  >
     <a
       href="#"
     >
