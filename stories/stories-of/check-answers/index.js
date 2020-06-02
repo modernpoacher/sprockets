@@ -97,16 +97,6 @@ import NULL_NULL_ANY_OF from 'stories/definitions/check-answers/null-null-any-of
 import NULL_NULL_ONE_OF from 'stories/definitions/check-answers/null-null-one-of'
 import NULL_NULL_ALL_OF from 'stories/definitions/check-answers/null-null-all-of'
 
-/*
-storiesOf('CheckAnswersSprocket', module)
-  .add('Required and default props', () => (
-    <CheckAnswersSprocket
-      title='Check Answers'
-      checkAnswers={[]}
-    />
-  ))
-*/
-
 storiesOf('Check Answers Sprocket', module)
   .add('String - String', () => (
     <CheckAnswersSprocket
