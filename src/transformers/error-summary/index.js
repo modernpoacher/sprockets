@@ -225,7 +225,7 @@ export function getErrorHref ({ uri = '' } = {}) {
 }
 
 export default function transform (error, components) {
-  log('transform', error)
+  log('transform')
 
   return {
     text: getErrorTextByType(error, components),

@@ -4,21 +4,19 @@ import debug from 'debug'
 
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
-import getResourceUrl from './get-resource-url'
 import VisuallyHiddenText from './visually-hidden-text'
-import getVisuallyHiddenText from './get-visually-hidden-text'
 
 const log = debug('shinkansen:sprockets:components:group:check-answers')
 
-export default function ChangeAnswer ({ changeAnswer, resource }) {
+export default function ChangeAnswer ({ changeAnswer: { href, text, visuallyHiddenText } }) {
   log('ChangeAnswer')
 
   return (
     <dd>
-      <a href={getResourceUrl(resource)}>
-        <TextContent textContent='Change' />
+      <a href={href}>
+        <TextContent textContent={text} />
         {String.fromCharCode(32)}
-        <VisuallyHiddenText visuallyHiddenText={getVisuallyHiddenText(changeAnswer)} />
+        <VisuallyHiddenText visuallyHiddenText={visuallyHiddenText} />
       </a>
     </dd>
   )
@@ -26,10 +24,8 @@ export default function ChangeAnswer ({ changeAnswer, resource }) {
 
 ChangeAnswer.propTypes = {
   changeAnswer: PropTypes.shape({
-    elements: PropTypes.shape()
-  }).isRequired,
-  resource: PropTypes.shape({
-    alpha: PropTypes.string,
-    omega: PropTypes.string
+    href: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    visuallyHiddenText: PropTypes.string.isRequired
   }).isRequired
 }

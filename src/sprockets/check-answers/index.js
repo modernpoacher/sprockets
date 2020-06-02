@@ -27,16 +27,12 @@ export default class CheckAnswersSprocket extends Sprocket {
 
   renderGroup () {
     const {
-      checkAnswers,
-      resource
+      checkAnswers
     } = this.props
-
-    console.log(checkAnswers)
 
     return (
       <Group
         checkAnswers={checkAnswers}
-        resource={resource}
         ref={this.setGroup}
       />
     )
@@ -54,15 +50,10 @@ export default class CheckAnswersSprocket extends Sprocket {
 
 CheckAnswersSprocket.propTypes = {
   ...Sprocket.propTypes,
-  checkAnswers: PropTypes.shape().isRequired,
-  resource: PropTypes.shape({
-    alpha: PropTypes.string,
-    omega: PropTypes.string
-  }).isRequired
+  checkAnswers: PropTypes.array
 }
 
 CheckAnswersSprocket.defaultProps = {
   ...Sprocket.defaultProps,
-  checkAnswers: {},
-  resource: {}
+  checkAnswers: []
 }

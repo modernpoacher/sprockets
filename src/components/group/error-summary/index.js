@@ -11,25 +11,15 @@ import debug from 'debug'
 import Group from 'shinkansen-sprockets/components/group'
 
 import transform from 'shinkansen-sprockets/transformers/error-summary'
+import {
+  getKey
+} from 'shinkansen-sprockets/transformers/common'
+
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 const log = debug('shinkansen:sprockets:components:group:error-summary')
 
-const CHAR32 = String.fromCharCode(32)
-const CHAR45 = String.fromCharCode(45)
-
-function getKey (href, text, index) {
-  return (
-    `${href}-${text}-${index}`
-      .toLowerCase()
-      .replace(/^#/, 'error-')
-      .replace(/[^\w\-\d]/g, CHAR32).trim()
-      .replace(/\s\s+/g, CHAR32)
-      .replace(/\-\-+/g, CHAR45) // eslint-disable-line
-      .replace(/[\s\s|\-\-|\s\-|\-\s]+/g, CHAR45) // eslint-disable-line
-  )
-}
-
+/* eslint-disable-next-line react/prop-types */
 function renderError (error, index) {
   log('renderError')
 
@@ -39,7 +29,7 @@ function renderError (error, index) {
   } = transform(error)
 
   return (
-    <li key={getKey(href, text, index)}>
+    <li key={getKey(href, text, index)} className='error'>
       <a href={href}>
         <TextContent textContent={text} />
       </a>

@@ -33,8 +33,6 @@ export default class ErrorSummarySprocket extends Sprocket {
       errorSummary
     } = this.props
 
-    console.log(errorSummary)
-
     return (
       <Group
         errorSummary={errorSummary}
