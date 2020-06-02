@@ -1,0 +1,14 @@
+{
+  "type": "NUMBER",
+  "params": {
+    "answer": {
+      "title": "Number",
+      "value": ""
+    },
+    "changeAnswer": {
+      "href": "/alpha/omega",
+      "text": "Change",
+      "visuallyHiddenText": "number"
+    }
+  }
+}
