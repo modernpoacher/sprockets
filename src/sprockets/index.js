@@ -24,6 +24,7 @@ export default class Sprocket extends Component {
 
   shouldComponentUpdate (props) {
     return (
+      (props.children !== this.props.children) ||
       (props.title !== this.props.title) ||
       (props.onChange !== this.props.onChange)
     )
