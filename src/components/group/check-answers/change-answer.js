@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
+import {
+  Link
+} from 'react-router-dom'
+
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 import VisuallyHiddenText from './visually-hidden-text'
@@ -13,11 +17,11 @@ export default function ChangeAnswer ({ changeAnswer: { href, text, visuallyHidd
 
   return (
     <dd>
-      <a href={href}>
+      <Link to={href}>
         <TextContent textContent={text} />
         {String.fromCharCode(32)}
         <VisuallyHiddenText visuallyHiddenText={visuallyHiddenText} />
-      </a>
+      </Link>
     </dd>
   )
 }

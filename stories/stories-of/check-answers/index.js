@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import StorybookReactRouter from 'storybook-react-router'
 
 import {
   CheckAnswersSprocket
@@ -98,6 +99,7 @@ import NULL_NULL_ONE_OF from 'stories/definitions/check-answers/null-null-one-of
 import NULL_NULL_ALL_OF from 'stories/definitions/check-answers/null-null-all-of'
 
 storiesOf('Check Answers Sprocket', module)
+  .addDecorator(StorybookReactRouter())
   .add('String - String', () => (
     <CheckAnswersSprocket
       title='String - String'
