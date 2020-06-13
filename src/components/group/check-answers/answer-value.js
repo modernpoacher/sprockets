@@ -7,6 +7,19 @@ const log = debug('shinkansen:sprockets:components:group:check-answers')
 export default function SummaryValue ({ answer: { value } }) {
   log('SummaryValue')
 
+  if (Array.isArray(value)) {
+    const n = value.length - 1
+
+    return (
+      <dd>
+        {value
+          .reduce((a, v, i) => (
+            (i !== n) ? a.concat(v).concat(<br key={i} />) : a.concat(v)
+          ), [])}
+      </dd>
+    )
+  }
+
   return (
     <dd>
       {value}
@@ -16,6 +29,11 @@ export default function SummaryValue ({ answer: { value } }) {
 
 SummaryValue.propTypes = {
   answer: PropTypes.shape({
-    value: PropTypes.string.isRequired
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(
+        PropTypes.string
+      )
+    ]).isRequired
   }).isRequired
 }
