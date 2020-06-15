@@ -12,6 +12,13 @@ export default class CheckAnswersSprocket extends Sprocket {
     return classnames(super.getClassName(), 'check-answers')
   }
 
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.checkAnswers !== this.props.checkAnswers)
+    )
+  }
+
   renderTitle () {
     const {
       title

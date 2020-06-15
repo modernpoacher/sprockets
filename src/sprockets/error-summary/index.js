@@ -15,6 +15,13 @@ export default class ErrorSummarySprocket extends Sprocket {
     return classnames(super.getClassName(), 'error-summary')
   }
 
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.errorSummary !== this.props.errorSummary)
+    )
+  }
+
   renderTitle () {
     const {
       title
