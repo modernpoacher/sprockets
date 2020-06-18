@@ -16,7 +16,7 @@ export default function ChangeAnswer ({ changeAnswer: { href, text, visuallyHidd
   log('ChangeAnswer')
 
   return (
-    <dd>
+    <dd className='change-answer'>
       <Link to={href}>
         <TextContent textContent={text} />
         {String.fromCharCode(32)}

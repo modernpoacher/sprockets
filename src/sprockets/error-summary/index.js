@@ -49,14 +49,22 @@ export default class ErrorSummarySprocket extends Sprocket {
   }
 
   render () {
-    const className = this.getClassName()
+    const {
+      errorSummary
+    } = this.props
 
-    return (
-      <div className={className}>
-        {this.renderTitle()}
-        {this.renderGroup()}
-      </div>
-    )
+    if (errorSummary.length) {
+      const className = this.getClassName()
+
+      return (
+        <div tabIndex='-1' className={className}>
+          {this.renderTitle()}
+          {this.renderGroup()}
+        </div>
+      )
+    }
+
+    return null
   }
 }
 

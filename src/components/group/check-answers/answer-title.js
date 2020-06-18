@@ -8,7 +8,7 @@ export default function SummaryTitle ({ answer: { title } }) {
   log('SummaryTitle')
 
   return (
-    <dt>
+    <dt className='answer-title'>
       {title}
     </dt>
   )

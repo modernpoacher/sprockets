@@ -46,12 +46,20 @@ export default class CheckAnswersSprocket extends Sprocket {
   }
 
   render () {
-    return (
-      <div className={this.getClassName()}>
-        {this.renderTitle()}
-        {this.renderGroup()}
-      </div>
-    )
+    const {
+      checkAnswers
+    } = this.props
+
+    if (checkAnswers.length) {
+      return (
+        <div className={this.getClassName()}>
+          {this.renderTitle()}
+          {this.renderGroup()}
+        </div>
+      )
+    }
+
+    return null
   }
 }
 

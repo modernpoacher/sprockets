@@ -31,6 +31,7 @@ module.exports = {
         cwd: 'babelrc',
         alias: {
           'shinkansen-sprockets': './src',
+          build: './build',
           stories: './stories'
         }
       }

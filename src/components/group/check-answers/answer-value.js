@@ -4,25 +4,31 @@ import debug from 'debug'
 
 const log = debug('shinkansen:sprockets:components:group:check-answers')
 
-export default function SummaryValue ({ answer: { value } }) {
-  log('SummaryValue')
-
+function getAnswerValue (value) {
   if (Array.isArray(value)) {
     const n = value.length - 1
 
     return (
-      <dd>
-        {value
-          .reduce((a, v, i) => (
-            (i !== n) ? a.concat(v).concat(<br key={i} />) : a.concat(v)
-          ), [])}
-      </dd>
+      value
+        .reduce((a, v, i) => {
+          const s = String(v)
+
+          return (i !== n)
+            ? a.concat(s).concat(<br key={i} />)
+            : a.concat(s)
+        }, [])
     )
   }
 
+  return String(value)
+}
+
+export default function SummaryValue ({ answer: { value } }) {
+  log('SummaryValue')
+
   return (
-    <dd>
-      {value}
+    <dd className='answer-value'>
+      {getAnswerValue(value)}
     </dd>
   )
 }
