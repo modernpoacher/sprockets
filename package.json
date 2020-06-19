@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-sprockets",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Shinkansen Sprockets",
   "main": "./index.js",
   "keywords": [
