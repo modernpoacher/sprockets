@@ -8,5 +8,5 @@ import {
 
 storiesOf('Fieldset Sprocket', module)
   .add('Required and default props', () => (
-    <FieldsetSprocket title='Fieldset' />
+    <FieldsetSprocket title='Fieldset Sprocket' />
   ))

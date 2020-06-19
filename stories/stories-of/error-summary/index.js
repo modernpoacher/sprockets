@@ -37,9 +37,9 @@ import ERROR_ONE_OF from 'stories/definitions/error-summary/error-one-of'
 import ERROR_UNKNOWN from 'stories/definitions/error-summary/error-unknown'
 
 storiesOf('Error Summary Sprocket', module)
-  .add('Errors', () => (
+  .add('All Errors', () => (
     <ErrorSummarySprocket
-      title='Errors'
+      title='All Errors'
       errorSummary={[
         ERROR_MAX_ITEMS,
         ERROR_MIN_ITEMS,
@@ -71,6 +71,12 @@ storiesOf('Error Summary Sprocket', module)
         ERROR_ONE_OF,
         ERROR_UNKNOWN
       ]}
+    />
+  ))
+  .add('No Errors', () => (
+    <ErrorSummarySprocket
+      title='No Errors'
+      errorSummary={[]}
     />
   ))
   .add('Error - Max Items', () => (
