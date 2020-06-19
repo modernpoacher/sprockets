@@ -27,12 +27,12 @@
     "clean": "rimraf lib",
     "babel": "babel src -d lib",
     "babel:watch": "npm run babel -- -w",
-    "lint": "eslint src stories .storybook *.js",
+    "lint": "eslint src build stories .storybook *.js",
     "lint:fix": "npm run lint -- --fix",
     "test": "NODE_ENV=test jest --verbose false --collect-coverage false",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
-    "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib"
+    "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib .storybook"
   },
   "dependencies": {
     "classnames": "^2.2.6",
