@@ -74,9 +74,9 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
+          .toBeCalledWith('MOCK GETCLASSNAME', { error: false }, 'fieldset')
       })
 
       it('returns the classname', () => {
