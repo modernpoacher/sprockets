@@ -2,7 +2,6 @@
   "name": "shinkansen-sprockets",
   "version": "1.0.18",
   "description": "Shinkansen Sprockets",
-  "main": "./index.js",
   "keywords": [
     "Shinkansen",
     "Sprockets",
@@ -11,12 +10,13 @@
     "Karakuri",
     "React"
   ],
+  "main": "./index.js",
+  "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com/modernpoacher/shinkansen-sprockets.git"
   },
-  "author": "Jonathan Perry for Modern Poacher Limited",
-  "license": "MIT",
   "scripts": {
     "prepublishOnly": "npm run lint:fix && npm run build",
     "prebuild": "npm run clean",
