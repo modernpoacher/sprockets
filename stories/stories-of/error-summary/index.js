@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import StorybookReactRouter from 'storybook-react-router'
 
 import {
   ErrorSummarySprocket
@@ -37,6 +38,8 @@ import ERROR_ONE_OF from 'stories/definitions/error-summary/error-one-of'
 import ERROR_UNKNOWN from 'stories/definitions/error-summary/error-unknown'
 
 storiesOf('Error Summary Sprocket', module)
+  .addDecorator(StorybookReactRouter())
+
   .add('All Errors', () => (
     <ErrorSummarySprocket
       title='All Errors'
@@ -79,6 +82,7 @@ storiesOf('Error Summary Sprocket', module)
       errorSummary={[]}
     />
   ))
+
   .add('Error - Max Items', () => (
     <ErrorSummarySprocket
       title='Error - Max Items'
