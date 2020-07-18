@@ -1,4 +1,4 @@
-## @modernpoacher/shinkansen-sprockets
+## shinkansen-sprockets
 
 # Shinkansen Sprockets
 
