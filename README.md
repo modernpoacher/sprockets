@@ -4,7 +4,7 @@
 
 *Sprockets* are input groups for *React*.
 
-*Sprockets* are compatible with the [GOV.UK Design System](https://design-system.service.gov.uk/) but also encourage composition and inheritance.
+*Sprockets* are consistent with the [GOV.UK Design System](https://design-system.service.gov.uk/) but also encourage composition and inheritance.
 
 ## See also
 
