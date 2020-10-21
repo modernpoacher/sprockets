@@ -1,3 +1,5 @@
+.DS_Store
+
 .circleci
 .github
 
@@ -17,8 +19,12 @@ build
 gulpfile.js
 
 # Jest
-**/__tests__/**
+__tests__
 jest.config.js
+
+# NYC
+.nycrc
+.nyc_output
 
 # Coverage
 coverage
