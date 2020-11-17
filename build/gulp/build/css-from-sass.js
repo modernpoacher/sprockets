@@ -20,7 +20,7 @@ import {
   sourcePath,
   targetPath,
   modulePath
-} from 'build/paths'
+} from 'build/gulp/paths'
 
 import handleError from 'build/gulp/handle-error'
 
@@ -79,9 +79,8 @@ function getTransformForCssPurge () {
 
 export default function cssFromSass () {
   return (
-    gulp.src([`${buildSourcePath}/sass/**/*.*`, `!${buildSourcePath}/sass/**/_*.*`])
+    gulp.src([path.join(buildSourcePath, 'sass/**/*.*'), `!${path.join(buildSourcePath, 'sass/**/_*.*')}`])
       .pipe(sourcemaps.init({ loadMaps: true }))
-      // .pipe(rename((filePath) => { filePath.basename += `-${version}` }))
       .pipe(getTransformForSass())
       .pipe(getTransformForPostCss())
       .pipe(getTransformForCleanCss())
