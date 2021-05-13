@@ -2,9 +2,6 @@ version: 2.1
 
 jobs:
   lint_and_test:
-    branches:
-      only:
-        - master
     docker:
       - image: circleci/node:14.14.0
     steps:
@@ -22,9 +19,6 @@ jobs:
           name: Test
           command: npm run test
   publish:
-    branches:
-      only:
-        - master
     docker:
       - image: circleci/node:14.14.0
     steps:
@@ -74,6 +68,9 @@ workflows:
   commit-workflow:
     jobs:
       - lint_and_test
+          filters:
+            branches:
+              only: /master\/.*/
       - publish:
           requires:
             - lint_and_test
