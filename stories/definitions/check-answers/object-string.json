@@ -1,14 +1,14 @@
 {
-  "type": "NULL",
+  "type": "STRING",
   "params": {
     "answer": {
-      "title": "Null",
-      "value": "null"
+      "title": "String",
+      "value": "string"
     },
     "changeAnswer": {
       "href": "/alpha/omega",
       "text": "Change",
-      "visuallyHiddenText": "null"
+      "visuallyHiddenText": "string"
     }
   }
 }

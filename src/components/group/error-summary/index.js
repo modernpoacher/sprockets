@@ -17,7 +17,7 @@ import {
 
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
-const log = debug('shinkansen:sprockets:components:group:error-summary')
+const log = debug('shinkansen-sprockets:components:group:error-summary')
 
 /* eslint-disable-next-line react/prop-types */
 function render (error, index) {

@@ -10,7 +10,7 @@ import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 import VisuallyHiddenText from './visually-hidden-text'
 
-const log = debug('shinkansen:sprockets:components:group:check-answers')
+const log = debug('shinkansen-sprockets:components:group:check-answers')
 
 export default function ChangeAnswer ({ changeAnswer: { href, text, visuallyHiddenText } }) {
   log('ChangeAnswer')

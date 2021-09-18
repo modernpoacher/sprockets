@@ -1,6 +1,6 @@
 const debug = require('debug')
 
-const log = debug('shinkansen:sprockets')
+const log = debug('shinkansen-sprockets')
 
 log('`sprockets` is awake')
 

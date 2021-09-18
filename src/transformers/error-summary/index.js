@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('shinkansen:sprockets:transformers:error-summary')
+const log = debug('shinkansen-sprockets:transformers:error-summary')
 
 export function getErrorTextForMaxItems (components = {}) {
   log('getErrorTextForMaxItems')
