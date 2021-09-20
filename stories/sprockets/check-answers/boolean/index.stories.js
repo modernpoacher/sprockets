@@ -3,9 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import {
-  CheckAnswersSprocket
-} from 'shinkansen-sprockets'
+import CheckAnswersSprocket from 'shinkansen-sprockets/sprockets/check-answers'
 
 import BOOLEAN_BOOLEAN from 'stories/definitions/check-answers/boolean-boolean'
 import BOOLEAN_BOOLEAN_ENUM from 'stories/definitions/check-answers/boolean-boolean-enum'

@@ -3,9 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import {
-  CheckAnswersSprocket
-} from 'shinkansen-sprockets'
+import CheckAnswersSprocket from 'shinkansen-sprockets/sprockets/check-answers'
 
 import OBJECT_STRING from 'stories/definitions/check-answers/object-string'
 import OBJECT_STRING_ENUM from 'stories/definitions/check-answers/object-string-enum'
