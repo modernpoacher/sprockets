@@ -20,71 +20,124 @@ import NUMBER_NUMBER_ONE_OF from 'stories/definitions/check-answers/number-numbe
 import NUMBER_NUMBER_ALL_OF from 'stories/definitions/check-answers/number-number-all-of'
 
 import OBJECT_STRING from 'stories/definitions/check-answers/object-string'
-import OBJECT_NUMBER from 'stories/definitions/check-answers/object-number'
+import OBJECT_STRING_ENUM from 'stories/definitions/check-answers/object-string-enum'
+import OBJECT_STRING_ANY_OF from 'stories/definitions/check-answers/object-string-any-of'
+import OBJECT_STRING_ONE_OF from 'stories/definitions/check-answers/object-string-one-of'
+import OBJECT_STRING_ALL_OF from 'stories/definitions/check-answers/object-string-all-of'
 
-import OBJECT_OBJECT_STRING from 'stories/definitions/check-answers/object-object-string'
-import OBJECT_OBJECT_NUMBER from 'stories/definitions/check-answers/object-object-number'
-import OBJECT_OBJECT_BOOLEAN from 'stories/definitions/check-answers/object-object-boolean'
-import OBJECT_OBJECT_NULL from 'stories/definitions/check-answers/object-object-null'
+import OBJECT_NUMBER from 'stories/definitions/check-answers/object-number'
+import OBJECT_NUMBER_ENUM from 'stories/definitions/check-answers/object-number-enum'
+import OBJECT_NUMBER_ANY_OF from 'stories/definitions/check-answers/object-number-any-of'
+import OBJECT_NUMBER_ONE_OF from 'stories/definitions/check-answers/object-number-one-of'
+import OBJECT_NUMBER_ALL_OF from 'stories/definitions/check-answers/object-number-all-of'
 
 import OBJECT_ARRAY_OBJECT_STRING from 'stories/definitions/check-answers/object-array-object-string'
+import OBJECT_ARRAY_OBJECT_STRING_ENUM from 'stories/definitions/check-answers/object-array-object-string-enum'
+import OBJECT_ARRAY_OBJECT_STRING_ANY_OF from 'stories/definitions/check-answers/object-array-object-string-any-of'
+import OBJECT_ARRAY_OBJECT_STRING_ONE_OF from 'stories/definitions/check-answers/object-array-object-string-one-of'
+import OBJECT_ARRAY_OBJECT_STRING_ALL_OF from 'stories/definitions/check-answers/object-array-object-string-all-of'
+
 import OBJECT_ARRAY_OBJECT_NUMBER from 'stories/definitions/check-answers/object-array-object-number'
+import OBJECT_ARRAY_OBJECT_NUMBER_ENUM from 'stories/definitions/check-answers/object-array-object-number-enum'
+import OBJECT_ARRAY_OBJECT_NUMBER_ANY_OF from 'stories/definitions/check-answers/object-array-object-number-any-of'
+import OBJECT_ARRAY_OBJECT_NUMBER_ONE_OF from 'stories/definitions/check-answers/object-array-object-number-one-of'
+import OBJECT_ARRAY_OBJECT_NUMBER_ALL_OF from 'stories/definitions/check-answers/object-array-object-number-all-of'
+
 import OBJECT_ARRAY_OBJECT_BOOLEAN from 'stories/definitions/check-answers/object-array-object-boolean'
+import OBJECT_ARRAY_OBJECT_BOOLEAN_ENUM from 'stories/definitions/check-answers/object-array-object-boolean-enum'
+import OBJECT_ARRAY_OBJECT_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/object-array-object-boolean-any-of'
+import OBJECT_ARRAY_OBJECT_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/object-array-object-boolean-one-of'
+import OBJECT_ARRAY_OBJECT_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/object-array-object-boolean-all-of'
+
 import OBJECT_ARRAY_OBJECT_NULL from 'stories/definitions/check-answers/object-array-object-null'
+import OBJECT_ARRAY_OBJECT_NULL_ENUM from 'stories/definitions/check-answers/object-array-object-null-enum'
+import OBJECT_ARRAY_OBJECT_NULL_ANY_OF from 'stories/definitions/check-answers/object-array-object-null-any-of'
+import OBJECT_ARRAY_OBJECT_NULL_ONE_OF from 'stories/definitions/check-answers/object-array-object-null-one-of'
+import OBJECT_ARRAY_OBJECT_NULL_ALL_OF from 'stories/definitions/check-answers/object-array-object-null-all-of'
 
 import OBJECT_ARRAY_ARRAY_STRING from 'stories/definitions/check-answers/object-array-array-string'
+import OBJECT_ARRAY_ARRAY_STRING_ENUM from 'stories/definitions/check-answers/object-array-array-string-enum'
+import OBJECT_ARRAY_ARRAY_STRING_ANY_OF from 'stories/definitions/check-answers/object-array-array-string-any-of'
+import OBJECT_ARRAY_ARRAY_STRING_ONE_OF from 'stories/definitions/check-answers/object-array-array-string-one-of'
+import OBJECT_ARRAY_ARRAY_STRING_ALL_OF from 'stories/definitions/check-answers/object-array-array-string-all-of'
+
 import OBJECT_ARRAY_ARRAY_NUMBER from 'stories/definitions/check-answers/object-array-array-number'
+import OBJECT_ARRAY_ARRAY_NUMBER_ENUM from 'stories/definitions/check-answers/object-array-array-number-enum'
+import OBJECT_ARRAY_ARRAY_NUMBER_ANY_OF from 'stories/definitions/check-answers/object-array-array-number-any-of'
+import OBJECT_ARRAY_ARRAY_NUMBER_ONE_OF from 'stories/definitions/check-answers/object-array-array-number-one-of'
+import OBJECT_ARRAY_ARRAY_NUMBER_ALL_OF from 'stories/definitions/check-answers/object-array-array-number-all-of'
+
 import OBJECT_ARRAY_ARRAY_BOOLEAN from 'stories/definitions/check-answers/object-array-array-boolean'
+import OBJECT_ARRAY_ARRAY_BOOLEAN_ENUM from 'stories/definitions/check-answers/object-array-array-boolean-enum'
+import OBJECT_ARRAY_ARRAY_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/object-array-array-boolean-any-of'
+import OBJECT_ARRAY_ARRAY_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/object-array-array-boolean-one-of'
+import OBJECT_ARRAY_ARRAY_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/object-array-array-boolean-all-of'
+
 import OBJECT_ARRAY_ARRAY_NULL from 'stories/definitions/check-answers/object-array-array-null'
+import OBJECT_ARRAY_ARRAY_NULL_ENUM from 'stories/definitions/check-answers/object-array-array-null-enum'
+import OBJECT_ARRAY_ARRAY_NULL_ANY_OF from 'stories/definitions/check-answers/object-array-array-null-any-of'
+import OBJECT_ARRAY_ARRAY_NULL_ONE_OF from 'stories/definitions/check-answers/object-array-array-null-one-of'
+import OBJECT_ARRAY_ARRAY_NULL_ALL_OF from 'stories/definitions/check-answers/object-array-array-null-all-of'
 
 import OBJECT_BOOLEAN from 'stories/definitions/check-answers/object-boolean'
+import OBJECT_BOOLEAN_ENUM from 'stories/definitions/check-answers/object-boolean-enum'
+import OBJECT_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/object-boolean-any-of'
+import OBJECT_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/object-boolean-one-of'
+import OBJECT_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/object-boolean-all-of'
+
 import OBJECT_NULL from 'stories/definitions/check-answers/object-null'
+import OBJECT_NULL_ENUM from 'stories/definitions/check-answers/object-null-enum'
+import OBJECT_NULL_ANY_OF from 'stories/definitions/check-answers/object-null-any-of'
+import OBJECT_NULL_ONE_OF from 'stories/definitions/check-answers/object-null-one-of'
+import OBJECT_NULL_ALL_OF from 'stories/definitions/check-answers/object-null-all-of'
 
 import ARRAY_ARRAY_OBJECT_STRING from 'stories/definitions/check-answers/array-array-object-string'
 import ARRAY_ARRAY_OBJECT_STRING_ENUM from 'stories/definitions/check-answers/array-array-object-string-enum'
 import ARRAY_ARRAY_OBJECT_STRING_ANY_OF from 'stories/definitions/check-answers/array-array-object-string-any-of'
 import ARRAY_ARRAY_OBJECT_STRING_ONE_OF from 'stories/definitions/check-answers/array-array-object-string-one-of'
+import ARRAY_ARRAY_OBJECT_STRING_ALL_OF from 'stories/definitions/check-answers/array-array-object-string-all-of'
 
 import ARRAY_ARRAY_OBJECT_NUMBER from 'stories/definitions/check-answers/array-array-object-number'
 import ARRAY_ARRAY_OBJECT_NUMBER_ENUM from 'stories/definitions/check-answers/array-array-object-number-enum'
 import ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF from 'stories/definitions/check-answers/array-array-object-number-any-of'
 import ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF from 'stories/definitions/check-answers/array-array-object-number-one-of'
-
-import ARRAY_ARRAY_OBJECT_OBJECT_STRING from 'stories/definitions/check-answers/array-array-object-object-string'
-import ARRAY_ARRAY_OBJECT_OBJECT_NUMBER from 'stories/definitions/check-answers/array-array-object-object-number'
-import ARRAY_ARRAY_OBJECT_OBJECT_BOOLEAN from 'stories/definitions/check-answers/array-array-object-object-boolean'
-import ARRAY_ARRAY_OBJECT_OBJECT_NULL from 'stories/definitions/check-answers/array-array-object-object-null'
-
-import ARRAY_ARRAY_OBJECT_ARRAY_STRING from 'stories/definitions/check-answers/array-array-object-array-string'
-import ARRAY_ARRAY_OBJECT_ARRAY_NUMBER from 'stories/definitions/check-answers/array-array-object-array-number'
-import ARRAY_ARRAY_OBJECT_ARRAY_BOOLEAN from 'stories/definitions/check-answers/array-array-object-array-boolean'
-import ARRAY_ARRAY_OBJECT_ARRAY_NULL from 'stories/definitions/check-answers/array-array-object-array-null'
+import ARRAY_ARRAY_OBJECT_NUMBER_ALL_OF from 'stories/definitions/check-answers/array-array-object-number-all-of'
 
 import ARRAY_ARRAY_OBJECT_BOOLEAN from 'stories/definitions/check-answers/array-array-object-boolean'
+import ARRAY_ARRAY_OBJECT_BOOLEAN_ENUM from 'stories/definitions/check-answers/array-array-object-boolean-enum'
+import ARRAY_ARRAY_OBJECT_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/array-array-object-boolean-any-of'
+import ARRAY_ARRAY_OBJECT_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/array-array-object-boolean-one-of'
+import ARRAY_ARRAY_OBJECT_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/array-array-object-boolean-all-of'
+
 import ARRAY_ARRAY_OBJECT_NULL from 'stories/definitions/check-answers/array-array-object-null'
+import ARRAY_ARRAY_OBJECT_NULL_ENUM from 'stories/definitions/check-answers/array-array-object-null-enum'
+import ARRAY_ARRAY_OBJECT_NULL_ANY_OF from 'stories/definitions/check-answers/array-array-object-null-any-of'
+import ARRAY_ARRAY_OBJECT_NULL_ONE_OF from 'stories/definitions/check-answers/array-array-object-null-one-of'
+import ARRAY_ARRAY_OBJECT_NULL_ALL_OF from 'stories/definitions/check-answers/array-array-object-null-all-of'
 
 import ARRAY_ARRAY_ARRAY_STRING from 'stories/definitions/check-answers/array-array-array-string'
 import ARRAY_ARRAY_ARRAY_STRING_ENUM from 'stories/definitions/check-answers/array-array-array-string-enum'
 import ARRAY_ARRAY_ARRAY_STRING_ANY_OF from 'stories/definitions/check-answers/array-array-array-string-any-of'
 import ARRAY_ARRAY_ARRAY_STRING_ONE_OF from 'stories/definitions/check-answers/array-array-array-string-one-of'
+import ARRAY_ARRAY_ARRAY_STRING_ALL_OF from 'stories/definitions/check-answers/array-array-array-string-all-of'
 
 import ARRAY_ARRAY_ARRAY_NUMBER from 'stories/definitions/check-answers/array-array-array-number'
 import ARRAY_ARRAY_ARRAY_NUMBER_ENUM from 'stories/definitions/check-answers/array-array-array-number-enum'
 import ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF from 'stories/definitions/check-answers/array-array-array-number-any-of'
 import ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF from 'stories/definitions/check-answers/array-array-array-number-one-of'
-
-import ARRAY_ARRAY_ARRAY_OBJECT_STRING from 'stories/definitions/check-answers/array-array-array-object-string'
-import ARRAY_ARRAY_ARRAY_OBJECT_NUMBER from 'stories/definitions/check-answers/array-array-array-object-number'
-import ARRAY_ARRAY_ARRAY_OBJECT_BOOLEAN from 'stories/definitions/check-answers/array-array-array-object-boolean'
-import ARRAY_ARRAY_ARRAY_OBJECT_NULL from 'stories/definitions/check-answers/array-array-array-object-null'
-
-import ARRAY_ARRAY_ARRAY_ARRAY_STRING from 'stories/definitions/check-answers/array-array-array-array-string'
-import ARRAY_ARRAY_ARRAY_ARRAY_NUMBER from 'stories/definitions/check-answers/array-array-array-array-number'
-import ARRAY_ARRAY_ARRAY_ARRAY_BOOLEAN from 'stories/definitions/check-answers/array-array-array-array-boolean'
-import ARRAY_ARRAY_ARRAY_ARRAY_NULL from 'stories/definitions/check-answers/array-array-array-array-null'
+import ARRAY_ARRAY_ARRAY_NUMBER_ALL_OF from 'stories/definitions/check-answers/array-array-array-number-all-of'
 
 import ARRAY_ARRAY_ARRAY_BOOLEAN from 'stories/definitions/check-answers/array-array-array-boolean'
+import ARRAY_ARRAY_ARRAY_BOOLEAN_ENUM from 'stories/definitions/check-answers/array-array-array-boolean-enum'
+import ARRAY_ARRAY_ARRAY_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/array-array-array-boolean-any-of'
+import ARRAY_ARRAY_ARRAY_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/array-array-array-boolean-one-of'
+import ARRAY_ARRAY_ARRAY_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/array-array-array-boolean-all-of'
+
 import ARRAY_ARRAY_ARRAY_NULL from 'stories/definitions/check-answers/array-array-array-null'
+import ARRAY_ARRAY_ARRAY_NULL_ENUM from 'stories/definitions/check-answers/array-array-array-null-enum'
+import ARRAY_ARRAY_ARRAY_NULL_ANY_OF from 'stories/definitions/check-answers/array-array-array-null-any-of'
+import ARRAY_ARRAY_ARRAY_NULL_ONE_OF from 'stories/definitions/check-answers/array-array-array-null-one-of'
+import ARRAY_ARRAY_ARRAY_NULL_ALL_OF from 'stories/definitions/check-answers/array-array-array-null-all-of'
 
 import BOOLEAN_BOOLEAN from 'stories/definitions/check-answers/boolean-boolean'
 import BOOLEAN_BOOLEAN_ENUM from 'stories/definitions/check-answers/boolean-boolean-enum'
@@ -127,71 +180,124 @@ export const AllAnswers = () => (
       NUMBER_NUMBER_ALL_OF,
 
       OBJECT_STRING,
-      OBJECT_NUMBER,
+      OBJECT_STRING_ENUM,
+      OBJECT_STRING_ANY_OF,
+      OBJECT_STRING_ONE_OF,
+      OBJECT_STRING_ALL_OF,
 
-      OBJECT_OBJECT_STRING,
-      OBJECT_OBJECT_NUMBER,
-      OBJECT_OBJECT_BOOLEAN,
-      OBJECT_OBJECT_NULL,
+      OBJECT_NUMBER,
+      OBJECT_NUMBER_ENUM,
+      OBJECT_NUMBER_ANY_OF,
+      OBJECT_NUMBER_ONE_OF,
+      OBJECT_NUMBER_ALL_OF,
 
       OBJECT_ARRAY_OBJECT_STRING,
+      OBJECT_ARRAY_OBJECT_STRING_ENUM,
+      OBJECT_ARRAY_OBJECT_STRING_ANY_OF,
+      OBJECT_ARRAY_OBJECT_STRING_ONE_OF,
+      OBJECT_ARRAY_OBJECT_STRING_ALL_OF,
+
       OBJECT_ARRAY_OBJECT_NUMBER,
+      OBJECT_ARRAY_OBJECT_NUMBER_ENUM,
+      OBJECT_ARRAY_OBJECT_NUMBER_ANY_OF,
+      OBJECT_ARRAY_OBJECT_NUMBER_ONE_OF,
+      OBJECT_ARRAY_OBJECT_NUMBER_ALL_OF,
+
       OBJECT_ARRAY_OBJECT_BOOLEAN,
+      OBJECT_ARRAY_OBJECT_BOOLEAN_ENUM,
+      OBJECT_ARRAY_OBJECT_BOOLEAN_ANY_OF,
+      OBJECT_ARRAY_OBJECT_BOOLEAN_ONE_OF,
+      OBJECT_ARRAY_OBJECT_BOOLEAN_ALL_OF,
+
       OBJECT_ARRAY_OBJECT_NULL,
+      OBJECT_ARRAY_OBJECT_NULL_ENUM,
+      OBJECT_ARRAY_OBJECT_NULL_ANY_OF,
+      OBJECT_ARRAY_OBJECT_NULL_ONE_OF,
+      OBJECT_ARRAY_OBJECT_NULL_ALL_OF,
 
       OBJECT_ARRAY_ARRAY_STRING,
+      OBJECT_ARRAY_ARRAY_STRING_ENUM,
+      OBJECT_ARRAY_ARRAY_STRING_ANY_OF,
+      OBJECT_ARRAY_ARRAY_STRING_ONE_OF,
+      OBJECT_ARRAY_ARRAY_STRING_ALL_OF,
+
       OBJECT_ARRAY_ARRAY_NUMBER,
+      OBJECT_ARRAY_ARRAY_NUMBER_ENUM,
+      OBJECT_ARRAY_ARRAY_NUMBER_ANY_OF,
+      OBJECT_ARRAY_ARRAY_NUMBER_ONE_OF,
+      OBJECT_ARRAY_ARRAY_NUMBER_ALL_OF,
+
       OBJECT_ARRAY_ARRAY_BOOLEAN,
+      OBJECT_ARRAY_ARRAY_BOOLEAN_ENUM,
+      OBJECT_ARRAY_ARRAY_BOOLEAN_ANY_OF,
+      OBJECT_ARRAY_ARRAY_BOOLEAN_ONE_OF,
+      OBJECT_ARRAY_ARRAY_BOOLEAN_ALL_OF,
+
       OBJECT_ARRAY_ARRAY_NULL,
+      OBJECT_ARRAY_ARRAY_NULL_ENUM,
+      OBJECT_ARRAY_ARRAY_NULL_ANY_OF,
+      OBJECT_ARRAY_ARRAY_NULL_ONE_OF,
+      OBJECT_ARRAY_ARRAY_NULL_ALL_OF,
 
       OBJECT_BOOLEAN,
+      OBJECT_BOOLEAN_ENUM,
+      OBJECT_BOOLEAN_ANY_OF,
+      OBJECT_BOOLEAN_ONE_OF,
+      OBJECT_BOOLEAN_ALL_OF,
+
       OBJECT_NULL,
+      OBJECT_NULL_ENUM,
+      OBJECT_NULL_ANY_OF,
+      OBJECT_NULL_ONE_OF,
+      OBJECT_NULL_ALL_OF,
 
       ARRAY_ARRAY_OBJECT_STRING,
       ARRAY_ARRAY_OBJECT_STRING_ENUM,
       ARRAY_ARRAY_OBJECT_STRING_ANY_OF,
       ARRAY_ARRAY_OBJECT_STRING_ONE_OF,
+      ARRAY_ARRAY_OBJECT_STRING_ALL_OF,
 
       ARRAY_ARRAY_OBJECT_NUMBER,
       ARRAY_ARRAY_OBJECT_NUMBER_ENUM,
       ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF,
       ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF,
-
-      ARRAY_ARRAY_OBJECT_OBJECT_STRING,
-      ARRAY_ARRAY_OBJECT_OBJECT_NUMBER,
-      ARRAY_ARRAY_OBJECT_OBJECT_BOOLEAN,
-      ARRAY_ARRAY_OBJECT_OBJECT_NULL,
-
-      ARRAY_ARRAY_OBJECT_ARRAY_STRING,
-      ARRAY_ARRAY_OBJECT_ARRAY_NUMBER,
-      ARRAY_ARRAY_OBJECT_ARRAY_BOOLEAN,
-      ARRAY_ARRAY_OBJECT_ARRAY_NULL,
+      ARRAY_ARRAY_OBJECT_NUMBER_ALL_OF,
 
       ARRAY_ARRAY_OBJECT_BOOLEAN,
+      ARRAY_ARRAY_OBJECT_BOOLEAN_ENUM,
+      ARRAY_ARRAY_OBJECT_BOOLEAN_ANY_OF,
+      ARRAY_ARRAY_OBJECT_BOOLEAN_ONE_OF,
+      ARRAY_ARRAY_OBJECT_BOOLEAN_ALL_OF,
+
       ARRAY_ARRAY_OBJECT_NULL,
+      ARRAY_ARRAY_OBJECT_NULL_ENUM,
+      ARRAY_ARRAY_OBJECT_NULL_ANY_OF,
+      ARRAY_ARRAY_OBJECT_NULL_ONE_OF,
+      ARRAY_ARRAY_OBJECT_NULL_ALL_OF,
 
       ARRAY_ARRAY_ARRAY_STRING,
       ARRAY_ARRAY_ARRAY_STRING_ENUM,
       ARRAY_ARRAY_ARRAY_STRING_ANY_OF,
       ARRAY_ARRAY_ARRAY_STRING_ONE_OF,
+      ARRAY_ARRAY_ARRAY_STRING_ALL_OF,
 
       ARRAY_ARRAY_ARRAY_NUMBER,
       ARRAY_ARRAY_ARRAY_NUMBER_ENUM,
       ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF,
       ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF,
-
-      ARRAY_ARRAY_ARRAY_OBJECT_STRING,
-      ARRAY_ARRAY_ARRAY_OBJECT_NUMBER,
-      ARRAY_ARRAY_ARRAY_OBJECT_BOOLEAN,
-      ARRAY_ARRAY_ARRAY_OBJECT_NULL,
-
-      ARRAY_ARRAY_ARRAY_ARRAY_STRING,
-      ARRAY_ARRAY_ARRAY_ARRAY_NUMBER,
-      ARRAY_ARRAY_ARRAY_ARRAY_BOOLEAN,
-      ARRAY_ARRAY_ARRAY_ARRAY_NULL,
+      ARRAY_ARRAY_ARRAY_NUMBER_ALL_OF,
 
       ARRAY_ARRAY_ARRAY_BOOLEAN,
+      ARRAY_ARRAY_ARRAY_BOOLEAN_ENUM,
+      ARRAY_ARRAY_ARRAY_BOOLEAN_ANY_OF,
+      ARRAY_ARRAY_ARRAY_BOOLEAN_ONE_OF,
+      ARRAY_ARRAY_ARRAY_BOOLEAN_ALL_OF,
+
       ARRAY_ARRAY_ARRAY_NULL,
+      ARRAY_ARRAY_ARRAY_NULL_ENUM,
+      ARRAY_ARRAY_ARRAY_NULL_ANY_OF,
+      ARRAY_ARRAY_ARRAY_NULL_ONE_OF,
+      ARRAY_ARRAY_ARRAY_NULL_ALL_OF,
 
       BOOLEAN_BOOLEAN,
       BOOLEAN_BOOLEAN_ENUM,

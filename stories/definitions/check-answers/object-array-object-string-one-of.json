@@ -1,0 +1,14 @@
+{
+  "type": "STRING",
+  "params": {
+    "answer": {
+      "title": "String (One Of)",
+      "value": "Three"
+    },
+    "changeAnswer": {
+      "href": "/alpha/omega",
+      "text": "Change",
+      "visuallyHiddenText": "string"
+    }
+  }
+}

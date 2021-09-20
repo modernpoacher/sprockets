@@ -1,0 +1,14 @@
+{
+  "type": "BOOLEAN",
+  "params": {
+    "answer": {
+      "title": "Boolean (Any Of)",
+      "value": "False"
+    },
+    "changeAnswer": {
+      "href": "/alpha/omega",
+      "text": "Change",
+      "visuallyHiddenText": "boolean"
+    }
+  }
+}

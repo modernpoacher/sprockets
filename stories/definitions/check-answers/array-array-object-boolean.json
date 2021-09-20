@@ -3,7 +3,7 @@
   "params": {
     "answer": {
       "title": "Boolean",
-      "value": "true"
+      "value": "false"
     },
     "changeAnswer": {
       "href": "/alpha/omega",

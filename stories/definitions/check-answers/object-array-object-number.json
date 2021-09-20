@@ -3,7 +3,7 @@
   "params": {
     "answer": {
       "title": "Number",
-      "value": "1"
+      "value": "3"
     },
     "changeAnswer": {
       "href": "/alpha/omega",

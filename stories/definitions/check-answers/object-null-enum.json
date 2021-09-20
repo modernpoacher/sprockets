@@ -1,0 +1,14 @@
+{
+  "type": "NULL",
+  "params": {
+    "answer": {
+      "title": "Null (Enum)",
+      "value": "null"
+    },
+    "changeAnswer": {
+      "href": "/alpha/omega",
+      "text": "Change",
+      "visuallyHiddenText": "null"
+    }
+  }
+}
