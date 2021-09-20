@@ -3,10 +3,11 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Immutable from 'immutable'
-import classnames from 'classnames'
 
 import debug from 'debug'
+
+import equal from 'fast-deep-equal'
+import classnames from 'classnames'
 
 import Group from 'shinkansen-sprockets/components/group'
 
@@ -43,24 +44,22 @@ export default class CheckAnswersGroup extends Group {
   }
 
   /**
-   *  Convert latest 'props' to an Immutable.Map() and store in 'state'
+   *  Compare latest 'props' with 'state' for changes to 'checkAnswers'
    *
    *  @param {Object} props   Latest props
    *  @param {Object} state   Current state
    */
   static getDerivedStateFromProps ({ checkAnswers }, { checkAnswers: C }) {
-    const c = Immutable.Map(checkAnswers)
-
     return {
-      checkAnswers: Immutable.is(C, c) ? C : c
+      checkAnswers: equal(checkAnswers, C) ? C : checkAnswers
     }
   }
 
   /**
-   *  Compare latest 'props' via 'state' for changes to 'checkAnswers'
+   *  Compare latest 'props' with 'state' for changes to 'checkAnswers'
    *
    *  @param {Object} props   Latest props
-   *  @param {Object} state   Latest state
+   *  @param {Object} state   Current state
    */
   shouldComponentUpdate (props, state) {
     const {

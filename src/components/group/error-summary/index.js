@@ -3,10 +3,11 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Immutable from 'immutable'
-import classnames from 'classnames'
 
 import debug from 'debug'
+
+import equal from 'fast-deep-equal'
+import classnames from 'classnames'
 
 import Group from 'shinkansen-sprockets/components/group'
 
@@ -45,24 +46,22 @@ export default class ErrorSummaryGroup extends Group {
   }
 
   /**
-   *  Convert latest 'props' to an Immutable.Map() and store in 'state'
+   *  Compare latest 'props' with 'state' for changes to 'errorSummary'
    *
    *  @param {Object} props   Latest props
    *  @param {Object} state   Current state
    */
   static getDerivedStateFromProps ({ errorSummary }, { errorSummary: E }) {
-    const e = Immutable.Map(errorSummary)
-
     return {
-      errorSummary: Immutable.is(E, e) ? E : e
+      errorSummary: equal(errorSummary, E) ? E : errorSummary
     }
   }
 
   /**
-   *  Compare latest 'props' via 'state' for changes to 'errorSummary'
+   *  Compare latest 'props' with 'state' for changes to 'errorSummary'
    *
    *  @param {Object} props   Latest props
-   *  @param {Object} state   Latest state
+   *  @param {Object} state   Current state
    */
   shouldComponentUpdate (props, state) {
     const {

@@ -37,6 +37,38 @@ import ERROR_$REF from 'stories/definitions/error-summary/error-$ref'
 import ERROR_ONE_OF from 'stories/definitions/error-summary/error-one-of'
 import ERROR_UNKNOWN from 'stories/definitions/error-summary/error-unknown'
 
+const ERROR = {
+  ERROR_MAX_ITEMS: [ERROR_MAX_ITEMS],
+  ERROR_MIN_ITEMS: [ERROR_MIN_ITEMS],
+  ERROR_MAX_LENGTH: [ERROR_MAX_LENGTH],
+  ERROR_MIN_LENGTH: [ERROR_MIN_LENGTH],
+  ERROR_MAX_PROPERTIES: [ERROR_MAX_PROPERTIES],
+  ERROR_MIN_PROPERTIES: [ERROR_MIN_PROPERTIES],
+  ERROR_ADDITIONAL_ITEMS: [ERROR_ADDITIONAL_ITEMS],
+  ERROR_MAXIMUM: [ERROR_MAXIMUM],
+  ERROR_MINIMUM: [ERROR_MINIMUM],
+  ERROR_FORMAT: [ERROR_FORMAT],
+  ERROR_ADDITIONAL_PROPERTIES: [ERROR_ADDITIONAL_PROPERTIES],
+  ERROR_DEPENDENCIES: [ERROR_DEPENDENCIES],
+  ERROR_UNIQUE_ITEMS: [ERROR_UNIQUE_ITEMS],
+  ERROR_PROPERTY_REQUIRED: [ERROR_PROPERTY_REQUIRED],
+  ERROR_PROPERTY_NAMES: [ERROR_PROPERTY_NAMES],
+  ERROR_PATTERN_REQUIRED: [ERROR_PATTERN_REQUIRED],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING: [ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER: [ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT: [ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY: [ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN: [ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN],
+  ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL: [ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL],
+  ERROR_MULTIPLE_OF: [ERROR_MULTIPLE_OF],
+  ERROR_PATTERN: [ERROR_PATTERN],
+  ERROR_CONST: [ERROR_CONST],
+  ERROR_ENUM: [ERROR_ENUM],
+  ERROR_$REF: [ERROR_$REF],
+  ERROR_ONE_OF: [ERROR_ONE_OF],
+  ERROR_UNKNOWN: [ERROR_UNKNOWN]
+}
+
 export default {
   title: 'Components/Error Summary',
   component: ErrorSummarySprocket,
@@ -46,48 +78,68 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    title: 'Error Summary',
+    errorSummary: 'ERROR_UNKNOWN'
+  },
+  argTypes: {
+    errorSummary: {
+      options: Object.keys(ERROR),
+      mapping: ERROR,
+      control: {
+        type: 'radio',
+        labels: {
+          ERROR_MAX_ITEMS: 'Error - Max Items',
+          ERROR_MIN_ITEMS: 'Error - Min Items',
+          ERROR_MAX_LENGTH: 'Error - Max Length',
+          ERROR_MIN_LENGTH: 'Error - Min Length',
+          ERROR_MAX_PROPERTIES: 'Error - Max Properties',
+          ERROR_MIN_PROPERTIES: 'Error - Min Properties',
+          ERROR_ADDITIONAL_ITEMS: 'Error - Additional Items',
+          ERROR_MAXIMUM: 'Error - Maximum',
+          ERROR_MINIMUM: 'Error - Minimum',
+          ERROR_FORMAT: 'Error - Format',
+          ERROR_ADDITIONAL_PROPERTIES: 'Error - Additional Properties',
+          ERROR_DEPENDENCIES: 'Error - Dependencies',
+          ERROR_UNIQUE_ITEMS: 'Error - Unique Items',
+          ERROR_PROPERTY_REQUIRED: 'Error - Property Required',
+          ERROR_PROPERTY_NAMES: 'Error - Property Names',
+          ERROR_PATTERN_REQUIRED: 'Error - Pattern Required',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING: 'Error - Type Invalid (expected string)',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER: 'Error - Type Invalid (expected number)',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT: 'Error - Type Invalid (expected object)',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY: 'Error - Type Invalid (expected array)',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN: 'Error - Type Invalid (expected boolean)',
+          ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL: 'Error - Type Invalid (expected null)',
+          ERROR_MULTIPLE_OF: 'Error - Multiple Of',
+          ERROR_PATTERN: 'Error - Pattern',
+          ERROR_CONST: 'Error - Const',
+          ERROR_ENUM: 'Error - Enum',
+          ERROR_$REF: 'Error - $Ref',
+          ERROR_ONE_OF: 'Error - One Of',
+          ERROR_UNKNOWN: 'Error - Unknown'
+        }
+      }
+    }
+  }
 }
+
+export const Default = (args) => (
+  <ErrorSummarySprocket
+    {...args}
+  />
+)
 
 export const AllErrors = () => (
   <ErrorSummarySprocket
     title='All Errors'
-    errorSummary={[
-      ERROR_MAX_ITEMS,
-      ERROR_MIN_ITEMS,
-      ERROR_MAX_LENGTH,
-      ERROR_MIN_LENGTH,
-      ERROR_MAX_PROPERTIES,
-      ERROR_MIN_PROPERTIES,
-      ERROR_ADDITIONAL_ITEMS,
-      ERROR_MAXIMUM,
-      ERROR_MINIMUM,
-      ERROR_FORMAT,
-      ERROR_ADDITIONAL_PROPERTIES,
-      ERROR_DEPENDENCIES,
-      ERROR_UNIQUE_ITEMS,
-      ERROR_PROPERTY_REQUIRED,
-      ERROR_PROPERTY_NAMES,
-      ERROR_PATTERN_REQUIRED,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN,
-      ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL,
-      ERROR_MULTIPLE_OF,
-      ERROR_PATTERN,
-      ERROR_CONST,
-      ERROR_ENUM,
-      ERROR_$REF,
-      ERROR_ONE_OF,
-      ERROR_UNKNOWN
-    ]}
+    errorSummary={Object.values(ERROR).map(([e]) => e)}
   />
 )
 
 AllErrors.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }
 
 export const NoErrors = () => (
@@ -98,353 +150,5 @@ export const NoErrors = () => (
 )
 
 NoErrors.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMaxItems = () => (
-  <ErrorSummarySprocket
-    title='Error - Max Items'
-    errorSummary={[ERROR_MAX_ITEMS]}
-  />
-)
-
-ErrorMaxItems.storyName = 'Error - Max Items'
-ErrorMaxItems.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMinItems = () => (
-  <ErrorSummarySprocket
-    title='Error - Min Items'
-    errorSummary={[ERROR_MIN_ITEMS]}
-  />
-)
-
-ErrorMinItems.storyName = 'Error - Min Items'
-ErrorMinItems.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMaxLength = () => (
-  <ErrorSummarySprocket
-    title='Error - Max Length'
-    errorSummary={[ERROR_MAX_LENGTH]}
-  />
-)
-
-ErrorMaxLength.storyName = 'Error - Max Length'
-ErrorMaxLength.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMinLength = () => (
-  <ErrorSummarySprocket
-    title='Error - Min Length'
-    errorSummary={[ERROR_MIN_LENGTH]}
-  />
-)
-
-ErrorMinLength.storyName = 'Error - Min Length'
-ErrorMinLength.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMaxProperties = () => (
-  <ErrorSummarySprocket
-    title='Error - Max Properties'
-    errorSummary={[ERROR_MAX_PROPERTIES]}
-  />
-)
-
-ErrorMaxProperties.storyName = 'Error - Max Properties'
-ErrorMaxProperties.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMinProperties = () => (
-  <ErrorSummarySprocket
-    title='Error - Min Properties'
-    errorSummary={[ERROR_MIN_PROPERTIES]}
-  />
-)
-
-ErrorMinProperties.storyName = 'Error - Min Properties'
-ErrorMinProperties.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorAdditionalItems = () => (
-  <ErrorSummarySprocket
-    title='Error - Additional Items'
-    errorSummary={[ERROR_ADDITIONAL_ITEMS]}
-  />
-)
-
-ErrorAdditionalItems.storyName = 'Error - Additional Items'
-ErrorAdditionalItems.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMaximum = () => (
-  <ErrorSummarySprocket
-    title='Error - Maximum'
-    errorSummary={[ERROR_MAXIMUM]}
-  />
-)
-
-ErrorMaximum.storyName = 'Error - Maximum'
-ErrorMaximum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMinimum = () => (
-  <ErrorSummarySprocket
-    title='Error - Minimum'
-    errorSummary={[ERROR_MINIMUM]}
-  />
-)
-
-ErrorMinimum.storyName = 'Error - Minimum'
-ErrorMinimum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorFormat = () => (
-  <ErrorSummarySprocket
-    title='Error - Format'
-    errorSummary={[ERROR_FORMAT]}
-  />
-)
-
-ErrorFormat.storyName = 'Error - Format'
-ErrorFormat.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorAdditionalProperties = () => (
-  <ErrorSummarySprocket
-    title='Error - Additional Properties'
-    errorSummary={[ERROR_ADDITIONAL_PROPERTIES]}
-  />
-)
-
-ErrorAdditionalProperties.storyName = 'Error - Additional Properties'
-ErrorAdditionalProperties.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorDependencies = () => (
-  <ErrorSummarySprocket
-    title='Error - Dependencies'
-    errorSummary={[ERROR_DEPENDENCIES]}
-  />
-)
-
-ErrorDependencies.storyName = 'Error - Dependencies'
-ErrorDependencies.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorUniqueItems = () => (
-  <ErrorSummarySprocket
-    title='Error - Unique Items'
-    errorSummary={[ERROR_UNIQUE_ITEMS]}
-  />
-)
-
-ErrorUniqueItems.storyName = 'Error - Unique Items'
-ErrorUniqueItems.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorPropertyRequired = () => (
-  <ErrorSummarySprocket
-    title='Error - Property Required'
-    errorSummary={[ERROR_PROPERTY_REQUIRED]}
-  />
-)
-
-ErrorPropertyRequired.storyName = 'Error - Property Required'
-ErrorPropertyRequired.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorPropertyNames = () => (
-  <ErrorSummarySprocket
-    title='Error - Property Names'
-    errorSummary={[ERROR_PROPERTY_NAMES]}
-  />
-)
-
-ErrorPropertyNames.storyName = 'Error - Property Names'
-ErrorPropertyNames.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorPatternRequired = () => (
-  <ErrorSummarySprocket
-    title='Error - Pattern Required'
-    errorSummary={[ERROR_PATTERN_REQUIRED]}
-  />
-)
-
-ErrorPatternRequired.storyName = 'Error - Pattern Required'
-ErrorPatternRequired.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedString = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected string)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING]}
-  />
-)
-
-ErrorTypeInvalidExpectedString.storyName = 'Error - Type Invalid (expected string)'
-ErrorTypeInvalidExpectedString.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedNumber = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected number)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER]}
-  />
-)
-
-ErrorTypeInvalidExpectedNumber.storyName = 'Error - Type Invalid (expected number)'
-ErrorTypeInvalidExpectedNumber.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedObject = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected object)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT]}
-  />
-)
-
-ErrorTypeInvalidExpectedObject.storyName = 'Error - Type Invalid (expected object)'
-ErrorTypeInvalidExpectedObject.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedArray = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected array)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY]}
-  />
-)
-
-ErrorTypeInvalidExpectedArray.storyName = 'Error - Type Invalid (expected array)'
-ErrorTypeInvalidExpectedArray.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedBoolean = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected boolean)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN]}
-  />
-)
-
-ErrorTypeInvalidExpectedBoolean.storyName = 'Error - Type Invalid (expected boolean)'
-ErrorTypeInvalidExpectedBoolean.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorTypeInvalidExpectedNull = () => (
-  <ErrorSummarySprocket
-    title='Error - Type Invalid (expected null)'
-    errorSummary={[ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL]}
-  />
-)
-
-ErrorTypeInvalidExpectedNull.storyName = 'Error - Type Invalid (expected null)'
-ErrorTypeInvalidExpectedNull.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorMultipleOf = () => (
-  <ErrorSummarySprocket
-    title='Error - Multiple Of'
-    errorSummary={[ERROR_MULTIPLE_OF]}
-  />
-)
-
-ErrorMultipleOf.storyName = 'Error - Multiple Of'
-ErrorMultipleOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorPattern = () => (
-  <ErrorSummarySprocket
-    title='Error - Pattern'
-    errorSummary={[ERROR_PATTERN]}
-  />
-)
-
-ErrorPattern.storyName = 'Error - Pattern'
-ErrorPattern.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorConst = () => (
-  <ErrorSummarySprocket
-    title='Error - Const'
-    errorSummary={[ERROR_CONST]}
-  />
-)
-
-ErrorConst.storyName = 'Error - Const'
-ErrorConst.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorEnum = () => (
-  <ErrorSummarySprocket
-    title='Error - Enum'
-    errorSummary={[ERROR_ENUM]}
-  />
-)
-
-ErrorEnum.storyName = 'Error - Enum'
-ErrorEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const Error$Ref = () => (
-  <ErrorSummarySprocket
-    title='Error - $Ref'
-    errorSummary={[ERROR_$REF]}
-  />
-)
-
-Error$Ref.storyName = 'Error - $Ref'
-Error$Ref.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorOneOf = () => (
-  <ErrorSummarySprocket
-    title='Error - One Of'
-    errorSummary={[ERROR_ONE_OF]}
-  />
-)
-
-ErrorOneOf.storyName = 'Error - One Of'
-ErrorOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const ErrorUnknown = () => (
-  <ErrorSummarySprocket
-    title='Error - Unknown'
-    errorSummary={[ERROR_UNKNOWN]}
-  />
-)
-
-ErrorUnknown.storyName = 'Error - Unknown'
-ErrorUnknown.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }

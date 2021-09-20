@@ -3,14 +3,15 @@
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Immutable from 'immutable'
+
+import equal from 'fast-deep-equal'
 
 import transform from 'shinkansen-sprockets/transformers/error-message'
 
 import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 export default class ErrorMessage extends Component {
-  state = { errorMessage: Immutable.Map() }
+  state = {}
 
   hasTextContent () {
     const { errorMessage } = this.props
@@ -42,10 +43,8 @@ export default class ErrorMessage extends Component {
    *  @param {Object} state   Current state
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
-    const e = Immutable.Map(errorMessage)
-
     return {
-      errorMessage: Immutable.is(E, e) ? E : e
+      errorMessage: equal(errorMessage, E) ? E : errorMessage
     }
   }
 
