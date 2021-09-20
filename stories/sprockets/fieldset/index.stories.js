@@ -11,7 +11,7 @@ export default {
       options: Object.keys(errors),
       mapping: errors,
       control: {
-        type: 'select',
+        type: 'radio',
         labels: {
           string: 'String',
           number: 'Number',
@@ -31,7 +31,9 @@ export default {
 }
 
 export const Fieldset = (args) => (
-  <FieldsetSprocket {...args} />
+  <FieldsetSprocket
+    {...args}
+  />
 )
 
 Fieldset.args = {
