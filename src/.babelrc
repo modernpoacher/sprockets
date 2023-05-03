@@ -1,6 +1,4 @@
 {
-  "compact": true,
-  "comments": false,
   "presets": [
     [
       "@babel/env",
@@ -39,7 +37,31 @@
         ],
         "cwd": "babelrc",
         "alias": {
-          "shinkansen-sprockets": ".",
+          "#sprockets/check-answers": "./sprockets/check-answers/index.jsx",
+          "#sprockets/error-summary": "./sprockets/error-summary/index.jsx",
+          "#sprockets/fieldset": "./sprockets/fieldset/index.jsx",
+          "#sprockets": "./sprockets/index.jsx",
+          "#components/common/text-content": "./components/common/text-content/index.cjs",
+          "#components/description/fieldset": "./components/description/fieldset/index.jsx",
+          "#components/description": "./components/description/index.jsx",
+          "#components/error-message/fieldset": "./components/error-message/fieldset/index.jsx",
+          "#components/error-message": "./components/error-message/index.jsx",
+          "#components/group/check-answers/answer-title": "./components/group/check-answers/answer-title.jsx",
+          "#components/group/check-answers/answer-value": "./components/group/check-answers/answer-value.jsx",
+          "#components/group/check-answers/change-answer": "./components/group/check-answers/change-answer.jsx",
+          "#components/group/check-answers/visually-hidden-text": "./components/group/check-answers/visually-hidden-text.jsx",
+          "#components/group/check-answers": "./components/group/check-answers/index.jsx",
+          "#components/group/error-summary": "./components/group/error-summary/index.jsx",
+          "#components/group/fieldset": "./components/group/fieldset/index.jsx",
+          "#components/group": "./components/group/index.jsx",
+          "#components/title/check-answers": "./components/title/check-answers/index.jsx",
+          "#components/title/error-summary": "./components/title/error-summary/index.jsx",
+          "#components/title/fieldset": "./components/title/fieldset/index.jsx",
+          "#components/title": "./components/title/index.jsx",
+          "#transformers/check-answers": "./transformers/check-answers/index.mjs",
+          "#transformers/common": "./transformers/common/index.mjs",
+          "#transformers/error-message": "./transformers/error-message/index.mjs",
+          "#transformers/error-summary": "./transformers/error-summary/index.mjs",
           "build": "../build",
           "stories": "../stories"
         }

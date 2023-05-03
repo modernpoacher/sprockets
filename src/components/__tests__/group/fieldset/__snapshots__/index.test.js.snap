@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`shinkansen-sprockets/components/group/fieldset <Group /> With additional props renders 1`] = `null`;
-
-exports[`shinkansen-sprockets/components/group/fieldset <Group /> With required props renders 1`] = `null`;
