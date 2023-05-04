@@ -9,14 +9,14 @@ import debug from 'debug'
 import equal from 'fast-deep-equal'
 import classnames from 'classnames'
 
-import Group from '#components/group'
+import Group from 'shinkansen-sprockets/components/group'
 
-import transform from '#transformers/error-summary'
+import transform from 'shinkansen-sprockets/transformers/error-summary'
 import {
   getKey
-} from '#transformers/common'
+} from 'shinkansen-sprockets/transformers/common'
 
-import TextContent from '#components/common/text-content'
+import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 const log = debug('shinkansen-sprockets:components:group:error-summary')
 

@@ -5,19 +5,19 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from '#components/title'
-import Group from '#components/group'
+import Title from 'shinkansen-sprockets/components/title'
+import Group from 'shinkansen-sprockets/components/group'
 
-import Sprocket from '#sprockets'
+import Sprocket from 'shinkansen-sprockets/sprockets'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#components/title')
-jest.mock('#components/group')
+jest.mock('shinkansen-sprockets/components/title')
+jest.mock('shinkansen-sprockets/components/group')
 
-describe('#sprockets', () => {
+describe('shinkansen-sprockets/sprockets', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (

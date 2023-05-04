@@ -9,11 +9,11 @@ import debug from 'debug'
 import equal from 'fast-deep-equal'
 import classnames from 'classnames'
 
-import Group from '#components/group'
+import Group from 'shinkansen-sprockets/components/group'
 
 import {
   getKey
-} from '#transformers/common'
+} from 'shinkansen-sprockets/transformers/common'
 
 import AnswerTitle from './answer-title.cjs'
 import AnswerValue from './answer-value.cjs'

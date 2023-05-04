@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from '#sprockets'
-import Title from '#components/title/check-answers'
-import Group from '#components/group/check-answers'
+import Sprocket from 'shinkansen-sprockets/sprockets'
+import Title from 'shinkansen-sprockets/components/title/check-answers'
+import Group from 'shinkansen-sprockets/components/group/check-answers'
 
 export default class CheckAnswersSprocket extends Sprocket {
   getClassName () {

@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from '#sprockets'
-import Title from '#components/title/error-summary'
-import Group from '#components/group/error-summary'
+import Sprocket from 'shinkansen-sprockets/sprockets'
+import Title from 'shinkansen-sprockets/components/title/error-summary'
+import Group from 'shinkansen-sprockets/components/group/error-summary'
 
 export default class ErrorSummarySprocket extends Sprocket {
   getClassName () {

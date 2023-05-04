@@ -6,11 +6,11 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from '#sprockets'
-import Title from '#components/title/fieldset'
-import Description from '#components/description/fieldset'
-import ErrorMessage from '#components/error-message/fieldset'
-import Group from '#components/group/fieldset'
+import Sprocket from 'shinkansen-sprockets/sprockets'
+import Title from 'shinkansen-sprockets/components/title/fieldset'
+import Description from 'shinkansen-sprockets/components/description/fieldset'
+import ErrorMessage from 'shinkansen-sprockets/components/error-message/fieldset'
+import Group from 'shinkansen-sprockets/components/group/fieldset'
 
 export default class FieldsetSprocket extends Sprocket {
   getDescription = () => this.description

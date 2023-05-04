@@ -3,11 +3,11 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Group from '#components/group'
+import Group from 'shinkansen-sprockets/components/group'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('#components/group', () => {
+describe('shinkansen-sprockets/components/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

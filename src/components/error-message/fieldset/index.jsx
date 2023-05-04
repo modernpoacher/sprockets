@@ -2,7 +2,7 @@
  * FieldsetErrorMessage component
  */
 import classnames from 'classnames'
-import ErrorMessage from '#components/error-message'
+import ErrorMessage from 'shinkansen-sprockets/components/error-message'
 
 export default class FieldsetErrorMessage extends ErrorMessage {
   getClassName () {

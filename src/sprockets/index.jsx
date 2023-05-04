@@ -4,8 +4,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Title from '#components/title'
-import Group from '#components/group'
+import Title from 'shinkansen-sprockets/components/title'
+import Group from 'shinkansen-sprockets/components/group'
 
 function onChange () {
   /* */

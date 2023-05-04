@@ -5,18 +5,18 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from '#components/group'
-import Group from '#components/group/check-answers'
+import Super from 'shinkansen-sprockets/components/group'
+import Group from 'shinkansen-sprockets/components/group/check-answers'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#components/group/check-answers/answer-title', () => () => 'MOCK ANSWER TITLE')
-jest.mock('#components/group/check-answers/answer-value', () => () => 'MOCK ANSWER VALUE')
-jest.mock('#components/group/check-answers/change-answer', () => () => 'MOCK CHANGE ANSWER')
+jest.mock('shinkansen-sprockets/components/group/check-answers/answer-title', () => () => 'MOCK ANSWER TITLE')
+jest.mock('shinkansen-sprockets/components/group/check-answers/answer-value', () => () => 'MOCK ANSWER VALUE')
+jest.mock('shinkansen-sprockets/components/group/check-answers/change-answer', () => () => 'MOCK CHANGE ANSWER')
 
-describe('#components/group/check-answers', () => {
+describe('shinkansen-sprockets/components/group/check-answers', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

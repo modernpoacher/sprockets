@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Title from '#components/title'
+import Title from 'shinkansen-sprockets/components/title'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-jest.mock('#components/common/text-content', () => () => 'MOCK TEXT CONTENT')
+jest.mock('shinkansen-sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 
-describe('#components/title', () => {
+describe('shinkansen-sprockets/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

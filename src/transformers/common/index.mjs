@@ -1,5 +1,11 @@
+import debug from 'debug'
+
 const CHAR32 = String.fromCharCode(32)
 const CHAR45 = String.fromCharCode(45)
+
+const log = debug('shinkansen-sprockets/transformers/common')
+
+log('`shinkansen` is awake')
 
 export function getKey (href, text, index) {
   return (

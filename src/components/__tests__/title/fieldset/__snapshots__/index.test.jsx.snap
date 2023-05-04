@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#components/title/fieldset <Title /> With additional props renders 1`] = `
+exports[`shinkansen-sprockets/components/title/fieldset <Title /> With additional props renders 1`] = `
 <legend
   className="MOCK CLASSNAME"
 >
@@ -8,4 +8,4 @@ exports[`#components/title/fieldset <Title /> With additional props renders 1`] 
 </legend>
 `;
 
-exports[`#components/title/fieldset <Title /> With required props renders 1`] = `null`;
+exports[`shinkansen-sprockets/components/title/fieldset <Title /> With required props renders 1`] = `null`;

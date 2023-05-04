@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import TextContent from '#components/common/text-content'
+import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 import VisuallyHiddenText from './visually-hidden-text.cjs'
 

@@ -5,17 +5,17 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from '#sprockets'
-import Sprocket from '#sprockets/fieldset'
+import Super from 'shinkansen-sprockets/sprockets'
+import Sprocket from 'shinkansen-sprockets/sprockets/fieldset'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#components/title/fieldset')
-jest.mock('#components/group/fieldset')
+jest.mock('shinkansen-sprockets/components/title/fieldset')
+jest.mock('shinkansen-sprockets/components/group/fieldset')
 
-describe('#sprockets/fieldset', () => {
+describe('shinkansen-sprockets/sprockets/fieldset', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (

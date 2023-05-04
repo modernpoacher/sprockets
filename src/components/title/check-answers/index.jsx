@@ -4,7 +4,7 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Title from '#components/title'
+import Title from 'shinkansen-sprockets/components/title'
 
 export default class CheckAnswersTitle extends Title {
   getClassName () {
