@@ -2,34 +2,31 @@
 
 .circleci
 .github
-
-.storybook
 .husky
+
 .editorconfig
 .eslintignore
 .eslintrc
 
 .depsrc
 
-# NPM
-.npmignore
+# User-defined NPM configuration
 .npmrc
+
+# User-defined NVM configuration
+.nvmrc
 
 # Build
 build
-gulpfile.js
-gulp.sh
+gulpfile.mjs
 
 # Jest
 __tests__
-jest.config.js
-
-# NYC
-.nycrc
-.nyc_output
+jest.config.cjs
 
 # Coverage
 coverage
 
 # Storybook
+.storybook
 stories
