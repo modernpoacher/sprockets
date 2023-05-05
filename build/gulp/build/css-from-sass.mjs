@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import gulp from '@sequencemedia/gulp'
 import glob from 'glob-all'
 import dartSass from 'sass'
