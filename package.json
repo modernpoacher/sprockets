@@ -35,7 +35,7 @@
     "pretest": "npm run nvm",
     "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
     "storybook": "npm run build && npm run transform && start-storybook -p 6007",
-    "nvm": "bash nvm.sh 2> /dev/null"
+    "nvm": "bash nvm.sh"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -43,7 +43,6 @@
     "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {
-    "@babel/compat-data": "^7.21.7",
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -61,10 +60,7 @@
     "@storybook/addon-links": "6.5.12",
     "@storybook/react": "6.5.12",
     "autoprefixer": "^10.4.14",
-    "babel-jest": "^29.5.0",
     "babel-plugin-module-resolver": "^5.0.0",
-    "cheerio": "1.0.0-rc.6",
-    "concurrently": "^8.0.1",
     "core-js": "^3.30.1",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
