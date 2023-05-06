@@ -50,12 +50,9 @@ const plugins = [
   ],
   [
     'module-resolver', {
-      root: [
-        '.'
-      ],
       alias: {
         /**
-         * Storybook
+         *  Storybook
          */
         'shinkansen-sprockets/sprockets/check-answers': './src/sprockets/check-answers/index.cjs',
         'shinkansen-sprockets/sprockets/error-summary': './src/sprockets/error-summary/index.cjs',
@@ -94,6 +91,7 @@ module.exports = (api) => {
 
   return {
     presets,
-    plugins
+    plugins,
+    ignore: [/node_modules\/(?!shinkansen-)/]
   }
 }
