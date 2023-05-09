@@ -1,6 +1,7 @@
 /**
  * FieldsetErrorMessage component
  */
+
 import classnames from 'classnames'
 import ErrorMessage from 'shinkansen-sprockets/components/error-message'
 

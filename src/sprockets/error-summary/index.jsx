@@ -1,6 +1,9 @@
 /**
  * ErrorSummarySprocket component
+ *
+ * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
  */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -15,6 +18,10 @@ export default class ErrorSummarySprocket extends Sprocket {
     return classnames(super.getClassName(), 'error-summary')
   }
 
+  /**
+   * @param {SprocketProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||

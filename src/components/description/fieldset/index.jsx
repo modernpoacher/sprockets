@@ -1,6 +1,7 @@
 /**
  * FieldsetDescription component
  */
+
 import classnames from 'classnames'
 import Description from 'shinkansen-sprockets/components/description'
 

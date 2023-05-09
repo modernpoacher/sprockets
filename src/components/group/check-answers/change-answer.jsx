@@ -12,6 +12,10 @@ import VisuallyHiddenText from './visually-hidden-text.cjs'
 
 const log = debug('shinkansen-sprockets:components:group:check-answers')
 
+/**
+ * @param {SprocketsTypes.AnswerDefinitionType}
+ * @returns {React.JSX.Element}
+ */
 export default function ChangeAnswer ({ changeAnswer: { href, text, visuallyHiddenText } }) {
   log('ChangeAnswer')
 

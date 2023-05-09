@@ -4,6 +4,10 @@ import debug from 'debug'
 
 const log = debug('shinkansen-sprockets:components:group:check-answers')
 
+/**
+ * @param {string | string[]}
+ * @returns {string | string[]}
+ */
 function getAnswerValue (value) {
   if (Array.isArray(value)) {
     const n = value.length - 1
@@ -23,8 +27,12 @@ function getAnswerValue (value) {
   return String(value)
 }
 
-export default function SummaryValue ({ answer: { value } }) {
-  log('SummaryValue')
+/**
+ * @param {SprocketsTypes.AnswerDefinitionType}
+ * @returns {React.JSX.Element}
+ */
+export default function AnswerValue ({ answer: { value } }) {
+  log('AnswerValue')
 
   return (
     <dd className='answer-value'>
@@ -33,7 +41,7 @@ export default function SummaryValue ({ answer: { value } }) {
   )
 }
 
-SummaryValue.propTypes = {
+AnswerValue.propTypes = {
   answer: PropTypes.shape({
     value: PropTypes.oneOfType([
       PropTypes.string,

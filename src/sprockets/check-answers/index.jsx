@@ -1,3 +1,9 @@
+/**
+ * CheckAnswersSprocket component
+ *
+ * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -12,6 +18,10 @@ export default class CheckAnswersSprocket extends Sprocket {
     return classnames(super.getClassName(), 'check-answers')
   }
 
+  /**
+   * @param {SprocketProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||

@@ -1,6 +1,7 @@
 /**
  * FieldsetGroup component
  */
+
 import classnames from 'classnames'
 import Group from 'shinkansen-sprockets/components/group'
 

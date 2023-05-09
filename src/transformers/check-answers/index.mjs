@@ -4,7 +4,11 @@ const log = debug('shinkansen-sprockets/transformers/check-answers')
 
 log('`shinkansen` is awake')
 
-export default function transform ({ changeAnswer: { text, href } }, components) {
+/**
+ * @param {SprocketsTypes.AnswerDefinitionType}
+ * @returns {FieldChangeType}
+ */
+export default function transform ({ changeAnswer: { text, href } }) {
   log('transform')
 
   return {

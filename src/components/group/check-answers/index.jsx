@@ -1,6 +1,14 @@
 /**
  * CheckAnswersGroup component
+ *
+ * @typedef {import('shinkansen-sprockets/components/group').GroupProps} GroupProps
+ *
+ * Group state
+ *
+ * @typedef {Object} GroupState
+ * @property {{}} [checkAnswers]
  */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -37,6 +45,9 @@ function render ({ params: { answer, changeAnswer: { href, text, ...changeAnswer
 }
 
 export default class CheckAnswersGroup extends Group {
+  /**
+   * @type {GroupState}
+   */
   state = {}
 
   getClassName () {
@@ -46,8 +57,9 @@ export default class CheckAnswersGroup extends Group {
   /**
    *  Compare latest 'props' with 'state' for changes to 'checkAnswers'
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   * @param {GroupProps} props   Latest props
+   * @param {GroupState} state   Current state
+   * @returns {{checkAnswers: {}}}
    */
   static getDerivedStateFromProps ({ checkAnswers }, { checkAnswers: C }) {
     return {
@@ -56,10 +68,11 @@ export default class CheckAnswersGroup extends Group {
   }
 
   /**
-   *  Compare latest 'props' with 'state' for changes to 'checkAnswers'
+   * Compare latest 'props' with 'state' for changes to 'checkAnswers'
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   * @param {GroupProps} props   Latest props
+   * @param {GroupState} state   Current state
+   * @returns {boolean}
    */
   shouldComponentUpdate (props, state) {
     const {

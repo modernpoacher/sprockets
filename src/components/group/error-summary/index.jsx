@@ -1,6 +1,14 @@
 /**
  * ErrorSummaryGroup component
+ *
+ * @typedef {import('shinkansen-sprockets/components/group').GroupProps} GroupProps
+ *
+ * Group state
+ *
+ * @typedef {Object} GroupState
+ * @property {{}} [errorSummary]
  */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -39,6 +47,9 @@ function render (error, index) {
 }
 
 export default class ErrorSummaryGroup extends Group {
+  /**
+   * @type {GroupState}
+   */
   state = {}
 
   getClassName () {
@@ -46,10 +57,11 @@ export default class ErrorSummaryGroup extends Group {
   }
 
   /**
-   *  Compare latest 'props' with 'state' for changes to 'errorSummary'
+   * Compare latest 'props' with 'state' for changes to 'errorSummary'
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   * @param {GroupProps} props   Latest props
+   * @param {GroupState} state   Current state
+   * @returns {GroupState}
    */
   static getDerivedStateFromProps ({ errorSummary }, { errorSummary: E }) {
     return {
@@ -58,10 +70,11 @@ export default class ErrorSummaryGroup extends Group {
   }
 
   /**
-   *  Compare latest 'props' with 'state' for changes to 'errorSummary'
+   * Compare latest 'props' with 'state' for changes to 'errorSummary'
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   * @param {GroupProps} props   Latest props
+   * @param {GroupState} state   Current state
+   * @returns {boolean}
    */
   shouldComponentUpdate (props, state) {
     const {

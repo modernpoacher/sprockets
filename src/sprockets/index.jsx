@@ -1,6 +1,9 @@
 /**
  * Sprocket component
+ *
+ * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
  */
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -22,6 +25,10 @@ export default class Sprocket extends Component {
     return 'sprocket'
   }
 
+  /**
+   * @param {SprocketProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       (props.children !== this.props.children) ||

@@ -4,8 +4,12 @@ import debug from 'debug'
 
 const log = debug('shinkansen-sprockets:components:group:check-answers')
 
-export default function SummaryTitle ({ answer: { title } }) {
-  log('SummaryTitle')
+/**
+ * @param {SprocketsTypes.AnswerDefinitionType}
+ * @returns {React.JSX.Element}
+ */
+export default function AnswerTitle ({ answer: { title } }) {
+  log('AnswerTitle')
 
   return (
     <dt className='answer-title'>
@@ -14,7 +18,7 @@ export default function SummaryTitle ({ answer: { title } }) {
   )
 }
 
-SummaryTitle.propTypes = {
+AnswerTitle.propTypes = {
   answer: PropTypes.shape({
     title: PropTypes.string.isRequired
   }).isRequired

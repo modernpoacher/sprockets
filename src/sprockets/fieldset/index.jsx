@@ -1,6 +1,9 @@
 /**
  * FieldsetSprocket component
+ *
+ * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
  */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -27,6 +30,10 @@ export default class FieldsetSprocket extends Sprocket {
     return classnames(super.getClassName(), { error: !!errorMessage }, 'fieldset')
   }
 
+  /**
+   * @param {SprocketProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||

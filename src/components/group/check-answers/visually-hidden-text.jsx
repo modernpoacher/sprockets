@@ -14,6 +14,8 @@ export default function VisuallyHiddenText ({ visuallyHiddenText }) {
       </span>
     )
   }
+
+  return null
 }
 
 VisuallyHiddenText.propTypes = {
