@@ -79,8 +79,8 @@ const plugins = [
         'shinkansen-sprockets/transformers/common': './src/transformers/common/index.mjs',
         'shinkansen-sprockets/transformers/error-message': './src/transformers/error-message/index.mjs',
         'shinkansen-sprockets/transformers/error-summary': './src/transformers/error-summary/index.mjs',
-        build: './build',
-        stories: './stories'
+        '#stories/errors': './stories/errors.mjs',
+        '#stories': './stories'
       }
     }
   ]

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import errors from 'stories/errors'
 import FieldsetSprocket from 'shinkansen-sprockets/sprockets/fieldset'
+import errors from '#stories/errors'
 
 export default {
-  title: 'Components/Fieldset',
+  title: 'Stories/Sprockets/Fieldset',
   component: FieldsetSprocket,
   argTypes: {
     errorMessage: {
