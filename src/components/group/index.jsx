@@ -46,9 +46,9 @@ export default class Group extends Component {
 Group.propTypes = {
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(
-      PropTypes.element
+      PropTypes.node
     )
   ])
 }

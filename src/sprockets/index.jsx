@@ -81,9 +81,9 @@ Sprocket.propTypes = {
   title: PropTypes.string,
   onChange: PropTypes.func,
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(
-      PropTypes.element
+      PropTypes.node
     )
   ])
 }
