@@ -1,11 +1,14 @@
 ## `shinkansen-sprockets`
 
-# Shinkansen Sprockets
+Shinkansen generates JSON Schema valid documents from user submissions with `<html />` forms.
 
-*Sprockets* are input groups for *React*.
+# Cogs
 
-*Sprockets* are consistent with the [GOV.UK Design System](https://design-system.service.gov.uk/) but also encourage composition and inheritance.
+_Sprockets_ are React components for input groups.
+
+_Sprockets_ are composed of _Cogs_ to provide named components for _Engine_.
 
 ## See also
 
-- [Shinkansen Cogs](https://github.com/modernpoacher/shinkansen-cogs)
+- [Cogs](https://github.com/modernpoacher/shinkansen-cogs)
+- [Engine](https://github.com/modernpoacher/shinkansen-engine)
