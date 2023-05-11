@@ -4,7 +4,6 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
 import equal from 'fast-deep-equal'
 
 import transform from 'shinkansen-sprockets/transformers/error-message'
@@ -38,10 +37,11 @@ export default class ErrorMessage extends Component {
   }
 
   /**
-   *  Convert latest 'props' to an Immutable.Map() and store in 'state'
+   *  Merge latest `props` to `state`
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   *  @param {{errorMessage?: SprocketsTypes.ErrorDefinitionType}} props   Latest props
+   *  @param {{errorMessage?: SprocketsTypes.ErrorDefinitionType}} state   Latest state
+   *  @returns {{errorMessage: SprocketsTypes.ErrorDefinitionType | void}}
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
     return {
@@ -50,10 +50,11 @@ export default class ErrorMessage extends Component {
   }
 
   /**
-   *  Compare latest 'props' via 'state' for changes to 'errorMessage'
+   *  Compare current and latest `state` for changes to `errorMessage`
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Latest state
+   *  @param {{errorMessage?: SprocketsTypes.ErrorDefinitionType}} props   Latest props
+   *  @param {{errorMessage?: SprocketsTypes.ErrorDefinitionType}} state   Latest state
+   *  @returns {boolean}
    */
   shouldComponentUpdate (props, state) {
     const {
