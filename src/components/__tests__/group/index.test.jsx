@@ -1,11 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import Group from 'shinkansen-sprockets/components/group'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 describe('shinkansen-sprockets/components/group', () => {
   describe('<Group />', () => {
@@ -54,8 +50,8 @@ describe('shinkansen-sprockets/components/group', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getClassName())
@@ -76,8 +72,8 @@ describe('shinkansen-sprockets/components/group', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
       })
 

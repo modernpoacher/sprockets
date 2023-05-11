@@ -1,7 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
@@ -9,8 +7,6 @@ import Title from 'shinkansen-sprockets/components/title'
 import Group from 'shinkansen-sprockets/components/group'
 
 import Sprocket from 'shinkansen-sprockets/sprockets'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -63,9 +59,10 @@ describe('shinkansen-sprockets/sprockets', () => {
         let instance
 
         beforeEach(() => {
-          const wrapper = shallow(component)
-
-          instance = wrapper.instance()
+          instance = (
+            renderer.create(component)
+              .getInstance()
+          )
         })
 
         describe('`getTitle`', () => {
@@ -118,9 +115,10 @@ describe('shinkansen-sprockets/sprockets', () => {
           <Sprocket title='MOCK TITLE' />
         )
 
-        const wrapper = shallow(component)
-
-        const instance = wrapper.instance()
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
 
         const mockTitle = {}
 
@@ -139,8 +137,8 @@ describe('shinkansen-sprockets/sprockets', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           const mockTitle = {}
@@ -159,8 +157,8 @@ describe('shinkansen-sprockets/sprockets', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           instance.setTitle()
@@ -177,9 +175,10 @@ describe('shinkansen-sprockets/sprockets', () => {
           <Sprocket group='MOCK TITLE' />
         )
 
-        const wrapper = shallow(component)
-
-        const instance = wrapper.instance()
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
 
         const mockGroup = {}
 
@@ -198,8 +197,8 @@ describe('shinkansen-sprockets/sprockets', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           const mockGroup = {}
@@ -218,8 +217,8 @@ describe('shinkansen-sprockets/sprockets', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           instance.setGroup()
@@ -244,8 +243,8 @@ describe('shinkansen-sprockets/sprockets', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           returnValue = instance.getClassName()
@@ -276,9 +275,10 @@ describe('shinkansen-sprockets/sprockets', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
       })
 
       describe('`props` have changed', () => {
@@ -317,9 +317,10 @@ describe('shinkansen-sprockets/sprockets', () => {
       beforeEach(() => {
         // jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
 
         instance.renderTitle()
       })
@@ -347,9 +348,10 @@ describe('shinkansen-sprockets/sprockets', () => {
       beforeEach(() => {
         // jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
 
         instance.renderGroup()
       })

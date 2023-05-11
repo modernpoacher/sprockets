@@ -1,14 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
 import Super from 'shinkansen-sprockets/sprockets'
 import Sprocket from 'shinkansen-sprockets/sprockets/fieldset'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -67,8 +63,8 @@ describe('shinkansen-sprockets/sprockets/fieldset', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()

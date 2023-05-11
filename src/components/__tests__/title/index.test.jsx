@@ -1,11 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import Title from 'shinkansen-sprockets/components/title'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('shinkansen-sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 
@@ -79,8 +75,8 @@ describe('shinkansen-sprockets/components/title', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           return expect(instance.hasTextContent())
@@ -95,8 +91,8 @@ describe('shinkansen-sprockets/components/title', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           return expect(instance.hasTextContent())
@@ -112,8 +108,8 @@ describe('shinkansen-sprockets/components/title', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getTextContent())
@@ -128,8 +124,8 @@ describe('shinkansen-sprockets/components/title', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getClassName())
@@ -148,8 +144,9 @@ describe('shinkansen-sprockets/components/title', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-        ).instance()
+          renderer.create(component)
+            .getInstance()
+        )
       })
 
       describe('`props` have changed', () => {
