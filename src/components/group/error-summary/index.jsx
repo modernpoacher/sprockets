@@ -109,7 +109,7 @@ export default class ErrorSummaryGroup extends Group {
 
 ErrorSummaryGroup.propTypes = {
   ...Group.propTypes,
-  errorSummary: PropTypes.array
+  errorSummary: PropTypes.arrayOf(PropTypes.shape())
 }
 
 ErrorSummaryGroup.defaultProps = {

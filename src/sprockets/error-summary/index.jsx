@@ -77,7 +77,7 @@ export default class ErrorSummarySprocket extends Sprocket {
 
 ErrorSummarySprocket.propTypes = {
   ...Sprocket.propTypes,
-  errorSummary: PropTypes.array
+  errorSummary: PropTypes.arrayOf(PropTypes.shape())
 }
 
 ErrorSummarySprocket.defaultProps = {

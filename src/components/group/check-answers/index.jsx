@@ -107,7 +107,7 @@ export default class CheckAnswersGroup extends Group {
 
 CheckAnswersGroup.propTypes = {
   ...Group.propTypes,
-  checkAnswers: PropTypes.array
+  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
 }
 
 CheckAnswersGroup.defaultProps = {

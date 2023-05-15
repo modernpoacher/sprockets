@@ -75,7 +75,7 @@ export default class CheckAnswersSprocket extends Sprocket {
 
 CheckAnswersSprocket.propTypes = {
   ...Sprocket.propTypes,
-  checkAnswers: PropTypes.array
+  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
 }
 
 CheckAnswersSprocket.defaultProps = {
