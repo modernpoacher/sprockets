@@ -27,7 +27,7 @@ import AnswerTitle from './answer-title.cjs'
 import AnswerValue from './answer-value.cjs'
 import ChangeAnswer from './change-answer.cjs'
 
-const log = debug('shinkansen-sprockets:components:group:check-answers')
+const log = debug('shinkansen-sprockets/components/group/check-answers')
 
 /* eslint-disable-next-line react/prop-types */
 function render ({ params: { answer, changeAnswer: { href, text, ...changeAnswer } } }, index) {

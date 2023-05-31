@@ -10,7 +10,7 @@ import TextContent from 'shinkansen-sprockets/components/common/text-content'
 
 import VisuallyHiddenText from './visually-hidden-text.cjs'
 
-const log = debug('shinkansen-sprockets:components:group:check-answers')
+const log = debug('shinkansen-sprockets/components/group/check-answers')
 
 /**
  * @param {SprocketsTypes.AnswerDefinitionType}
