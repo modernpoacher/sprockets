@@ -16,9 +16,9 @@ import {
   writeFile
 } from 'fs/promises'
 
-const log = debug('shinkansen-sprockets/build/gulp/transform')
+const log = debug('@modernpoacher/sprockets/build/gulp/transform')
 
-log('`shinkansen` is awake')
+log('`sprockets` is awake')
 
 // eslint-disable-next-line no-irregular-whitespace
 // \u200b

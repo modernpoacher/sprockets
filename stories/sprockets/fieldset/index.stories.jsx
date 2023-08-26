@@ -1,42 +1,23 @@
 import React from 'react'
 
-import FieldsetSprocket from 'shinkansen-sprockets/sprockets/fieldset'
-import errors from '#stories/errors'
+import FieldsetSprocket from '@modernpoacher/sprockets/sprockets/fieldset'
 
 export default {
   title: 'Stories/Sprockets/Fieldset',
-  component: FieldsetSprocket,
-  argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'radio',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          boolean: 'Boolean',
-          array: 'Array',
-          object: 'Object',
-          null: 'Null'
-        }
-      }
-    },
-    children: {
-      control: {
-        type: null
-      }
-    }
-  }
+  component: FieldsetSprocket
 }
 
-export const Fieldset = (args) => (
+export const Default = () => (
   <FieldsetSprocket
-    {...args}
+    title='Title'
+    description='Description'
+    errorMessage='Error message'
   />
 )
 
-Fieldset.args = {
-  title: 'Title',
-  description: 'Description'
-}
+export const NoErrors = (args) => (
+  <FieldsetSprocket
+    title='Title'
+    description='Description'
+  />
+)

@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
-const log = debug('shinkansen-sprockets/components/group/check-answers')
+const log = debug('@modernpoacher/sprockets/components/group/check-answers')
 
 /**
  * @param {SprocketsTypes.AnswerDefinitionType}
  * @returns {React.JSX.Element}
  */
-export default function AnswerTitle ({ answer: { title } }) {
+export default function AnswerTitle ({ title }) {
   log('AnswerTitle')
 
   return (
@@ -19,7 +19,5 @@ export default function AnswerTitle ({ answer: { title } }) {
 }
 
 AnswerTitle.propTypes = {
-  answer: PropTypes.shape({
-    title: PropTypes.string.isRequired
-  }).isRequired
+  title: PropTypes.string.isRequired
 }

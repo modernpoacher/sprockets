@@ -6,12 +6,8 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('@modernpoacher/sprockets/components/group/fieldset')
+const log = debug('@modernpoacher/sprockets/components/group/error-summary/error-item')
 
 log('`sprockets` is awake')
 
-const {
-  default: component
-} = require('./index.jsx')
-
-module.exports = component
+module.exports = require('./error-item.jsx')

@@ -1,7 +1,7 @@
 /**
  * Group component
  *
- * @typedef {import('shinkansen-sprockets/components/group').GroupProps} GroupProps
+ * @typedef {import('@modernpoacher/sprockets/components/group').GroupProps} GroupProps
  */
 
 import React, { Component } from 'react'

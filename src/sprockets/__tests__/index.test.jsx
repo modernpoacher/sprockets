@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-sprockets/components/title'
-import Group from 'shinkansen-sprockets/components/group'
+import Title from '@modernpoacher/sprockets/components/title'
+import Group from '@modernpoacher/sprockets/components/group'
 
-import Sprocket from 'shinkansen-sprockets/sprockets'
+import Sprocket from '@modernpoacher/sprockets/sprockets'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-sprockets/components/title')
-jest.mock('shinkansen-sprockets/components/group')
+jest.mock('@modernpoacher/sprockets/components/title')
+jest.mock('@modernpoacher/sprockets/components/group')
 
-describe('shinkansen-sprockets/sprockets', () => {
+describe('@modernpoacher/sprockets/sprockets', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (

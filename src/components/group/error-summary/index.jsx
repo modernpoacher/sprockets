@@ -1,50 +1,20 @@
 /**
  * ErrorSummaryGroup component
  *
- * @typedef {import('shinkansen-sprockets/components/group').GroupProps} GroupProps
+ * @typedef {import('@modernpoacher/sprockets/components/group').GroupProps} GroupProps
  *
  * Group state
  *
  * @typedef {Object} GroupState
- * @property {{}} [errorSummary]
+ * @property {{}} [children]
  */
 
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import debug from 'debug'
-
-import equal from 'fast-deep-equal'
 import classnames from 'classnames'
 
-import Group from 'shinkansen-sprockets/components/group'
-
-import transform from 'shinkansen-sprockets/transformers/error-summary'
-import {
-  getKey
-} from 'shinkansen-sprockets/transformers/common'
-
-import TextContent from 'shinkansen-sprockets/components/common/text-content'
-
-const log = debug('shinkansen-sprockets/components/group/error-summary')
-
-/* eslint-disable-next-line react/prop-types */
-function render (error, index) {
-  log('render')
-
-  const {
-    href,
-    text
-  } = transform(error)
-
-  return (
-    <li key={getKey(href, text, index)} className='error'>
-      <a href={href}>
-        <TextContent textContent={text} />
-      </a>
-    </li>
-  )
-}
+import Group from '@modernpoacher/sprockets/components/group'
 
 export default class ErrorSummaryGroup extends Group {
   /**
@@ -57,20 +27,20 @@ export default class ErrorSummaryGroup extends Group {
   }
 
   /**
-   * Compare latest 'props' with 'state' for changes to 'errorSummary'
+   * Compare latest 'props' with 'state' for changes to 'children'
    *
    * @param {GroupProps} props   Latest props
    * @param {GroupState} state   Current state
    * @returns {GroupState}
    */
-  static getDerivedStateFromProps ({ errorSummary }, { errorSummary: E }) {
+  static getDerivedStateFromProps ({ children: e }, { children: E }) {
     return {
-      errorSummary: equal(errorSummary, E) ? E : errorSummary
+      children: (e !== E) ? e : E
     }
   }
 
   /**
-   * Compare latest 'props' with 'state' for changes to 'errorSummary'
+   * Compare latest 'props' with 'state' for changes to 'children'
    *
    * @param {GroupProps} props   Latest props
    * @param {GroupState} state   Current state
@@ -78,11 +48,11 @@ export default class ErrorSummaryGroup extends Group {
    */
   shouldComponentUpdate (props, state) {
     const {
-      errorSummary: e
+      children: e
     } = state
 
     const {
-      errorSummary: E
+      children: E
     } = this.state
 
     return (e !== E)
@@ -90,15 +60,15 @@ export default class ErrorSummaryGroup extends Group {
 
   render () {
     const {
-      errorSummary
+      children
     } = this.props
 
-    if (errorSummary.length) {
+    if (children) {
       return (
         <ul
           className={this.getClassName()}
           ref={this.setDOMNode}>
-          {errorSummary.map(render)}
+          {children}
         </ul>
       )
     }
@@ -109,10 +79,14 @@ export default class ErrorSummaryGroup extends Group {
 
 ErrorSummaryGroup.propTypes = {
   ...Group.propTypes,
-  errorSummary: PropTypes.arrayOf(PropTypes.shape())
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 ErrorSummaryGroup.defaultProps = {
-  ...Group.defaultProps,
-  errorSummary: []
+  ...Group.defaultProps
 }

@@ -1,13 +1,13 @@
 require('@babel/register')({
   ignore: [
-    /node_modules\/(?!shinkansen|@modernpoacher)/
+    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
   ]
 })
 
 const debug = require('debug')
 
-const log = debug('shinkansen-sprockets/components/group/check-answers/visually-hidden-text')
+const log = debug('@modernpoacher/sprockets/components/group/check-answers/visually-hidden-text')
 
-log('`shinkansen` is awake')
+log('`sprockets` is awake')
 
 module.exports = require('./visually-hidden-text.jsx')

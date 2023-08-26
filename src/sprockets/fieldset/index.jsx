@@ -1,7 +1,7 @@
 /**
  * FieldsetSprocket component
  *
- * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
+ * @typedef {import('@modernpoacher/sprockets/sprockets').SprocketProps} SprocketProps
  */
 
 import React from 'react'
@@ -9,11 +9,11 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from 'shinkansen-sprockets/sprockets'
-import Title from 'shinkansen-sprockets/components/title/fieldset'
-import Description from 'shinkansen-sprockets/components/description/fieldset'
-import ErrorMessage from 'shinkansen-sprockets/components/error-message/fieldset'
-import Group from 'shinkansen-sprockets/components/group/fieldset'
+import Sprocket from '@modernpoacher/sprockets/sprockets'
+import Title from '@modernpoacher/sprockets/components/title/fieldset'
+import Description from '@modernpoacher/sprockets/components/description/fieldset'
+import ErrorMessage from '@modernpoacher/sprockets/components/error-message/fieldset'
+import Group from '@modernpoacher/sprockets/components/group/fieldset'
 
 export default class FieldsetSprocket extends Sprocket {
   getDescription = () => this.description

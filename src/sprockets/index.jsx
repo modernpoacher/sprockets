@@ -1,14 +1,14 @@
 /**
  * Sprocket component
  *
- * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
+ * @typedef {import('@modernpoacher/sprockets/sprockets').SprocketProps} SprocketProps
  */
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Title from 'shinkansen-sprockets/components/title'
-import Group from 'shinkansen-sprockets/components/group'
+import Title from '@modernpoacher/sprockets/components/title'
+import Group from '@modernpoacher/sprockets/components/group'
 
 function onChange () {
   /* */

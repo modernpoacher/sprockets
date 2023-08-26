@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "shinkansen-sprockets/*": [
+      "@modernpoacher/sprockets/*": [
         "src/*",
         "stories/*"
       ]

@@ -1,14 +1,14 @@
 require('@babel/register')({
   ignore: [
-    /node_modules\/(?!shinkansen|@modernpoacher)/
+    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
   ]
 })
 
 const debug = require('debug')
 
-const log = debug('shinkansen-sprockets/sprockets')
+const log = debug('@modernpoacher/sprockets/sprockets')
 
-log('`shinkansen` is awake')
+log('`sprockets` is awake')
 
 /**
  *  Has only default export

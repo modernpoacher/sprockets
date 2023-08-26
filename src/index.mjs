@@ -4,9 +4,9 @@ import CheckAnswersSprocket from './sprockets/check-answers/index.cjs'
 import ErrorSummarySprocket from './sprockets/error-summary/index.cjs'
 import FieldsetSprocket from './sprockets/fieldset/index.cjs'
 
-const log = debug('shinkansen-sprockets')
+const log = debug('@modernpoacher/sprockets')
 
-log('`shinkansen` is awake')
+log('`sprockets` is awake')
 
 export { default as CheckAnswersSprocket } from './sprockets/check-answers/index.cjs'
 export { default as ErrorSummarySprocket } from './sprockets/error-summary/index.cjs'

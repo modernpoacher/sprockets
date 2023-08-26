@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-sprockets/components/title'
-import Title from 'shinkansen-sprockets/components/title/fieldset'
+import Super from '@modernpoacher/sprockets/components/title'
+import Title from '@modernpoacher/sprockets/components/title/fieldset'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('shinkansen-sprockets/components/title/fieldset', () => {
+describe('@modernpoacher/sprockets/components/title/fieldset', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

@@ -1,7 +1,7 @@
 /**
  * CheckAnswersSprocket component
  *
- * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
+ * @typedef {import('@modernpoacher/sprockets/sprockets').SprocketProps} SprocketProps
  */
 
 import React from 'react'
@@ -9,9 +9,9 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from 'shinkansen-sprockets/sprockets'
-import Title from 'shinkansen-sprockets/components/title/check-answers'
-import Group from 'shinkansen-sprockets/components/group/check-answers'
+import Sprocket from '@modernpoacher/sprockets/sprockets'
+import Title from '@modernpoacher/sprockets/components/title/check-answers'
+import Group from '@modernpoacher/sprockets/components/group/check-answers'
 
 export default class CheckAnswersSprocket extends Sprocket {
   getClassName () {
@@ -25,7 +25,7 @@ export default class CheckAnswersSprocket extends Sprocket {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
-      (props.checkAnswers !== this.props.checkAnswers)
+      (props.children !== this.props.children)
     )
   }
 
@@ -44,23 +44,23 @@ export default class CheckAnswersSprocket extends Sprocket {
 
   renderGroup () {
     const {
-      checkAnswers
+      children
     } = this.props
 
     return (
       <Group
-        checkAnswers={checkAnswers}
-        ref={this.setGroup}
-      />
+        ref={this.setGroup}>
+        {children}
+      </Group>
     )
   }
 
   render () {
     const {
-      checkAnswers
+      children
     } = this.props
 
-    if (checkAnswers.length) {
+    if (children) {
       return (
         <div className={this.getClassName()}>
           {this.renderTitle()}
@@ -75,10 +75,14 @@ export default class CheckAnswersSprocket extends Sprocket {
 
 CheckAnswersSprocket.propTypes = {
   ...Sprocket.propTypes,
-  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 CheckAnswersSprocket.defaultProps = {
-  ...Sprocket.defaultProps,
-  checkAnswers: []
+  ...Sprocket.defaultProps
 }

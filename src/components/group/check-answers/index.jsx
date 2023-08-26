@@ -1,48 +1,20 @@
 /**
  * CheckAnswersGroup component
  *
- * @typedef {import('shinkansen-sprockets/components/group').GroupProps} GroupProps
+ * @typedef {import('@modernpoacher/sprockets/components/group').GroupProps} GroupProps
  *
  * Group state
  *
  * @typedef {Object} GroupState
- * @property {{}} [checkAnswers]
+ * @property {{}} [children]
  */
 
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import debug from 'debug'
-
-import equal from 'fast-deep-equal'
 import classnames from 'classnames'
 
-import Group from 'shinkansen-sprockets/components/group'
-
-import {
-  getKey
-} from 'shinkansen-sprockets/transformers/common'
-
-import AnswerTitle from './answer-title.cjs'
-import AnswerValue from './answer-value.cjs'
-import ChangeAnswer from './change-answer.cjs'
-
-const log = debug('shinkansen-sprockets/components/group/check-answers')
-
-/* eslint-disable-next-line react/prop-types */
-function render ({ params: { answer, changeAnswer: { href, text, ...changeAnswer } } }, index) {
-  log('render')
-
-  return (
-    <div key={getKey(href, text, index)} className='answer'>
-      <AnswerTitle answer={answer} />
-      <AnswerValue answer={answer} />
-      <ChangeAnswer
-        changeAnswer={{ ...changeAnswer, href, text }}
-      />
-    </div>
-  )
-}
+import Group from '@modernpoacher/sprockets/components/group'
 
 export default class CheckAnswersGroup extends Group {
   /**
@@ -55,20 +27,20 @@ export default class CheckAnswersGroup extends Group {
   }
 
   /**
-   *  Compare latest 'props' with 'state' for changes to 'checkAnswers'
+   *  Compare latest 'props' with 'state' for changes to 'children'
    *
    * @param {GroupProps} props   Latest props
    * @param {GroupState} state   Current state
-   * @returns {{checkAnswers: {}}}
+   * @returns {{children: {}}}
    */
-  static getDerivedStateFromProps ({ checkAnswers }, { checkAnswers: C }) {
+  static getDerivedStateFromProps ({ children: c }, { children: C }) {
     return {
-      checkAnswers: equal(checkAnswers, C) ? C : checkAnswers
+      children: (c !== C) ? c : C
     }
   }
 
   /**
-   * Compare latest 'props' with 'state' for changes to 'checkAnswers'
+   * Compare latest 'props' with 'state' for changes to 'children'
    *
    * @param {GroupProps} props   Latest props
    * @param {GroupState} state   Current state
@@ -76,11 +48,11 @@ export default class CheckAnswersGroup extends Group {
    */
   shouldComponentUpdate (props, state) {
     const {
-      checkAnswers: c
+      children: c
     } = state
 
     const {
-      checkAnswers: C
+      children: C
     } = this.state
 
     return (c !== C)
@@ -88,15 +60,15 @@ export default class CheckAnswersGroup extends Group {
 
   render () {
     const {
-      checkAnswers
+      children
     } = this.props
 
-    if (checkAnswers.length) {
+    if (children) {
       return (
         <dl
           className={this.getClassName()}
           ref={this.setDOMNode}>
-          {checkAnswers.map(render)}
+          {children}
         </dl>
       )
     }
@@ -107,10 +79,14 @@ export default class CheckAnswersGroup extends Group {
 
 CheckAnswersGroup.propTypes = {
   ...Group.propTypes,
-  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 CheckAnswersGroup.defaultProps = {
-  ...Group.defaultProps,
-  checkAnswers: []
+  ...Group.defaultProps
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
-const log = debug('shinkansen-sprockets/components/group/check-answers')
+const log = debug('@modernpoacher/sprockets/components/group/check-answers')
 
 /**
  * @param {string | string[]}
@@ -31,7 +31,7 @@ function getAnswerValue (value) {
  * @param {SprocketsTypes.AnswerDefinitionType}
  * @returns {React.JSX.Element}
  */
-export default function AnswerValue ({ answer: { value } }) {
+export default function AnswerValue ({ value }) {
   log('AnswerValue')
 
   return (
@@ -42,12 +42,10 @@ export default function AnswerValue ({ answer: { value } }) {
 }
 
 AnswerValue.propTypes = {
-  answer: PropTypes.shape({
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(
-        PropTypes.string
-      )
-    ]).isRequired
-  }).isRequired
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]).isRequired
 }

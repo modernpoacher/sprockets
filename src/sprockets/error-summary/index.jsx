@@ -1,7 +1,7 @@
 /**
  * ErrorSummarySprocket component
  *
- * @typedef {import('shinkansen-sprockets/sprockets').SprocketProps} SprocketProps
+ * @typedef {import('@modernpoacher/sprockets/sprockets').SprocketProps} SprocketProps
  */
 
 import React from 'react'
@@ -9,9 +9,9 @@ import PropTypes from 'prop-types'
 
 import classnames from 'classnames'
 
-import Sprocket from 'shinkansen-sprockets/sprockets'
-import Title from 'shinkansen-sprockets/components/title/error-summary'
-import Group from 'shinkansen-sprockets/components/group/error-summary'
+import Sprocket from '@modernpoacher/sprockets/sprockets'
+import Title from '@modernpoacher/sprockets/components/title/error-summary'
+import Group from '@modernpoacher/sprockets/components/group/error-summary'
 
 export default class ErrorSummarySprocket extends Sprocket {
   getClassName () {
@@ -25,7 +25,7 @@ export default class ErrorSummarySprocket extends Sprocket {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
-      (props.errorSummary !== this.props.errorSummary)
+      (props.children !== this.props.children)
     )
   }
 
@@ -44,23 +44,23 @@ export default class ErrorSummarySprocket extends Sprocket {
 
   renderGroup () {
     const {
-      errorSummary
+      children
     } = this.props
 
     return (
       <Group
-        errorSummary={errorSummary}
         ref={this.setGroup}>
+        {children}
       </Group>
     )
   }
 
   render () {
     const {
-      errorSummary
+      children
     } = this.props
 
-    if (errorSummary.length) {
+    if (children) {
       const className = this.getClassName()
 
       return (
@@ -77,10 +77,14 @@ export default class ErrorSummarySprocket extends Sprocket {
 
 ErrorSummarySprocket.propTypes = {
   ...Sprocket.propTypes,
-  errorSummary: PropTypes.arrayOf(PropTypes.shape())
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 ErrorSummarySprocket.defaultProps = {
-  ...Sprocket.defaultProps,
-  errorSummary: []
+  ...Sprocket.defaultProps
 }

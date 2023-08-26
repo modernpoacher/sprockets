@@ -34,7 +34,7 @@ declare namespace SprocketsTypes {
   }
 }
 
-declare module 'shinkansen-sprockets/sprockets' {
+declare module '@modernpoacher/sprockets/sprockets' {
   import React from 'react'
 
   export type SprocketProps = {
@@ -46,25 +46,25 @@ declare module 'shinkansen-sprockets/sprockets' {
   export default class Sprocket extends React.Component<SprocketProps> {}
 }
 
-declare module 'shinkansen-sprockets/sprockets/check-answers' {
-  import Sprocket from 'shinkansen-sprockets/sprockets'
+declare module '@modernpoacher/sprockets/sprockets/check-answers' {
+  import Sprocket from '@modernpoacher/sprockets/sprockets'
 
   export default class ErrorSummarySprocket extends Sprocket {}
 }
 
-declare module 'shinkansen-sprockets/sprockets/error-summary' {
-  import Sprocket from 'shinkansen-sprockets/sprockets'
+declare module '@modernpoacher/sprockets/sprockets/error-summary' {
+  import Sprocket from '@modernpoacher/sprockets/sprockets'
 
   export default class CheckAnswersSprocket extends Sprocket {}
 }
 
-declare module 'shinkansen-sprockets/sprockets/fieldset' {
-  import Sprocket from 'shinkansen-sprockets/sprockets'
+declare module '@modernpoacher/sprockets/sprockets/fieldset' {
+  import Sprocket from '@modernpoacher/sprockets/sprockets'
 
   export default class FieldsetSprocket extends Sprocket {}
 }
 
-declare module 'shinkansen-sprockets/components/common/text-content' {
+declare module '@modernpoacher/sprockets/components/common/text-content' {
   import React from 'react'
 
   export type TextContentProps = {
@@ -74,7 +74,7 @@ declare module 'shinkansen-sprockets/components/common/text-content' {
   export default function TextContent(props: TextContentProps): React.JSX.Element
 }
 
-declare module 'shinkansen-sprockets/components/description' {
+declare module '@modernpoacher/sprockets/components/description' {
   import React from 'react'
 
   export type DescriptionProps = {
@@ -84,13 +84,13 @@ declare module 'shinkansen-sprockets/components/description' {
   export default class Description extends React.Component<DescriptionProps> {}
 }
 
-declare module 'shinkansen-sprockets/components/description/fieldset' {
-  import Description from 'shinkansen-sprockets/components/description'
+declare module '@modernpoacher/sprockets/components/description/fieldset' {
+  import Description from '@modernpoacher/sprockets/components/description'
 
   export default class FieldsetDescription extends Description {}
 }
 
-declare module 'shinkansen-sprockets/components/error-message' {
+declare module '@modernpoacher/sprockets/components/error-message' {
   import React from 'react'
 
   export type ErrorMessageProps = {
@@ -100,13 +100,13 @@ declare module 'shinkansen-sprockets/components/error-message' {
   export default class ErrorMessage extends React.Component<ErrorMessageProps> {}
 }
 
-declare module 'shinkansen-sprockets/components/error-message/fieldset' {
-  import ErrorMessage from 'shinkansen-sprockets/components/error-message'
+declare module '@modernpoacher/sprockets/components/error-message/fieldset' {
+  import ErrorMessage from '@modernpoacher/sprockets/components/error-message'
 
   export default class FieldsetErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-sprockets/components/title' {
+declare module '@modernpoacher/sprockets/components/title' {
   import React from 'react'
 
   export type TitleProps = {
@@ -116,7 +116,7 @@ declare module 'shinkansen-sprockets/components/title' {
   export default class Title extends React.Component<TitleProps> {}
 }
 
-declare module 'shinkansen-sprockets/components/group' {
+declare module '@modernpoacher/sprockets/components/group' {
   import React from 'react'
 
   export type GroupProps = {
@@ -127,60 +127,44 @@ declare module 'shinkansen-sprockets/components/group' {
   export default class Group extends React.Component<GroupProps> {}
 }
 
-declare module 'shinkansen-sprockets/components/title/check-answers' {
-  import Title from 'shinkansen-sprockets/components/title'
+declare module '@modernpoacher/sprockets/components/title/check-answers' {
+  import Title from '@modernpoacher/sprockets/components/title'
 
   export default class CheckAnswersTitle extends Title {}
 }
 
-declare module 'shinkansen-sprockets/components/group/check-answers' {
-  import Group from 'shinkansen-sprockets/components/group'
+declare module '@modernpoacher/sprockets/components/group/check-answers' {
+  import Group from '@modernpoacher/sprockets/components/group'
 
   export default class CheckAnswersGroup extends Group {}
 }
 
-declare module 'shinkansen-sprockets/components/title/error-summary' {
-  import Title from 'shinkansen-sprockets/components/title'
+declare module '@modernpoacher/sprockets/components/title/error-summary' {
+  import Title from '@modernpoacher/sprockets/components/title'
 
   export default class ErrorSummaryTitle extends Title {}
 }
 
-declare module 'shinkansen-sprockets/components/group/error-summary' {
-  import Group from 'shinkansen-sprockets/components/group'
+declare module '@modernpoacher/sprockets/components/group/error-summary' {
+  import Group from '@modernpoacher/sprockets/components/group'
 
   export default class ErrorSummaryGroup extends Group {}
 }
 
-declare module 'shinkansen-sprockets/components/title/fieldset' {
-  import Title from 'shinkansen-sprockets/components/title'
+declare module '@modernpoacher/sprockets/components/title/fieldset' {
+  import Title from '@modernpoacher/sprockets/components/title'
 
   export default class FieldsetTitle extends Title {}
 }
 
-declare module 'shinkansen-sprockets/components/group/fieldset' {
-  import Group from 'shinkansen-sprockets/components/group'
+declare module '@modernpoacher/sprockets/components/group/fieldset' {
+  import Group from '@modernpoacher/sprockets/components/group'
 
   export default class FieldsetGroup extends Group {}
 }
 
-declare module 'shinkansen-sprockets/transformers/check-answers' {
-  export default function transform (answer: SprocketsTypes.AnswerDefinitionType): SprocketsTypes.FieldChangeType
-}
-
-declare module 'shinkansen-sprockets/transformers/error-message' {
-  export default function transform (error: SprocketsTypes.ErrorDefinitionType): SprocketsTypes.FieldErrorType
-}
-
-declare module 'shinkansen-sprockets/transformers/error-summary' {
-  export default function transform (error: SprocketsTypes.ErrorDefinitionType): SprocketsTypes.FieldErrorType
-}
-
-declare module 'shinkansen-sprockets/transformers/common' {
-  export function getKey(href: string, text: string, index: number): string
-}
-
-declare module 'shinkansen-sprockets' {
-  export { default as CheckAnswersSprocket } from 'shinkansen-sprockets/sprockets/check-answers'
-  export { default as ErrorSummarySprocket } from 'shinkansen-sprockets/sprockets/error-summary'
-  export { default as FieldsetSprocket } from 'shinkansen-sprockets/sprockets/fieldset'
+declare module '@modernpoacher/sprockets' {
+  export { default as CheckAnswersSprocket } from '@modernpoacher/sprockets/sprockets/check-answers'
+  export { default as ErrorSummarySprocket } from '@modernpoacher/sprockets/sprockets/error-summary'
+  export { default as FieldsetSprocket } from '@modernpoacher/sprockets/sprockets/fieldset'
 }

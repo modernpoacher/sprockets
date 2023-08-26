@@ -3,12 +3,13 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-sprockets/components/group'
-import Group from 'shinkansen-sprockets/components/group/error-summary'
+import Super from '@modernpoacher/sprockets/components/group'
+import Group from '@modernpoacher/sprockets/components/group/error-summary'
+import GroupItem from '@modernpoacher/sprockets/components/group/error-summary/error-item'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('shinkansen-sprockets/components/group/error-summary', () => {
+describe('@modernpoacher/sprockets/components/group/error-summary', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
@@ -32,9 +33,12 @@ describe('shinkansen-sprockets/components/group/error-summary', () => {
       it('renders', () => {
         const component = (
           <Group
-            onChange={jest.fn()}
-            errorSummary={[{ type: 'UNKNOWN', params: {} }]}
-          />
+            onChange={jest.fn()}>
+            <GroupItem
+              text='MOCK ERROR TEXT'
+              href='#mock-error-href'
+            />
+          </Group>
         )
 
         return expect(renderer.create(component).toJSON())

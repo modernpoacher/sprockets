@@ -5,21 +5,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from 'shinkansen-sprockets/components/common/text-content'
+import TextContent from '@modernpoacher/sprockets/components/common/text-content'
 
 export default class Description extends Component {
-  hasTextContent () {
-    const { description } = this.props
-
-    return !!description
-  }
-
-  getTextContent () {
-    const { description } = this.props
-
-    return description
-  }
-
   getClassName () {
     return 'description'
   }
@@ -30,25 +18,13 @@ export default class Description extends Component {
     )
   }
 
-  renderTextContent () {
-    if (this.hasTextContent()) {
-      const textContent = this.getTextContent()
-
-      return (
-        <TextContent textContent={textContent} />
-      )
-    }
-
-    return null
-  }
-
   render () {
     const { description } = this.props
 
     if (description) {
       return (
         <span className={this.getClassName()}>
-          {this.renderTextContent()}
+          <TextContent textContent={description} />
         </span>
       )
     }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-sprockets/components/group/error-summary <Group /> With additional props renders 1`] = `
+exports[`@modernpoacher/sprockets/components/group/error-summary <Group /> With additional props renders 1`] = `
 <ul
   className="MOCK CLASSNAME"
 >
@@ -8,16 +8,16 @@ exports[`shinkansen-sprockets/components/group/error-summary <Group /> With addi
     className="error"
   >
     <a
-      href="#"
+      href="#mock-error-href"
     >
       <span
         className="text-content"
       >
-        Unknown
+        MOCK ERROR TEXT
       </span>
     </a>
   </li>
 </ul>
 `;
 
-exports[`shinkansen-sprockets/components/group/error-summary <Group /> With required props renders 1`] = `null`;
+exports[`@modernpoacher/sprockets/components/group/error-summary <Group /> With required props renders 1`] = `null`;
