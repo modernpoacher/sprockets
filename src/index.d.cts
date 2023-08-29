@@ -39,7 +39,8 @@ declare module '@modernpoacher/sprockets/sprockets' {
 
   export type SprocketProps = {
     title: string
-    onChange: SprocketsTypes.OnChangeType
+    onChange: SprocketsTypes.OnChangeType,
+    groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
 
@@ -120,7 +121,8 @@ declare module '@modernpoacher/sprockets/components/group' {
   import React from 'react'
 
   export type GroupProps = {
-    onChange: SprocketsTypes.OnChangeType
+    onChange: SprocketsTypes.OnChangeType,
+    groupRef: object,
     children: React.JSX.Element | React.JSX.Element[]
   }
 

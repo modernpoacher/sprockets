@@ -37,7 +37,6 @@ export default class ErrorSummarySprocket extends Sprocket {
     return (
       <Title
         title={title}
-        ref={this.setTitle}
       />
     )
   }
@@ -48,8 +47,7 @@ export default class ErrorSummarySprocket extends Sprocket {
     } = this.props
 
     return (
-      <Group
-        ref={this.setGroup}>
+      <Group>
         {children}
       </Group>
     )

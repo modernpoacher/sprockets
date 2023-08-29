@@ -50,7 +50,6 @@ export default class FieldsetSprocket extends Sprocket {
     return (
       <Title
         title={title}
-        ref={this.setTitle}
       />
     )
   }
@@ -63,7 +62,6 @@ export default class FieldsetSprocket extends Sprocket {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -76,7 +74,6 @@ export default class FieldsetSprocket extends Sprocket {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -89,8 +86,7 @@ export default class FieldsetSprocket extends Sprocket {
 
     return (
       <Group
-        onChange={onChange}
-        ref={this.setGroup}>
+        onChange={onChange}>
         {this.renderTitle()}
         {this.renderDescription()}
         {this.renderErrorMessage()}

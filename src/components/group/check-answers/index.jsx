@@ -60,6 +60,7 @@ export default class CheckAnswersGroup extends Group {
 
   render () {
     const {
+      groupRef,
       children
     } = this.props
 
@@ -67,7 +68,7 @@ export default class CheckAnswersGroup extends Group {
       return (
         <dl
           className={this.getClassName()}
-          ref={this.setDOMNode}>
+          ref={groupRef}>
           {children}
         </dl>
       )

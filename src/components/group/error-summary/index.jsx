@@ -60,6 +60,7 @@ export default class ErrorSummaryGroup extends Group {
 
   render () {
     const {
+      groupRef,
       children
     } = this.props
 
@@ -67,7 +68,7 @@ export default class ErrorSummaryGroup extends Group {
       return (
         <ul
           className={this.getClassName()}
-          ref={this.setDOMNode}>
+          ref={groupRef}>
           {children}
         </ul>
       )
