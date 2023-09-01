@@ -10,10 +10,10 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Sprocket from '@modernpoacher/sprockets/sprockets'
-import Title from '@modernpoacher/sprockets/components/title/fieldset'
-import Description from '@modernpoacher/sprockets/components/description/fieldset'
-import ErrorMessage from '@modernpoacher/sprockets/components/error-message/fieldset'
-import Group from '@modernpoacher/sprockets/components/group/fieldset'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Group from './group/index.jsx'
 
 export default class FieldsetSprocket extends Sprocket {
   getDescription = () => this.description

@@ -4,11 +4,11 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/title'
-import Title from '@modernpoacher/sprockets/components/title/fieldset'
+import Title from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/title/fieldset', () => {
+describe('@modernpoacher/sprockets/components/title/error-summary', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
@@ -66,7 +66,7 @@ describe('@modernpoacher/sprockets/components/title/fieldset', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'error-summary')
       })
 
       it('returns the classname', () => {

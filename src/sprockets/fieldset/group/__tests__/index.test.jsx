@@ -3,16 +3,16 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/sprockets/components/title'
-import Title from '@modernpoacher/sprockets/components/title/error-summary'
+import Super from '@modernpoacher/sprockets/components/group'
+import Group from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/title/error-summary', () => {
-  describe('<Title />', () => {
+describe('@modernpoacher/sprockets/components/group/fieldset', () => {
+  describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
-        <Title />
+        <Group />
       )
 
       it('renders', () => {
@@ -22,7 +22,7 @@ describe('@modernpoacher/sprockets/components/title/error-summary', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Title.prototype.getClassName)
+          return expect(Group.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -30,13 +30,8 @@ describe('@modernpoacher/sprockets/components/title/error-summary', () => {
 
     describe('With additional props', () => {
       it('renders', () => {
-        jest.spyOn(Title.prototype, 'hasTextContent').mockReturnValue(true)
-        jest.spyOn(Title.prototype, 'getTextContent')
-        jest.spyOn(Title.prototype, 'renderTextContent').mockReturnValue('MOCK RENDER CONTENT')
-
         const component = (
-          <Title
-            title='MOCK TITLE'
+          <Group
             onChange={jest.fn()}
           />
         )
@@ -53,7 +48,7 @@ describe('@modernpoacher/sprockets/components/title/error-summary', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Title />
+          <Group />
         )
 
         const instance = (
@@ -66,7 +61,7 @@ describe('@modernpoacher/sprockets/components/title/error-summary', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'error-summary')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
       })
 
       it('returns the classname', () => {

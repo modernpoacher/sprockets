@@ -3,16 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/sprockets/components/title'
-import Title from '@modernpoacher/sprockets/components/title/check-answers'
+import Super from '@modernpoacher/sprockets/components/group'
+import Group from '../index.jsx'
+import GroupItem from '../error-item.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/title/check-answers', () => {
-  describe('<Title />', () => {
+describe('@modernpoacher/sprockets/components/group/error-summary', () => {
+  describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
-        <Title />
+        <Group />
       )
 
       it('renders', () => {
@@ -22,7 +23,7 @@ describe('@modernpoacher/sprockets/components/title/check-answers', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Title.prototype.getClassName)
+          return expect(Group.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -30,15 +31,14 @@ describe('@modernpoacher/sprockets/components/title/check-answers', () => {
 
     describe('With additional props', () => {
       it('renders', () => {
-        jest.spyOn(Title.prototype, 'hasTextContent').mockReturnValue(true)
-        jest.spyOn(Title.prototype, 'getTextContent')
-        jest.spyOn(Title.prototype, 'renderTextContent').mockReturnValue('MOCK RENDER CONTENT')
-
         const component = (
-          <Title
-            title='MOCK TITLE'
-            onChange={jest.fn()}
-          />
+          <Group
+            onChange={jest.fn()}>
+            <GroupItem
+              text='MOCK ERROR TEXT'
+              href='#mock-error-href'
+            />
+          </Group>
         )
 
         return expect(renderer.create(component).toJSON())
@@ -53,7 +53,7 @@ describe('@modernpoacher/sprockets/components/title/check-answers', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Title />
+          <Group />
         )
 
         const instance = (
@@ -66,7 +66,7 @@ describe('@modernpoacher/sprockets/components/title/check-answers', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'check-answers')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'error-summary')
       })
 
       it('returns the classname', () => {

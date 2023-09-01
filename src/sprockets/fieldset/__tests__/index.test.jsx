@@ -8,8 +8,8 @@ import Sprocket from '@modernpoacher/sprockets/sprockets/fieldset'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/sprockets/components/title/fieldset')
-jest.mock('@modernpoacher/sprockets/components/group/fieldset')
+jest.mock('../title/index.jsx')
+jest.mock('../group/index.jsx')
 
 describe('@modernpoacher/sprockets/sprockets/fieldset', () => {
   describe('<Sprocket />', () => {

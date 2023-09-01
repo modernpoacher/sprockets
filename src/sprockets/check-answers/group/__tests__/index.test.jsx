@@ -4,11 +4,16 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/group'
-import Group from '@modernpoacher/sprockets/components/group/fieldset'
+import Group from '../index.jsx'
+import GroupItem from '../answer-item.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/group/fieldset', () => {
+jest.mock('../answer-title.jsx', () => () => 'MOCK ANSWER TITLE')
+jest.mock('../answer-value.jsx', () => () => 'MOCK ANSWER VALUE')
+jest.mock('../change-answer.jsx', () => () => 'MOCK CHANGE ANSWER')
+
+describe('@modernpoacher/sprockets/components/group/check-answers', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
@@ -32,8 +37,19 @@ describe('@modernpoacher/sprockets/components/group/fieldset', () => {
       it('renders', () => {
         const component = (
           <Group
-            onChange={jest.fn()}
-          />
+            onChange={jest.fn()}>
+            <GroupItem
+              answer={{
+                title: 'MOCK ANSWER TITLE',
+                value: 'MOCK ANSWER VALUE'
+              }}
+              changeAnswer={{
+                text: 'MOCK CHANGE ANSWER TEXT',
+                href: '#mock-change-answer-href',
+                visuallyHiddenText: 'MOCK VISUALLY HIDDEN TEXT'
+              }}
+            />
+          </Group>
         )
 
         return expect(renderer.create(component).toJSON())
@@ -61,7 +77,7 @@ describe('@modernpoacher/sprockets/components/group/fieldset', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'check-answers')
       })
 
       it('returns the classname', () => {

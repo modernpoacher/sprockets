@@ -3,21 +3,16 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/sprockets/components/group'
-import Group from '@modernpoacher/sprockets/components/group/check-answers'
-import GroupItem from '@modernpoacher/sprockets/components/group/check-answers/answer-item'
+import Super from '@modernpoacher/sprockets/components/title'
+import Title from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/sprockets/components/group/check-answers/answer-title', () => () => 'MOCK ANSWER TITLE')
-jest.mock('@modernpoacher/sprockets/components/group/check-answers/answer-value', () => () => 'MOCK ANSWER VALUE')
-jest.mock('@modernpoacher/sprockets/components/group/check-answers/change-answer', () => () => 'MOCK CHANGE ANSWER')
-
-describe('@modernpoacher/sprockets/components/group/check-answers', () => {
-  describe('<Group />', () => {
+describe('@modernpoacher/sprockets/components/title/fieldset', () => {
+  describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
-        <Group />
+        <Title />
       )
 
       it('renders', () => {
@@ -27,7 +22,7 @@ describe('@modernpoacher/sprockets/components/group/check-answers', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Group.prototype.getClassName)
+          return expect(Title.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -35,21 +30,15 @@ describe('@modernpoacher/sprockets/components/group/check-answers', () => {
 
     describe('With additional props', () => {
       it('renders', () => {
+        jest.spyOn(Title.prototype, 'hasTextContent').mockReturnValue(true)
+        jest.spyOn(Title.prototype, 'getTextContent')
+        jest.spyOn(Title.prototype, 'renderTextContent').mockReturnValue('MOCK RENDER CONTENT')
+
         const component = (
-          <Group
-            onChange={jest.fn()}>
-            <GroupItem
-              answer={{
-                title: 'MOCK ANSWER TITLE',
-                value: 'MOCK ANSWER VALUE'
-              }}
-              changeAnswer={{
-                text: 'MOCK CHANGE ANSWER TEXT',
-                href: '#mock-change-answer-href',
-                visuallyHiddenText: 'MOCK VISUALLY HIDDEN TEXT'
-              }}
-            />
-          </Group>
+          <Title
+            title='MOCK TITLE'
+            onChange={jest.fn()}
+          />
         )
 
         return expect(renderer.create(component).toJSON())
@@ -64,7 +53,7 @@ describe('@modernpoacher/sprockets/components/group/check-answers', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Group />
+          <Title />
         )
 
         const instance = (
@@ -77,7 +66,7 @@ describe('@modernpoacher/sprockets/components/group/check-answers', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'check-answers')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'fieldset')
       })
 
       it('returns the classname', () => {

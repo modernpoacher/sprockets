@@ -10,8 +10,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Sprocket from '@modernpoacher/sprockets/sprockets'
-import Title from '@modernpoacher/sprockets/components/title/check-answers'
-import Group from '@modernpoacher/sprockets/components/group/check-answers'
+import Title from './title/index.jsx'
+import Group from './group/index.jsx'
 
 export default class CheckAnswersSprocket extends Sprocket {
   getClassName () {
