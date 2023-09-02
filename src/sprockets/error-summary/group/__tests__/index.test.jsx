@@ -9,7 +9,7 @@ import GroupItem from '../error-item.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/group/error-summary', () => {
+describe('@modernpoacher/sprockets/sprockets/error-summary/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

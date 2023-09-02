@@ -8,7 +8,7 @@ import Title from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/title/check-answers', () => {
+describe('@modernpoacher/sprockets/sprockets/check-answers/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

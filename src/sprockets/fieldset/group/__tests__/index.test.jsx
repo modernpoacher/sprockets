@@ -8,7 +8,7 @@ import Group from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/components/group/fieldset', () => {
+describe('@modernpoacher/sprockets/fieldset/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

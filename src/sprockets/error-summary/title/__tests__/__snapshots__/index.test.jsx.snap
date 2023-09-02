@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/sprockets/components/title/error-summary <Title /> With additional props renders 1`] = `
+exports[`@modernpoacher/sprockets/sprockets/error-summary/title <Title /> With additional props renders 1`] = `
 <h2
   className="MOCK CLASSNAME"
 >
@@ -8,4 +8,4 @@ exports[`@modernpoacher/sprockets/components/title/error-summary <Title /> With 
 </h2>
 `;
 
-exports[`@modernpoacher/sprockets/components/title/error-summary <Title /> With required props renders 1`] = `null`;
+exports[`@modernpoacher/sprockets/sprockets/error-summary/title <Title /> With required props renders 1`] = `null`;

@@ -6,7 +6,7 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('@modernpoacher/sprockets/components/group/check-answers/visually-hidden-text')
+const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group/visually-hidden-text')
 
 log('`sprockets` is awake')
 

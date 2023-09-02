@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
-const log = debug('@modernpoacher/sprockets/components/group/check-answers')
+const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group')
 
 export default function VisuallyHiddenText ({ visuallyHiddenText }) {
   log('VisuallyHiddenText')

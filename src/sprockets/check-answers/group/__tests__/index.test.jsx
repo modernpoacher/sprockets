@@ -13,7 +13,7 @@ jest.mock('../answer-title.jsx', () => () => 'MOCK ANSWER TITLE')
 jest.mock('../answer-value.jsx', () => () => 'MOCK ANSWER VALUE')
 jest.mock('../change-answer.jsx', () => () => 'MOCK CHANGE ANSWER')
 
-describe('@modernpoacher/sprockets/components/group/check-answers', () => {
+describe('@modernpoacher/sprockets/check-answers/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

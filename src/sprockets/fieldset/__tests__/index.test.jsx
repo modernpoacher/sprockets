@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/sprockets'
-import Sprocket from '@modernpoacher/sprockets/sprockets/fieldset'
+import Sprocket from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

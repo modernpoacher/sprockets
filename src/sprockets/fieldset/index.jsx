@@ -16,12 +16,6 @@ import ErrorMessage from './error-message/index.jsx'
 import Group from './group/index.jsx'
 
 export default class FieldsetSprocket extends Sprocket {
-  getDescription = () => this.description
-  getErrorMessage = () => this.errorMessage
-
-  setDescription = (description) => !!(this.description = description) || delete this.description
-  setErrorMessage = (errorMessage) => !!(this.errorMessage = errorMessage) || delete this.errorMessage
-
   getClassName () {
     const {
       errorMessage

@@ -10,7 +10,7 @@ import TextContent from '@modernpoacher/sprockets/components/common/text-content
 
 import VisuallyHiddenText from './visually-hidden-text.cjs'
 
-const log = debug('@modernpoacher/sprockets/components/group/check-answers')
+const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group/change-answer')
 
 /**
  * @param {SprocketsTypes.AnswerDefinitionType}

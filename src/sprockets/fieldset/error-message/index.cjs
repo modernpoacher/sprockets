@@ -6,7 +6,7 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('@modernpoacher/sprockets/components/error-message/fieldset')
+const log = debug('@modernpoacher/sprockets/sprockets/fieldset/error-message')
 
 log('`sprockets` is awake')
 
