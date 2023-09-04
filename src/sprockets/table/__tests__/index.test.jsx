@@ -11,7 +11,7 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 jest.mock('../title/index.jsx')
 jest.mock('../group/index.jsx')
 
-describe('@modernpoacher/sprockets/sprockets/fieldset', () => {
+describe('@modernpoacher/sprockets/sprockets/table', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (
@@ -26,27 +26,6 @@ describe('@modernpoacher/sprockets/sprockets/fieldset', () => {
       describe('`getClassName`', () => {
         it('is defined', () => {
           return expect(Sprocket.prototype.getClassName)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderTitle`', () => {
-        it('is defined', () => {
-          return expect(Sprocket.prototype.renderTitle)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderDescription`', () => {
-        it('is defined', () => {
-          return expect(Sprocket.prototype.renderDescription)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderErrorMessage`', () => {
-        it('is defined', () => {
-          return expect(Sprocket.prototype.renderErrorMessage)
             .toBeDefined()
         })
       })
@@ -93,7 +72,7 @@ describe('@modernpoacher/sprockets/sprockets/fieldset', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', { error: false }, 'fieldset')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'table')
       })
 
       it('returns the classname', () => {

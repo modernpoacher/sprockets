@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 
 import CheckAnswersSprocket from '@modernpoacher/sprockets/sprockets/check-answers'
-import AnswerItem from '@modernpoacher/sprockets/components/group/check-answers/answer-item'
+import AnswerItem from '@modernpoacher/sprockets/sprockets/check-answers/group/answer-item'
 
 export default {
   title: 'Stories/Sprockets/Check Answers',

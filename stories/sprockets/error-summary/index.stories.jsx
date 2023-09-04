@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 
 import ErrorSummarySprocket from '@modernpoacher/sprockets/sprockets/error-summary'
-import ErrorItem from '@modernpoacher/sprockets/components/group/error-summary/error-item'
+import ErrorItem from '@modernpoacher/sprockets/sprockets/error-summary/group/error-item'
 
 export default {
   title: 'Stories/Sprockets/Error Summary',
