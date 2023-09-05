@@ -84,11 +84,11 @@ export default class TableGroup extends Group {
           {head.length && (
             <thead>
               <tr>
-              {head.map(({ text }, i) => (
-                <th key={i}>
-                  {text}
-                </th>
-              ))}
+                {head.map(({ text }, i) => (
+                  <th key={i}>
+                    {text}
+                  </th>
+                ))}
               </tr>
             </thead>
           )}
