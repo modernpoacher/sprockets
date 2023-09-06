@@ -15,7 +15,7 @@ export const Default = () => (
   />
 )
 
-export const NoErrors = (args) => (
+export const NoErrors = () => (
   <FieldsetSprocket
     title='Title'
     description='Description'

@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`@modernpoacher/sprockets/sprockets/table <Sprocket /> With additional props renders 1`] = `null`;
-
-exports[`@modernpoacher/sprockets/sprockets/table <Sprocket /> With required props renders 1`] = `null`;
