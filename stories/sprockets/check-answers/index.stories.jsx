@@ -18,25 +18,29 @@ export default {
   ]
 }
 
-export const Default = () => (
-  <CheckAnswersSprocket
-    title='Default'>
-    <AnswerItem
-      answer={{ title: 'Title', value: 'Value' }}
-      changeAnswer={{ text: 'Link text', href: '#cog-route', visuallyHiddenText: 'Visually hidden text' }}
-    />
-  </CheckAnswersSprocket>
-)
+export function Default () {
+  return (
+    <CheckAnswersSprocket
+      title='Default'>
+      <AnswerItem
+        answer={{ title: 'Title', value: 'Value' }}
+        changeAnswer={{ text: 'Link text', href: '#cog-route', visuallyHiddenText: 'Visually hidden text' }}
+      />
+    </CheckAnswersSprocket>
+  )
+}
 
 Default.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }
 }
 
-export const NoAnswers = () => (
-  <CheckAnswersSprocket
-    title='No Answers'
-  />
-)
+export function NoAnswers () {
+  return (
+    <CheckAnswersSprocket
+      title='No Answers'
+    />
+  )
+}
 
 NoAnswers.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }

@@ -7,17 +7,21 @@ export default {
   component: FieldsetSprocket
 }
 
-export const Default = () => (
-  <FieldsetSprocket
-    title='Title'
-    description='Description'
-    errorMessage='Error message'
-  />
-)
+export function Default () {
+  return (
+    <FieldsetSprocket
+      title='Title'
+      description='Description'
+      errorMessage='Error message'
+    />
+  )
+}
 
-export const NoErrors = () => (
-  <FieldsetSprocket
-    title='Title'
-    description='Description'
-  />
-)
+export function NoErrors () {
+  return (
+    <FieldsetSprocket
+      title='Title'
+      description='Description'
+    />
+  )
+}

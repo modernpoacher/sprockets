@@ -18,22 +18,29 @@ export default {
   ]
 }
 
-export const Default = () => (
-  <ErrorSummarySprocket
-    title='Default'>
-    <ErrorItem text='Error description' href='#cog-id' />
-  </ErrorSummarySprocket>
-)
+export function Default () {
+  return (
+    <ErrorSummarySprocket
+      title='Default'>
+      <ErrorItem
+        text='Error description'
+        href='#cog-id'
+      />
+    </ErrorSummarySprocket>
+  )
+}
 
 Default.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }
 }
 
-export const NoErrors = () => (
-  <ErrorSummarySprocket
-    title='No Errors'
-  />
-)
+export function NoErrors () {
+  return (
+    <ErrorSummarySprocket
+      title='No Errors'
+    />
+  )
+}
 
 NoErrors.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }
