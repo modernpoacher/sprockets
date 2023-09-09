@@ -6,8 +6,12 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group/visually-hidden-text')
+const log = debug('@modernpoacher/sprockets/components/common/visually-hidden-text')
 
 log('`sprockets` is awake')
 
-module.exports = require('./visually-hidden-text.jsx')
+const {
+  default: component
+} = require('./index.jsx')
+
+module.exports = component

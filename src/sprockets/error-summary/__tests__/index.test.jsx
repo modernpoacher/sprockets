@@ -11,7 +11,7 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 jest.mock('../title/index.jsx')
 jest.mock('../group/index.jsx')
 
-describe('@modernpoacher/sprockets/sprockets/table', () => {
+describe('@modernpoacher/sprockets/sprockets/error-summary', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (
