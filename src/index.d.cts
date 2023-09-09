@@ -1,7 +1,7 @@
 declare namespace SprocketsTypes {
   export type OnChangeType = () => void
 
-  export type AnswerDefinitionType = {
+  export interface AnswerDefinitionType {
     answer: {
       title: string
       value: string | string[]
@@ -12,42 +12,22 @@ declare namespace SprocketsTypes {
       visuallyHiddenText?: string
     }
   }
-
-  export type ErrorDefinitionType = {
-    type: string,
-    uri: string,
-    params: {
-      expectedType: string
-    }
-  }
-
-  export type ComponentsType = {}
-
-  export type FieldChangeType = {
-    text: string,
-    href: string
-  }
-
-  export type FieldErrorType = {
-    text: string,
-    href: string
-  }
 }
 
 declare module '@modernpoacher/sprockets/components/common/text-content' {
-  import React from 'react'
+  import type React from 'react'
 
-  export type TextContentProps = {
+  export interface TextContentProps {
     textContent: string
   }
 
-  export default function TextContent(props: TextContentProps): React.JSX.Element
+  export default function TextContent (props: TextContentProps): React.JSX.Element
 }
 
 declare module '@modernpoacher/sprockets/components/description' {
   import React from 'react'
 
-  export type DescriptionProps = {
+  export interface DescriptionProps {
     description: string
   }
 
@@ -57,7 +37,7 @@ declare module '@modernpoacher/sprockets/components/description' {
 declare module '@modernpoacher/sprockets/components/error-message' {
   import React from 'react'
 
-  export type ErrorMessageProps = {
+  export interface ErrorMessageProps {
     errorMessage: string
   }
 
@@ -67,7 +47,7 @@ declare module '@modernpoacher/sprockets/components/error-message' {
 declare module '@modernpoacher/sprockets/components/title' {
   import React from 'react'
 
-  export type TitleProps = {
+  export interface TitleProps {
     title: string
   }
 
@@ -77,9 +57,9 @@ declare module '@modernpoacher/sprockets/components/title' {
 declare module '@modernpoacher/sprockets/components/group' {
   import React from 'react'
 
-  export type GroupProps = {
-    onChange: SprocketsTypes.OnChangeType,
-    groupRef: object,
+  export interface GroupProps {
+    onChange: SprocketsTypes.OnChangeType
+    groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
 
@@ -155,10 +135,10 @@ declare module '@modernpoacher/sprockets/sprockets/fieldset' {
 declare module '@modernpoacher/sprockets/sprockets' {
   import React from 'react'
 
-  export type SprocketProps = {
-    title: string,
-    onChange: SprocketsTypes.OnChangeType,
-    groupRef: object,
+  export interface SprocketProps {
+    title: string
+    onChange: SprocketsTypes.OnChangeType
+    groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
 
