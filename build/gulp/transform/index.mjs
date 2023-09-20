@@ -30,7 +30,7 @@ const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/g
 const SOURCE_PATH = path.relative(currentDir, sourcePath)
 const TARGET_PATH = path.relative(currentDir, targetPath)
 
-async function getCss (css = '') {
+async function getCss () {
   const filePath = path.join(SOURCE_PATH, 'css/preview-head.css')
   const fileData = await readFile(filePath, 'utf8')
 
