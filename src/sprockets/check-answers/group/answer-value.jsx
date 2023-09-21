@@ -1,8 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import debug from 'debug'
-
-const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group')
 
 /**
  * @param {string | string[]}
@@ -32,8 +29,6 @@ function getAnswerValue (value) {
  * @returns {React.JSX.Element}
  */
 export default function AnswerValue ({ value }) {
-  log('AnswerValue')
-
   return (
     <dd className='answer-value'>
       {getAnswerValue(value)}
