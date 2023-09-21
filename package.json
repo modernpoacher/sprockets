@@ -71,8 +71,8 @@
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "jest": "^29.7.0",
-    "postcss": "^8.4.30",
     "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.30",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.3.3",
     "postcss-map": "^0.11.0",
@@ -86,7 +86,6 @@
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
     "storybook": "^7.4.0",
-    "vinyl-paths": "^5.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
