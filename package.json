@@ -45,13 +45,13 @@
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.20",
+    "@babel/core": "^7.23.0",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.22.20",
     "@babel/preset-react": "^7.22.15",
     "@babel/register": "^7.22.15",
     "@modernpoacher/design-system": "1.0.77",
-    "@modernpoacher/hooks": "^1.0.437",
+    "@modernpoacher/hooks": "^1.0.438",
     "@storybook/addon-actions": "^7.4.5",
     "@storybook/addon-essentials": "^7.4.5",
     "@storybook/addon-links": "^7.4.5",
