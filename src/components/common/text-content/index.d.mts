@@ -5,5 +5,5 @@ declare module '@modernpoacher/sprockets/components/common/text-content' {
     textContent: string
   }
 
-  export default function TextContent (props: TextContentProps): React.JSX.Element
+  export default function TextContent (props: TextContentProps): React.JSX.Element | null
 }
