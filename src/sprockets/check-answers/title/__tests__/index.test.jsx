@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/title'
-import Title from '../index.jsx'
+import Title from '@modernpoacher/sprockets/sprockets/check-answers/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

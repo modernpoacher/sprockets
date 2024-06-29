@@ -10,5 +10,6 @@ exports[`@modernpoacher/sprockets/components/group <Group /> With additional pro
 exports[`@modernpoacher/sprockets/components/group <Group /> With required props renders 1`] = `
 <fieldset
   className="group"
+  onChange={[Function]}
 />
 `;

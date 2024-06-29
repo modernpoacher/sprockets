@@ -10,6 +10,11 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Sprocket from '@modernpoacher/sprockets/sprockets'
+
+import {
+  DEFAULT_HANDLE_CHANGE
+} from '@modernpoacher/sprockets/common'
+
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
@@ -74,7 +79,7 @@ export default class FieldsetSprocket extends Sprocket {
 
   renderGroup () {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       children
     } = this.props
 

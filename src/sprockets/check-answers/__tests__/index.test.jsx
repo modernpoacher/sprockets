@@ -4,14 +4,14 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/sprockets'
-import Sprocket from '../index.jsx'
+import Sprocket from '@modernpoacher/sprockets/sprockets/check-answers'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('../title/index.jsx')
-jest.mock('../group/index.jsx')
+jest.mock('@modernpoacher/sprockets/sprockets/check-answers/title')
+jest.mock('@modernpoacher/sprockets/sprockets/check-answers/group')
 
-describe('@modernpoacher/sprockets/sprockets/table', () => {
+describe('@modernpoacher/sprockets/sprockets/check-answers', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (

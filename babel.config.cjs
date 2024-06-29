@@ -47,6 +47,7 @@ const plugins = [
         /**
          *  Storybook
          */
+        '@modernpoacher/sprockets/common': './src/common/index.mjs',
         '@modernpoacher/sprockets/sprockets/check-answers/group/answer-item': './src/sprockets/check-answers/group/answer-item.jsx',
         '@modernpoacher/sprockets/sprockets/check-answers/group/answer-title': './src/sprockets/check-answers/group/answer-title.jsx',
         '@modernpoacher/sprockets/sprockets/check-answers/group/answer-value': './src/sprockets/check-answers/group/answer-value.jsx',

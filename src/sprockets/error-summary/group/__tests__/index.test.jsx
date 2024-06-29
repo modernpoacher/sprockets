@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/group'
-import Group from '../index.jsx'
-import GroupItem from '../error-item.jsx'
+import Group from '@modernpoacher/sprockets/sprockets/error-summary/group'
+import GroupItem from '@modernpoacher/sprockets/sprockets/error-summary/group/error-item'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

@@ -4,11 +4,11 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/group'
-import Group from '../index.jsx'
+import Group from '@modernpoacher/sprockets/sprockets/fieldset/group'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-describe('@modernpoacher/sprockets/fieldset/group', () => {
+describe('@modernpoacher/sprockets/sprockets/fieldset/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (
