@@ -1,6 +1,6 @@
 {
   "name": "@modernpoacher/sprockets",
-  "version": "0.0.187",
+  "version": "0.0.188",
   "description": "Sprockets",
   "keywords": [
     "Sprockets",
@@ -117,6 +117,7 @@
     "./sprockets/fieldset/description": "./src/sprockets/fieldset/description/index.cjs",
     "./sprockets/fieldset/error-message": "./src/sprockets/fieldset/error-message/index.cjs",
     "./sprockets/fieldset/group": "./src/sprockets/fieldset/group/index.cjs",
-    "./sprockets/fieldset/title": "./src/sprockets/fieldset/title/index.cjs"
+    "./sprockets/fieldset/title": "./src/sprockets/fieldset/title/index.cjs",
+    "./transformers/common": "./src/transformers/common/index.mjs"
   }
 }

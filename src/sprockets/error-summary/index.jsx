@@ -13,6 +13,8 @@ import Sprocket from '@modernpoacher/sprockets/sprockets'
 import Title from './title/index.jsx'
 import Group from './group/index.jsx'
 
+const DEFAULT_ERROR_SUMMARY = []
+
 export default class ErrorSummarySprocket extends Sprocket {
   getClassName () {
     return classnames(super.getClassName(), 'error-summary')
@@ -22,10 +24,10 @@ export default class ErrorSummarySprocket extends Sprocket {
    * @param {SprocketProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
-      (props.children !== this.props.children)
+      super.shouldComponentUpdate(props, state) ||
+      (props.errorSummary !== this.props.errorSummary)
     )
   }
 
@@ -43,22 +45,22 @@ export default class ErrorSummarySprocket extends Sprocket {
 
   renderGroup () {
     const {
-      children
+      errorSummary = DEFAULT_ERROR_SUMMARY
     } = this.props
 
     return (
-      <Group>
-        {children}
-      </Group>
+      <Group
+        errorSummary={errorSummary}
+      />
     )
   }
 
   render () {
     const {
-      children
+      errorSummary = DEFAULT_ERROR_SUMMARY
     } = this.props
 
-    if (children) {
+    if (errorSummary.length) {
       const className = this.getClassName()
 
       return (
@@ -75,14 +77,5 @@ export default class ErrorSummarySprocket extends Sprocket {
 
 ErrorSummarySprocket.propTypes = {
   ...Sprocket.propTypes,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(
-      PropTypes.node
-    )
-  ])
-}
-
-ErrorSummarySprocket.defaultProps = {
-  ...Sprocket.defaultProps
+  errorSummary: PropTypes.arrayOf(PropTypes.shape())
 }

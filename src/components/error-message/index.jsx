@@ -18,7 +18,7 @@ export default class ErrorMessage extends Component {
    *  @param {{errorMessage?: string}} props   Latest props
    *  @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (props.errorMessage !== this.props.errorMessage)
   }
 

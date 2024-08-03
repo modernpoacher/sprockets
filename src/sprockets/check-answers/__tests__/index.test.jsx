@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
@@ -9,7 +9,46 @@ import Sprocket from '@modernpoacher/sprockets/sprockets/check-answers'
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('@modernpoacher/sprockets/sprockets/check-answers/title')
-jest.mock('@modernpoacher/sprockets/sprockets/check-answers/group')
+jest.mock('@modernpoacher/sprockets/sprockets/check-answers/group', () => {
+  class MockCog extends mockComponent {
+    render () {
+      return 'MOCK CHECK ANSWERS GROUP'
+    }
+  }
+
+  return {
+    __esModule: true,
+    CheckCog: class CheckCog extends MockCog { },
+    default: MockCog
+  }
+})
+
+const MOCK_CHECK_ANSWERS = [
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  },
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  },
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  },
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  },
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  },
+  {
+    answer: { title: 'MOCK ANSWER TITLE', value: 'MOCK ANSWER VALUE' },
+    changeAnswer: { href: '#mock-answer-change-href', text: 'MOCK ANSWER CHANGE TEXT', visuallyHiddenText: 'MOCK ANSWER VISUALLY HIDDEN TEXT' }
+  }
+]
 
 describe('@modernpoacher/sprockets/sprockets/check-answers', () => {
   describe('<Sprocket />', () => {
@@ -50,6 +89,7 @@ describe('@modernpoacher/sprockets/sprockets/check-answers', () => {
         const component = (
           <Sprocket
             title='MOCK TITLE'
+            checkAnswers={MOCK_CHECK_ANSWERS}
           />
         )
 
