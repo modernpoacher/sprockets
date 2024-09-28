@@ -5,7 +5,6 @@ import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/group'
 import Group from '@modernpoacher/sprockets/sprockets/error-summary/group'
-import GroupItem from '@modernpoacher/sprockets/sprockets/error-summary/group/error-item'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -33,12 +32,9 @@ describe('@modernpoacher/sprockets/sprockets/error-summary/group', () => {
       it('renders', () => {
         const component = (
           <Group
-            onChange={jest.fn()}>
-            <GroupItem
-              text='MOCK ERROR TEXT'
-              href='#mock-error-href'
-            />
-          </Group>
+            onChange={jest.fn()}
+            errorSummary={[{ text: 'MOCK ERROR TEXT', href: '#mock-error-href' }]}
+          />
         )
 
         return expect(renderer.create(component).toJSON())

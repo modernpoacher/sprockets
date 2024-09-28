@@ -51,7 +51,6 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/register": "^7.24.6",
     "@modernpoacher/design-system": "1.0.179",
-    "@modernpoacher/hooks": "^1.0.495",
     "@storybook/addon-actions": "7.6.20",
     "@storybook/addon-essentials": "7.6.20",
     "@storybook/addon-links": "7.6.20",
@@ -117,6 +116,7 @@
     "./sprockets/fieldset/description": "./src/sprockets/fieldset/description/index.cjs",
     "./sprockets/fieldset/error-message": "./src/sprockets/fieldset/error-message/index.cjs",
     "./sprockets/fieldset/group": "./src/sprockets/fieldset/group/index.cjs",
-    "./sprockets/fieldset/title": "./src/sprockets/fieldset/title/index.cjs"
+    "./sprockets/fieldset/title": "./src/sprockets/fieldset/title/index.cjs",
+    "./transformers/common": "./src/transformers/common/index.mjs"
   }
 }

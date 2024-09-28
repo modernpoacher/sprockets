@@ -5,7 +5,6 @@ import classnames from 'classnames'
 
 import Super from '@modernpoacher/sprockets/components/group'
 import Group from '@modernpoacher/sprockets/sprockets/check-answers/group'
-import GroupItem from '@modernpoacher/sprockets/sprockets/check-answers/group/answer-item'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -37,19 +36,21 @@ describe('@modernpoacher/sprockets/sprockets/check-answers/group', () => {
       it('renders', () => {
         const component = (
           <Group
-            onChange={jest.fn()}>
-            <GroupItem
-              answer={{
-                title: 'MOCK ANSWER TITLE',
-                value: 'MOCK ANSWER VALUE'
-              }}
-              changeAnswer={{
-                text: 'MOCK CHANGE ANSWER TEXT',
-                href: '#mock-change-answer-href',
-                visuallyHiddenText: 'MOCK VISUALLY HIDDEN TEXT'
-              }}
-            />
-          </Group>
+            onChange={jest.fn()}
+            checkAnswers={[
+              {
+                answer: {
+                  title: 'MOCK ANSWER TITLE',
+                  value: 'MOCK ANSWER VALUE'
+                },
+                changeAnswer: {
+                  text: 'MOCK CHANGE ANSWER TEXT',
+                  href: '#mock-change-answer-href',
+                  visuallyHiddenText: 'MOCK VISUALLY HIDDEN TEXT'
+                }
+              }
+            ]}
+          />
         )
 
         return expect(renderer.create(component).toJSON())

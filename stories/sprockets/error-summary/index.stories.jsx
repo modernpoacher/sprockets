@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom'
 
 import ErrorSummarySprocket from '@modernpoacher/sprockets/sprockets/error-summary'
-import ErrorItem from '@modernpoacher/sprockets/sprockets/error-summary/group/error-item'
 
 export default {
   title: 'Stories/Sprockets/Error Summary',
@@ -21,12 +20,14 @@ export default {
 export function Default () {
   return (
     <ErrorSummarySprocket
-      title='Default'>
-      <ErrorItem
-        text='Error description'
-        href='#cog-id'
-      />
-    </ErrorSummarySprocket>
+      title='Default'
+      errorSummary={[
+        {
+          text: 'Error description',
+          href: '#cog-id'
+        }
+      ]}
+    />
   )
 }
 
