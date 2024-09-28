@@ -12,6 +12,11 @@ declare namespace SprocketsTypes {
       visuallyHiddenText?: string
     }
   }
+
+  export interface ErrorDefinitionType {
+    text: string
+    href: string
+  }
 }
 
 declare module '@modernpoacher/sprockets' {

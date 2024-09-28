@@ -13,6 +13,8 @@ import Sprocket from '@modernpoacher/sprockets/sprockets'
 import Title from './title/index.jsx'
 import Group from './group/index.jsx'
 
+const DEFAULT_CHECK_ANSWERS = []
+
 export default class CheckAnswersSprocket extends Sprocket {
   getClassName () {
     return classnames(super.getClassName(), 'check-answers')
@@ -22,10 +24,10 @@ export default class CheckAnswersSprocket extends Sprocket {
    * @param {SprocketProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
-      (props.children !== this.props.children)
+      super.shouldComponentUpdate(props, state) ||
+      (props.checkAnswers !== this.props.checkAnswers)
     )
   }
 
@@ -43,22 +45,22 @@ export default class CheckAnswersSprocket extends Sprocket {
 
   renderGroup () {
     const {
-      children
+      checkAnswers = DEFAULT_CHECK_ANSWERS
     } = this.props
 
     return (
-      <Group>
-        {children}
-      </Group>
+      <Group
+        checkAnswers={checkAnswers}
+      />
     )
   }
 
   render () {
     const {
-      children
+      checkAnswers = DEFAULT_CHECK_ANSWERS
     } = this.props
 
-    if (children) {
+    if (checkAnswers.length) {
       return (
         <div className={this.getClassName()}>
           {this.renderTitle()}
@@ -73,14 +75,5 @@ export default class CheckAnswersSprocket extends Sprocket {
 
 CheckAnswersSprocket.propTypes = {
   ...Sprocket.propTypes,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(
-      PropTypes.node
-    )
-  ])
-}
-
-CheckAnswersSprocket.defaultProps = {
-  ...Sprocket.defaultProps
+  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
 }

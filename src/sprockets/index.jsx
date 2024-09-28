@@ -23,7 +23,7 @@ export default class Sprocket extends Component {
    * @param {SprocketProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.children !== this.props.children) ||
       (props.title !== this.props.title) ||
@@ -83,8 +83,4 @@ Sprocket.propTypes = {
   groupRef: PropTypes.shape({
     current: PropTypes.shape().isRequired
   })
-}
-
-Sprocket.defaultProps = {
-  onChange: DEFAULT_HANDLE_CHANGE
 }

@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom'
 
 import CheckAnswersSprocket from '@modernpoacher/sprockets/sprockets/check-answers'
-import AnswerItem from '@modernpoacher/sprockets/sprockets/check-answers/group/answer-item'
 
 export default {
   title: 'Stories/Sprockets/Check Answers',
@@ -21,12 +20,14 @@ export default {
 export function Default () {
   return (
     <CheckAnswersSprocket
-      title='Default'>
-      <AnswerItem
-        answer={{ title: 'Title', value: 'Value' }}
-        changeAnswer={{ text: 'Link text', href: '#cog-route', visuallyHiddenText: 'Visually hidden text' }}
-      />
-    </CheckAnswersSprocket>
+      title='Default'
+      checkAnswers={[
+        {
+          answer: { title: 'Title', value: 'Value' },
+          changeAnswer: { text: 'Link text', href: '#cog-route', visuallyHiddenText: 'Visually hidden text' }
+        }
+      ]}
+    />
   )
 }
 
