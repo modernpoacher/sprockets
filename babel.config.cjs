@@ -45,7 +45,7 @@ const plugins = [
     'module-resolver', {
       alias: {
         /**
-         *  Storybook
+         *  Jest & Storybook
          */
         '@modernpoacher/sprockets/common': './src/common/index.mjs',
         '@modernpoacher/sprockets/sprockets/check-answers/group/answer-item': './src/sprockets/check-answers/group/answer-item.jsx',
