@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/modernpoacher/sprockets.git"
+    "url": "git+ssh://git@github.com/modernpoacher/sprockets.git"
   },
   "scripts": {
     "build": "cross-env DEBUG=@modernpoacher/sprockets* webpack",
