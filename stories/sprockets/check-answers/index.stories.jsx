@@ -17,10 +17,10 @@ export default {
   ]
 }
 
-export function Default () {
+export function OneAnswer () {
   return (
     <CheckAnswersSprocket
-      title='Default'
+      title='One Answer'
       checkAnswers={[
         {
           answer: { title: 'Title', value: 'Value' },
@@ -31,7 +31,7 @@ export function Default () {
   )
 }
 
-Default.parameters = {
+OneAnswer.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }
 }
 

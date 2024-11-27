@@ -7,7 +7,7 @@ export default {
   component: FieldsetSprocket
 }
 
-export function Default () {
+export function OneError () {
   return (
     <FieldsetSprocket
       title='Title'

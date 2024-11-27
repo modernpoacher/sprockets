@@ -8,8 +8,8 @@ import Sprocket from '#sprockets/sprockets/fieldset'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#sprockets/sprockets/error-summary/title')
-jest.mock('#sprockets/sprockets/error-summary/group')
+jest.mock('#sprockets/sprockets/fieldset/title')
+jest.mock('#sprockets/sprockets/fieldset/group')
 
 describe('#sprockets/sprockets/fieldset', () => {
   describe('<Sprocket />', () => {

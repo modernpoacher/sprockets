@@ -3,31 +3,11 @@
 exports[`#sprockets/sprockets/fieldset <Sprocket /> With additional props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
->
-  <fieldset
-    className="MOCK CLASSNAME"
-    onChange={[MockFunction]}
-  >
-    <legend
-      className="MOCK CLASSNAME"
-    >
-      <span
-        className="text-content"
-      >
-        MOCK TITLE
-      </span>
-    </legend>
-  </fieldset>
-</div>
+/>
 `;
 
 exports[`#sprockets/sprockets/fieldset <Sprocket /> With required props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
->
-  <fieldset
-    className="MOCK CLASSNAME"
-    onChange={[Function]}
-  />
-</div>
+/>
 `;

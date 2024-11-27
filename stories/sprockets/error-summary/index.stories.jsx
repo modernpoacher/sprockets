@@ -17,10 +17,10 @@ export default {
   ]
 }
 
-export function Default () {
+export function OneError () {
   return (
     <ErrorSummarySprocket
-      title='Default'
+      title='One Error'
       errorSummary={[
         {
           text: 'Error description',
@@ -31,7 +31,7 @@ export function Default () {
   )
 }
 
-Default.parameters = {
+OneError.parameters = {
   controls: { disabled: true, hideNoControlsWarning: true }
 }
 
