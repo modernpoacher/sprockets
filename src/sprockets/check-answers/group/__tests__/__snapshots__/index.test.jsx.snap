@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/sprockets/sprockets/check-answers/group <Group /> With additional props renders 1`] = `
+exports[`#sprockets/sprockets/check-answers/group <Group /> With additional props renders 1`] = `
 <dl
   className="MOCK CLASSNAME"
 >
@@ -14,4 +14,4 @@ exports[`@modernpoacher/sprockets/sprockets/check-answers/group <Group /> With a
 </dl>
 `;
 
-exports[`@modernpoacher/sprockets/sprockets/check-answers/group <Group /> With required props renders 1`] = `null`;
+exports[`#sprockets/sprockets/check-answers/group <Group /> With required props renders 1`] = `null`;

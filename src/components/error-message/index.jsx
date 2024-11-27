@@ -5,7 +5,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from '@modernpoacher/sprockets/components/common/text-content'
+import TextContent from '#sprockets/components/common/text-content'
 
 export default class ErrorMessage extends Component {
   getClassName () {

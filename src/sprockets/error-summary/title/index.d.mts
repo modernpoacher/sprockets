@@ -1,5 +1,9 @@
-declare module '@modernpoacher/sprockets/sprockets/error-summary/title' {
-  import Title from '@modernpoacher/sprockets/components/title'
+declare module '#sprockets/sprockets/error-summary/title' {
+  import Title from '#sprockets/components/title'
 
   export default class ErrorSummaryTitle extends Title {}
+}
+
+declare module '@modernpoacher/sprockets/sprockets/error-summary/title' {
+  export { default } from '#sprockets/sprockets/error-summary/title'
 }

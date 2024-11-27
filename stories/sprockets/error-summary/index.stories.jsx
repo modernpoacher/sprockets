@@ -3,7 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import ErrorSummarySprocket from '@modernpoacher/sprockets/sprockets/error-summary'
+import ErrorSummarySprocket from '#sprockets/sprockets/error-summary'
 
 export default {
   title: 'Stories/Sprockets/Error Summary',

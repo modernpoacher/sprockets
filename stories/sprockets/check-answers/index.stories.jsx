@@ -3,7 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import CheckAnswersSprocket from '@modernpoacher/sprockets/sprockets/check-answers'
+import CheckAnswersSprocket from '#sprockets/sprockets/check-answers'
 
 export default {
   title: 'Stories/Sprockets/Check Answers',

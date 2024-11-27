@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Title from '@modernpoacher/sprockets/components/title'
+import Title from '#sprockets/components/title'
 
-jest.mock('@modernpoacher/sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
+jest.mock('#sprockets/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 
-describe('@modernpoacher/sprockets/components/title', () => {
+describe('#sprockets/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

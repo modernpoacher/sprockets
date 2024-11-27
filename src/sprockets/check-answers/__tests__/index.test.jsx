@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/sprockets/sprockets'
-import Sprocket from '@modernpoacher/sprockets/sprockets/check-answers'
+import Super from '#sprockets/sprockets'
+import Sprocket from '#sprockets/sprockets/check-answers'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/sprockets/sprockets/check-answers/title')
-jest.mock('@modernpoacher/sprockets/sprockets/check-answers/group', () => {
+jest.mock('#sprockets/sprockets/check-answers/title')
+jest.mock('#sprockets/sprockets/check-answers/group', () => {
   class MockCog extends mockComponent {
     render () {
       return 'MOCK CHECK ANSWERS GROUP'
@@ -50,7 +50,7 @@ const MOCK_CHECK_ANSWERS = [
   }
 ]
 
-describe('@modernpoacher/sprockets/sprockets/check-answers', () => {
+describe('#sprockets/sprockets/check-answers', () => {
   describe('<Sprocket />', () => {
     describe('With required props', () => {
       const component = (

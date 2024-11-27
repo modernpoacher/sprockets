@@ -1,6 +1,6 @@
 import React from 'react'
 
-import FieldsetSprocket from '@modernpoacher/sprockets/sprockets/fieldset'
+import FieldsetSprocket from '#sprockets/sprockets/fieldset'
 
 export default {
   title: 'Stories/Sprockets/Fieldset',

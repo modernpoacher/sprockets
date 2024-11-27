@@ -3,7 +3,7 @@
  */
 
 import classnames from 'classnames'
-import ErrorMessage from '@modernpoacher/sprockets/components/error-message'
+import ErrorMessage from '#sprockets/components/error-message'
 
 export default class FieldsetErrorMessage extends ErrorMessage {
   getClassName () {

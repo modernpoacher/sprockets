@@ -19,8 +19,12 @@ declare namespace SprocketsTypes {
   }
 }
 
+declare module '#sprockets' {
+  export { default as CheckAnswersSprocket } from '#sprockets/sprockets/check-answers'
+  export { default as ErrorSummarySprocket } from '#sprockets/sprockets/error-summary'
+  export { default as FieldsetSprocket } from '#sprockets/sprockets/fieldset'
+}
+
 declare module '@modernpoacher/sprockets' {
-  export { default as CheckAnswersSprocket } from '@modernpoacher/sprockets/sprockets/check-answers'
-  export { default as ErrorSummarySprocket } from '@modernpoacher/sprockets/sprockets/error-summary'
-  export { default as FieldsetSprocket } from '@modernpoacher/sprockets/sprockets/fieldset'
+  export * from '#sprockets'
 }

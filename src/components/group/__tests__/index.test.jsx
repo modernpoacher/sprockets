@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Group from '@modernpoacher/sprockets/components/group'
+import Group from '#sprockets/components/group'
 
-describe('@modernpoacher/sprockets/components/group', () => {
+describe('#sprockets/components/group', () => {
   describe('<Group />', () => {
     describe('With required props', () => {
       const component = (

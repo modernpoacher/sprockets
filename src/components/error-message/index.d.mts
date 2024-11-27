@@ -1,4 +1,4 @@
-declare module '@modernpoacher/sprockets/components/error-message' {
+declare module '#sprockets/components/error-message' {
   import React from 'react'
 
   export interface ErrorMessageProps {
@@ -6,4 +6,9 @@ declare module '@modernpoacher/sprockets/components/error-message' {
   }
 
   export default class ErrorMessage extends React.Component<ErrorMessageProps> {}
+}
+
+declare module '@modernpoacher/sprockets/components/error-message' {
+  export { default } from '#sprockets/components/error-message'
+  export * from '#sprockets/components/error-message'
 }

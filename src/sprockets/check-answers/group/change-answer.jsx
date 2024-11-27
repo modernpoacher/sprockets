@@ -6,9 +6,9 @@ import {
   Link
 } from 'react-router-dom'
 
-import TextContent from '@modernpoacher/sprockets/components/common/text-content'
+import TextContent from '#sprockets/components/common/text-content'
 
-import VisuallyHiddenText from '@modernpoacher/sprockets/components/common/visually-hidden-text'
+import VisuallyHiddenText from '#sprockets/components/common/visually-hidden-text'
 
 const log = debug('@modernpoacher/sprockets/sprockets/check-answers/group/change-answer')
 

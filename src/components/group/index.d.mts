@@ -1,4 +1,4 @@
-declare module '@modernpoacher/sprockets/components/group' {
+declare module '#sprockets/components/group' {
   import React from 'react'
 
   export interface GroupProps {
@@ -8,4 +8,9 @@ declare module '@modernpoacher/sprockets/components/group' {
   }
 
   export default class Group extends React.Component<GroupProps> {}
+}
+
+declare module '@modernpoacher/sprockets/components/group' {
+  export { default } from '#sprockets/components/group'
+  export * from '#sprockets/components/group'
 }
