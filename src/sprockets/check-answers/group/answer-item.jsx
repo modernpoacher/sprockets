@@ -1,15 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import AnswerTitle from './answer-title.cjs'
-import AnswerValue from './answer-value.cjs'
-import ChangeAnswer from './change-answer.cjs'
+import AnswerTitle from './answer-title.jsx'
+import AnswerValue from './answer-value.jsx'
+import ChangeAnswer from './change-answer.jsx'
 
 export default function AnswerItem ({ answer: { title, value }, changeAnswer: { href, text, visuallyHiddenText } }) {
   return (
     <div className='answer'>
-      <AnswerTitle title={title} />
-      <AnswerValue value={value} />
+      <AnswerTitle
+        title={title}
+      />
+
+      <AnswerValue
+        value={value}
+      />
+
       <ChangeAnswer
         href={href}
         text={text}

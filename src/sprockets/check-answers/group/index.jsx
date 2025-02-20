@@ -23,9 +23,9 @@ import {
   getKey
 } from '#sprockets/transformers/common'
 
-import AnswerTitle from './answer-title.cjs'
-import AnswerValue from './answer-value.cjs'
-import ChangeAnswer from './change-answer.cjs'
+import AnswerTitle from './answer-title.jsx'
+import AnswerValue from './answer-value.jsx'
+import ChangeAnswer from './change-answer.jsx'
 
 const DEFAULT_CHECK_ANSWERS = []
 
@@ -37,8 +37,14 @@ function render ({ answer: { title, value }, changeAnswer: { href, text, ...chan
 
   return (
     <div key={getKey(href, text, index)} className='answer'>
-      <AnswerTitle title={title} />
-      <AnswerValue value={value} />
+      <AnswerTitle
+        title={title}
+      />
+
+      <AnswerValue
+        value={value}
+      />
+
       <ChangeAnswer
         changeAnswer={{ ...changeAnswer, href, text }}
       />
@@ -115,5 +121,5 @@ export default class CheckAnswersGroup extends Group {
 
 CheckAnswersGroup.propTypes = {
   ...Group.propTypes,
-  checkAnswers: PropTypes.arrayOf(PropTypes.shape())
+  checkAnswers: PropTypes.arrayOf(PropTypes.shape({}))
 }
