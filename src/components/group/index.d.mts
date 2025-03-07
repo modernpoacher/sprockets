@@ -2,7 +2,7 @@ declare module '#sprockets/components/group' {
   import React from 'react'
 
   export interface GroupProps {
-    onChange: SprocketsTypes.OnChangeType
+    onChange: SprocketsTypes.onEventType
     groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }

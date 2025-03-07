@@ -1,6 +1,6 @@
 declare global {
   namespace SprocketsTypes {
-    export type OnChangeType = () => void
+    export type onEventType = () => void
 
     export interface AnswerDefinitionType {
       answer: {

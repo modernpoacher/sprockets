@@ -3,7 +3,7 @@ declare module '#sprockets/sprockets' {
 
   export interface SprocketProps {
     title: string
-    onChange: SprocketsTypes.OnChangeType
+    onChange: SprocketsTypes.onEventType
     groupRef: object
     children: React.JSX.Element | React.JSX.Element[]
   }
