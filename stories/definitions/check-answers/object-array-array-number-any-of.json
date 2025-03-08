@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "title": "Number (Any Of)",
+    "value": "Three"
+  },
+  "changeAnswer": {
+    "href": "/alpha/omega",
+    "text": "Change",
+    "visuallyHiddenText": "number"
+  }
+}

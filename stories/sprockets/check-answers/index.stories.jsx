@@ -5,16 +5,21 @@ import {
 
 import CheckAnswersSprocket from '#sprockets/sprockets/check-answers'
 
+/**
+ *  @type {Array<(Story: () => React.JSX.Element) => React.JSX.Element>}
+ */
+const decorators = [
+  (Story) => (
+    <MemoryRouter>
+      <Story />
+    </MemoryRouter>
+  )
+]
+
 export default {
   title: 'Stories/Sprockets/Check Answers',
   component: CheckAnswersSprocket,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    )
-  ]
+  decorators
 }
 
 export function OneAnswer () {

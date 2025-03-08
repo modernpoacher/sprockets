@@ -1,0 +1,12 @@
+{
+  "type": "BOOLEAN",
+  "answer": {
+    "title": "Boolean (One Of)",
+    "value": "False"
+  },
+  "changeAnswer": {
+    "href": "/alpha/omega",
+    "text": "Change",
+    "visuallyHiddenText": "boolean"
+  }
+}

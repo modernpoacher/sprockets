@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#sprockets/sprockets/error-summary/group <Group /> With additional props matches the snapshot 1`] = `
+<ul
+  className="MOCK CLASSNAME"
+>
+  <li
+    className="error"
+  >
+    <a>
+      <TextContent />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`#sprockets/sprockets/error-summary/group <Group /> With required props matches the snapshot 1`] = `null`;

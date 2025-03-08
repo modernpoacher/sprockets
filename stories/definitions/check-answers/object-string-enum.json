@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "title": "String (Enum)",
+    "value": "Three"
+  },
+  "changeAnswer": {
+    "href": "/alpha/omega",
+    "text": "Change",
+    "visuallyHiddenText": "string"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "title": "Boolean (Enum)",
+    "value": "false"
+  },
+  "changeAnswer": {
+    "href": "/alpha/omega",
+    "text": "Change",
+    "visuallyHiddenText": "boolean"
+  }
+}

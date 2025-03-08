@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#sprockets/sprockets/error-summary <Sprocket /> With additional props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+  tabIndex={-1}
+>
+  <ErrorSummaryTitle>
+    <h2
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+    </h2>
+  </ErrorSummaryTitle>
+  <ErrorSummaryGroup>
+    <ul
+      className="MOCK CLASSNAME"
+    >
+      <li
+        className="error"
+      >
+        <a>
+          <TextContent />
+        </a>
+      </li>
+    </ul>
+  </ErrorSummaryGroup>
+</div>
+`;
+
+exports[`#sprockets/sprockets/error-summary <Sprocket /> With required props matches the snapshot 1`] = `null`;
