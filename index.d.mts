@@ -114,15 +114,18 @@ declare global {
 
       export namespace CheckAnswers {
         export interface CheckAnswersProps extends SprocketProps {
+          title?: string
           checkAnswers?: AnswerDefinitionType[]
         }
 
         export namespace Group {
           export interface CheckAnswersProps extends Super.Components.Group.GroupProps {
+            title?: string
             checkAnswers?: AnswerDefinitionType[]
           }
 
           export interface CheckAnswersState extends Super.Components.Group.GroupState {
+            title?: string
             checkAnswers?: AnswerDefinitionType[]
           }
         }
@@ -134,15 +137,18 @@ declare global {
 
       export namespace ErrorSummary {
         export interface ErrorSummaryProps extends SprocketProps {
+          title?: string
           errorSummary?: ErrorDefinitionType[]
         }
 
         export namespace Group {
           export interface ErrorSummaryProps extends Super.Components.Group.GroupProps {
+            title?: string
             errorSummary?: ErrorDefinitionType[]
           }
 
           export interface ErrorSummaryState extends Super.Components.Group.GroupState {
+            title?: string
             errorSummary?: ErrorDefinitionType[]
           }
         }
@@ -153,14 +159,30 @@ declare global {
       }
 
       export namespace Fieldset {
-        export type FieldsetProps = SprocketProps
+        export interface FieldsetProps extends SprocketProps {
+          title?: string
+          description?: string
+          errorMessage?: string
+        }
 
-        export type FieldsetState = SprocketState
+        export interface FieldsetState extends SprocketState {
+          title?: string
+          description?: string
+          errorMessage?: string
+        }
 
         export namespace Group {
-          export type FieldsetProps = Super.Components.Group.GroupProps
+          export interface FieldsetProps extends Super.Components.Group.GroupProps {
+            title?: string
+            description?: string
+            errorMessage?: string
+          }
 
-          export type FieldsetState = Super.Components.Group.GroupState
+          export interface FieldsetState extends Super.Components.Group.GroupState {
+            title?: string
+            description?: string
+            errorMessage?: string
+          }
         }
 
         export namespace Title {
