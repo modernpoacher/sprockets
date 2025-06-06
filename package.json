@@ -113,6 +113,9 @@
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   },
+  "overrides": {
+    "storybook": "$storybook"
+  },
   "imports": {
     "#sprockets": {
       "require": "./src/js/index.cjs",
@@ -171,8 +174,5 @@
     "./super/sprockets/*": "./src/js/super/sprockets/*/index.cjs",
     "./transformers": "./src/js/transformers/index.mjs",
     "./transformers/*": "./src/js/transformers/*/index.mjs"
-  },
-  "overrides": {
-    "storybook": "$storybook"
   }
 }
