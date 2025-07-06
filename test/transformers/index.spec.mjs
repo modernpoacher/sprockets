@@ -8,9 +8,9 @@ import {
 
 describe('#sprockets/transformers', () => {
   describe('`common`', () => {
-    it('is a function', () => {
+    it('is an object', () => {
       expect(common)
-        .to.be.a('module')
+        .to.be.an('object')
     })
   })
 })
