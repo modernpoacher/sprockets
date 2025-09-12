@@ -10,7 +10,7 @@ describe('#sprockets/transformers', () => {
   describe('`common`', () => {
     it('is an object', () => {
       expect(common)
-        .to.be.an('object')
+        .to.be.a('module') // an('object')
     })
   })
 })
