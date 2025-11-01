@@ -17,9 +17,7 @@ import type {
 } from '#sprockets/sprockets/fieldset'
 
 export type AnswerDefinitionType = SprocketsTypes.AnswerDefinitionType
-export type FieldChangeType = SprocketsTypes.FieldChangeType
 export type ErrorDefinitionType = SprocketsTypes.ErrorDefinitionType
-export type FieldErrorType = SprocketsTypes.FieldErrorType
 
 export { default as CheckAnswersSprocket } from '#sprockets/sprockets/check-answers'
 export { default as ErrorSummarySprocket } from '#sprockets/sprockets/error-summary'

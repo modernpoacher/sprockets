@@ -21,20 +21,11 @@ declare global {
       href: string
     }
 
-    export interface FieldChangeType {
-      text: string
-      href: string
-    }
-
-    export interface FieldErrorType {
-      text: string
-      href: string
-    }
-
     export namespace Super {
       export namespace Sprockets {
         export interface SprocketProps extends React.PropsWithChildren {
           groupRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
+          title?: string
         }
 
         export type SprocketState = Record<PropertyKey, unknown>
