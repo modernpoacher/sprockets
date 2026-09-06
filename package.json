@@ -55,6 +55,7 @@
     "@babel/core": "7.29.7",
     "@babel/eslint-parser": "7.29.7",
     "@babel/plugin-syntax-import-attributes": "7.29.7",
+    "@babel/plugin-syntax-jsx": "7.29.7",
     "@babel/preset-env": "7.29.7",
     "@babel/preset-react": "7.29.7",
     "@babel/register": "7.29.7",
@@ -100,8 +101,8 @@
     "prettier": "^3.9.6",
     "prop-types": "^15.8.1",
     "react": "^19.2.8",
-    "react-component-instance": "^0.0.158",
-    "react-component-snapshot": "^0.0.215",
+    "react-component-instance": "^0.0.159",
+    "react-component-snapshot": "^0.0.216",
     "react-dom": "^19.2.8",
     "react-router": "^8.3.1",
     "remove-files-webpack-plugin": "^1.5.0",
@@ -175,5 +176,11 @@
     "./super/sprockets/*": "./src/js/super/sprockets/*/index.cjs",
     "./transformers": "./src/js/transformers/index.mjs",
     "./transformers/*": "./src/js/transformers/*/index.mjs"
+  },
+  "allowScripts": {
+    "core-js@3.50.0": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }
